@@ -1,0 +1,82 @@
+Créer un site web responsive de *location de yachts de luxe* uniquement avec *HTML, CSS et JavaScript purs* (pas de frameworks externes).
+
+🎨 Palette de couleurs (définir en variables CSS dans :root) :
+- --primary-dark: #153A50;   /* Bleu nuit profond */
+- --secondary-dark: #5B8094; /* Bleu-gris moyen */
+- --accent: #7198AF;         /* Bleu doux élégant */
+- --secondary-light: #87B1C8;/* Bleu clair raffiné */
+- --light-bg: #AAD0E2;       /* Bleu pastel lumineux */
+
+---
+
+## Structure attendue
+
+1. *Header*
+   - Logo texte ou icône à gauche.
+   - Menu à droite : Accueil | Flotte | Tarifs | Services | Témoignages | Contact.
+   - Bouton "Réserver" stylé en --accent.
+   - Navigation sticky + responsive (burger menu sur mobile).
+
+2. *Section Héro (Accueil)*
+   - Grande image ou vidéo plein écran d’un yacht.
+   - Overlay sombre (--primary-dark avec opacité).
+   - Titre : "Louez un Yacht de Luxe".
+   - Sous-texte : "Une expérience inoubliable sur-mesure".
+   - Deux boutons CTA : "Réserver maintenant" & "Voir la flotte".
+
+3. *Recherche rapide*
+   - Formulaire horizontal avec champs : Date départ | Date retour | Lieu (port) | Passagers.
+   - Bouton "Rechercher".
+   - Validation basique en JavaScript (champs requis).
+
+4. *Section Flotte*
+   - Grille responsive (3 colonnes desktop, 2 tablette, 1 mobile).
+   - Carte yacht : image, nom, tarif ("À partir de 2500 €/jour"), bouton "Détails".
+   - Bouton "Détails" ouvre un *modal* avec description + galerie + bouton "Réserver".
+
+5. *Tarifs & Packs*
+   - 3 cartes prix : Demi-journée | Journée complète | Week-end.
+   - Boutons "Demander un devis".
+
+6. *Services & Extras*
+   - Liste avec icônes : équipage, chef à bord, transfert VIP, jet-ski, plongée, soirées privées.
+
+7. *Témoignages*
+   - Carousel/slider en JavaScript affichant 3 avis clients.
+
+8. *Galerie*
+   - Grille d’images cliquables avec effet *lightbox*.
+
+9. *Contact*
+   - Formulaire : Nom, Email, Téléphone, Message (validation JS).
+   - Coordonnées : adresse, téléphone, email.
+
+10. *Footer*
+    - Fond --primary-dark, texte blanc.
+    - Liens rapides + icônes réseaux sociaux.
+    - Copyright dynamique (année générée en JavaScript).
+
+---
+
+## Style attendu
+- Palette premium (bleu nuit + déclinaisons claires).
+- Boutons arrondis avec hover --secondary-dark.
+- Typographie élégante (Google Fonts : Montserrat ou Playfair).
+- Mise en page responsive avec Flexbox et Grid.
+- Animations douces (hover, fade-in au scroll).
+
+---
+
+## Fonctionnalités JavaScript
+- Modal yacht (ouvrir/fermer).
+- Slider témoignages automatique avec navigation manuelle.
+- Validation formulaire (champs requis + email correct).
+- Lightbox galerie.
+- Année dynamique dans le footer.
+
+---
+
+Livrables :
+- index.html (structure complète du site)
+- style.css (design avec variables CSS)
+- script.js (interactions et animations)
