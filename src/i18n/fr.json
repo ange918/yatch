@@ -8,14 +8,13 @@
     "contact": "Contact",
     "legal": "Légal",
     "faq": "FAQ",
-    "login": "Connexion",
-    "openAccount": "Ouvrir un compte"
+    "apply": "Demander un crédit"
   },
   "hero": {
     "badge": "Meilleure Banque Digitale Allemagne 2024",
     "headline": "Une banque qui s'adapte à votre vie",
     "subtext": "Découvrez des solutions financières modernes — sécurisées, rapides et entièrement numériques. Finanzkredit vous accompagne à chaque étape de votre parcours financier.",
-    "cta1": "Ouvrir un compte",
+    "cta1": "Voir les crédits",
     "cta2": "Simuler un crédit",
     "trustText": "Fait confiance par 1M+ clients dans toute l'Europe"
   },

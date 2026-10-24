@@ -8,14 +8,13 @@
     "contact": "Contact",
     "legal": "Juridisch",
     "faq": "FAQ",
-    "login": "Inloggen",
-    "openAccount": "Rekening openen"
+    "apply": "Lening aanvragen"
   },
   "hero": {
     "badge": "Beste Digitale Bank Duitsland 2024",
     "headline": "Bankieren dat bij uw leven past",
     "subtext": "Ontdek moderne financiële oplossingen — veilig, snel en volledig digitaal. Finanzkredit begeleidt u bij elke stap van uw financiële reis.",
-    "cta1": "Rekening openen",
+    "cta1": "Leningen bekijken",
     "cta2": "Krediet simuleren",
     "trustText": "Vertrouwd door 1M+ klanten in heel Europa"
   },

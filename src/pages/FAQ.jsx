@@ -23,10 +23,6 @@ const CAT_ICONS = {
 }
 
 const ALL_FAQS = [
-  { category: 'accounts', q: 'Wie eröffne ich ein Konto bei Finanzkredit?', a: 'Die Kontoeröffnung erfolgt vollständig online in weniger als 10 Minuten. Sie benötigen lediglich Ihren Personalausweis oder Reisepass und eine gültige E-Mail-Adresse.' },
-  { category: 'accounts', q: 'Welche Kontenarten bietet Finanzkredit an?', a: 'Wir bieten Girokonten (Basic, Plus, Premium), Sparkonten, Geschäftskonten und Gemeinschaftskonten an. Alle Konten können bequem online verwaltet werden.' },
-  { category: 'accounts', q: 'Gibt es eine Mindestaltersvoraussetzung?', a: 'Für die Eröffnung eines Kontos müssen Sie mindestens 18 Jahre alt sein. Für Jugendliche unter 18 Jahren bieten wir spezielle Jugendkonten an.' },
-  { category: 'accounts', q: 'Kann ich mehrere Konten bei Finanzkredit haben?', a: 'Ja, Sie können bis zu 5 Konten bei Finanzkredit führen, darunter verschiedene Währungskonten, Spar- und Girokonten.' },
   { category: 'cards', q: 'Welche Kreditkarten bietet Finanzkredit an?', a: 'Wir bieten Classic, Gold und Platinum Visa-Kreditkarten an. Alle Karten bieten weltweite Akzeptanz, und unsere Premium-Karten bieten Cashback und Zusatzleistungen.' },
   { category: 'cards', q: 'Wie beantrage ich eine Kreditkarte?', a: 'Die Beantragung erfolgt direkt in Ihrem Online-Banking oder der App. Nach Genehmigung erhalten Sie Ihre Karte innerhalb von 3–5 Werktagen per Post.' },
   { category: 'cards', q: 'Was tue ich, wenn meine Karte verloren geht?', a: 'Sperren Sie Ihre Karte sofort über die App oder unter 0800 123 456 7. Eine Ersatzkarte wird Ihnen innerhalb von 2 Werktagen zugesandt.' },
@@ -41,9 +37,6 @@ const ALL_FAQS = [
   { category: 'transfers', q: 'Wie richte ich einen Dauerauftrag ein?', a: 'Daueraufträge können einfach über die App oder das Online-Banking eingerichtet werden. Gehen Sie zu "Überweisungen" > "Dauerauftrag erstellen".' },
   { category: 'security', q: 'Wie sicher sind meine Daten bei Finanzkredit?', a: 'Wir verwenden 256-bit SSL-Verschlüsselung, 2-Faktor-Authentifizierung und sind ISO 27001 zertifiziert. Ihre Einlagen sind bis zu €100.000 gesichert.' },
   { category: 'security', q: 'Was soll ich tun, wenn ich eine verdächtige Aktivität bemerke?', a: 'Sperren Sie sofort Ihr Konto über die App und kontaktieren Sie unseren 24/7 Sicherheitsnotfall-Support unter 0800 987 654 3.' },
-  { category: 'app', q: 'Auf welchen Geräten ist die Finanzkredit-App verfügbar?', a: 'Die App ist für iOS (iPhone und iPad) und Android verfügbar und kann kostenlos im App Store bzw. Google Play heruntergeladen werden.' },
-  { category: 'app', q: 'Wie aktiviere ich den biometrischen Login?', a: 'Gehen Sie in der App zu "Einstellungen" > "Sicherheit" > "Biometrischer Login" und folgen Sie den Anweisungen zur Aktivierung von Face ID oder Fingerabdruck.' },
-  { category: 'app', q: 'Was tue ich, wenn ich mein Passwort vergessen habe?', a: 'Klicken Sie auf "Passwort vergessen" auf der Login-Seite. Sie erhalten eine E-Mail mit einem Link zum Zurücksetzen Ihres Passworts.' },
 ]
 
 export default function FAQ() {
@@ -51,7 +44,7 @@ export default function FAQ() {
   const [search, setSearch] = useState('')
   const [activeCategory, setActiveCategory] = useState('all')
 
-  const categories = ['all', 'accounts', 'cards', 'loans', 'transfers', 'security', 'app']
+  const categories = ['all', 'cards', 'loans', 'transfers', 'security']
 
   const filtered = useMemo(() => {
     return ALL_FAQS.filter((faq) => {

@@ -10,7 +10,6 @@ const stagger = { visible: { transition: { staggerChildren: 0.1 } } }
 const HERO_IMG = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80'
 
 const ONLINE_FEATURES = [
-  { bx: 'bx-mobile-alt', title: 'Mobile Banking App', desc: 'iOS & Android, über 4,8 Sterne' },
   { bx: 'bx-transfer', title: 'Sofortüberweisungen', desc: 'SEPA-Instant unter 10 Sekunden' },
   { bx: 'bx-credit-card', title: 'Virtuelle Karte', desc: 'Sofort verfügbar, vollständig sicher' },
   { bx: 'bx-bar-chart-alt-2', title: 'Ausgabenanalyse', desc: 'Verstehen Sie Ihr Ausgabeverhalten' },
@@ -49,8 +48,6 @@ const SUPPORT = [
 const SECURITY = [
   { bx: 'bx-lock-alt', title: '256-bit SSL Verschlüsselung', desc: 'Bankgrade Sicherheit für all Ihre Daten' },
   { bx: 'bx-shield', title: 'BaFin Reguliert', desc: 'Vollständig autorisiert und überwacht' },
-  { bx: 'bx-key', title: '2-Faktor-Authentifizierung', desc: 'Zusätzlicher Schutz für Ihr Konto' },
-  { bx: 'bx-fingerprint', title: 'Biometrischer Login', desc: 'Face ID und Fingerabdruck-Zugang' },
 ]
 
 function ServiceSection({ title, items, bg = 'bg-[#EBE2D1]' }) {

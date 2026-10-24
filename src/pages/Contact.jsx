@@ -239,7 +239,7 @@ export default function Contact() {
                 <h3 className="font-bold text-[#121110]">Häufige Fragen</h3>
               </div>
               <div className="space-y-2">
-                {['Wie eröffne ich ein Konto?', 'Welche Dokumente benötige ich?', 'Wie lange dauert die Bearbeitung?'].map(q => (
+                {['Wie beantrage ich einen Kredit?', 'Welche Dokumente benötige ich?', 'Wie lange dauert die Bearbeitung?'].map(q => (
                   <Link key={q} to="/faq" className="flex items-center justify-between p-3 hover:bg-gray-50 rounded-xl transition-colors group">
                     <span className="text-[13px] text-gray-600 font-medium group-hover:text-[#D2511A] transition-colors">{q}</span>
                     <ChevronRight size={14} className="text-gray-300 group-hover:text-[#D2511A]" />

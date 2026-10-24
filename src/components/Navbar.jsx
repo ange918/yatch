@@ -84,11 +84,8 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <Link to="/contact" className="px-4 py-2 text-sm font-semibold text-white/80 hover:text-white rounded-full border border-white/20 hover:border-white/40 transition-all">
-              {t('nav.login')}
-            </Link>
-            <Link to="/offers" className="px-4 py-2 text-sm font-semibold bg-[#D2511A] text-[#121110] rounded-full hover:scale-105 hover:shadow-[0_0_20px_rgba(210,81,26,0.4)] transition-all">
-              {t('nav.openAccount')}
+            <Link to="/contact" className="px-4 py-2 text-sm font-semibold bg-[#D2511A] text-[#121110] rounded-full hover:scale-105 hover:shadow-[0_0_20px_rgba(210,81,26,0.4)] transition-all">
+              {t('nav.apply')}
             </Link>
           </div>
 
@@ -121,11 +118,8 @@ export default function Navbar() {
             ))}
           </div>
           <div className="flex gap-3 mt-4">
-            <Link to="/contact" className="flex-1 text-center py-2.5 text-sm font-semibold text-white border border-white/20 rounded-full">
-              {t('nav.login')}
-            </Link>
-            <Link to="/offers" className="flex-1 text-center py-2.5 text-sm font-semibold bg-[#D2511A] text-[#121110] rounded-full">
-              {t('nav.openAccount')}
+            <Link to="/contact" className="flex-1 text-center py-2.5 text-sm font-semibold bg-[#D2511A] text-[#121110] rounded-full">
+              {t('nav.apply')}
             </Link>
           </div>
         </div>

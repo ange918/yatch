@@ -60,7 +60,7 @@ export default function Home() {
                 to="/offers"
                 className="inline-flex items-center justify-center gap-2 bg-[#D2511A] text-[#121110] font-bold px-8 py-4 rounded-full hover:scale-105 hover:shadow-[0_0_40px_rgba(210,81,26,0.5)] transition-all text-base sm:text-lg"
               >
-                <i className="bx bx-user-plus text-xl" />
+                <i className="bx bx-list-ul text-xl" />
                 {t('hero.cta1')}
               </Link>
               <Link
@@ -192,75 +192,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* App Promo */}
-      <section className="py-20 bg-gradient-to-br from-[#121110] to-[#3A2A20] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#D2511A] rounded-full" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-              <motion.div variants={fadeUp} className="mb-4"><Badge>{t('appPromo.badge')}</Badge></motion.div>
-              <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight"><Accent>{t('appPromo.title')}</Accent></motion.h2>
-              <motion.p variants={fadeUp} className="text-white/70 mb-8 leading-relaxed">{t('appPromo.subtitle')}</motion.p>
-              <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                {APP_FEATURES.map(({ key, bx }) => (
-                  <motion.div key={key} variants={fadeUp} className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-[#D2511A]/15 flex items-center justify-center shrink-0">
-                      <i className={`bx ${bx} text-[#D2511A] text-xl`} />
-                    </div>
-                    <span className="text-white/80 text-sm font-medium">{t(`appPromo.${key}`)}</span>
-                  </motion.div>
-                ))}
-              </motion.div>
-              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 items-start">
-                <Link to="/offers" className="inline-flex items-center gap-2 bg-[#D2511A] text-[#121110] font-bold px-6 py-3 rounded-full hover:scale-105 transition-all shadow-lg shadow-[#D2511A]/25">
-                  <i className="bx bx-mobile-alt text-xl" />
-                  {t('appPromo.downloadApp')}
-                </Link>
-                <div className="flex items-center gap-2 text-white/60 text-sm">
-                  <Star size={14} className="text-yellow-400 fill-yellow-400" />
-                  {t('appPromo.rating')}
-                </div>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 60 }} whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.8 }}
-              className="relative flex justify-center"
-            >
-              <div className="w-56 h-96 bg-[#8F3510]/90 rounded-3xl border-2 border-[#3A2A20]/60 flex flex-col overflow-hidden shadow-2xl shadow-black/40">
-                <div className="bg-[#8F3510] p-4 text-center border-b border-white/10">
-                  <p className="text-white font-bold text-sm tracking-wide">Finanzkredit</p>
-                  <div className="flex justify-center mt-1 gap-0.5">
-                    {[...Array(3)].map((_, i) => <div key={i} className="w-1 h-1 rounded-full bg-[#D2511A]" />)}
-                  </div>
-                </div>
-                <div className="flex-1 bg-gradient-to-b from-[#121110] to-[#8F3510] p-4 space-y-3">
-                  <div className="bg-white/10 rounded-2xl p-3 backdrop-blur-sm">
-                    <p className="text-white/60 text-xs mb-1">Kontostand</p>
-                    <p className="text-[#D2511A] font-black text-2xl">€24,583</p>
-                    <p className="text-white/40 text-xs mt-0.5">+2.4% diesen Monat</p>
-                  </div>
-                  {['+€2,400', '-€180', '+€850'].map((val, i) => (
-                    <div key={i} className="flex items-center justify-between bg-white/5 rounded-xl p-2.5">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-full bg-[#D2511A]/20 flex items-center justify-center">
-                          <i className={`bx ${val.startsWith('+') ? 'bx-trending-up' : 'bx-trending-down'} text-sm ${val.startsWith('+') ? 'text-[#D2511A]' : 'text-red-400'}`} />
-                        </div>
-                        <span className="text-white/40 text-xs">Trans.</span>
-                      </div>
-                      <span className={`text-xs font-bold ${val.startsWith('+') ? 'text-[#D2511A]' : 'text-red-400'}`}>{val}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-20 bg-[#EBE2D1]">
         <div className="max-w-4xl mx-auto px-4 text-center">
@@ -269,14 +200,14 @@ export default function Home() {
               Bereit loszulegen?
             </motion.h2>
             <motion.p variants={fadeUp} className="text-gray-500 mb-8 text-lg">
-              Eröffnen Sie Ihr Konto in weniger als 10 Minuten.
+              Beantragen Sie Ihren Wunschkredit in wenigen Minuten.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/offers"
+                to="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-[#D2511A] text-[#121110] font-bold px-8 py-4 rounded-full hover:scale-105 hover:shadow-[0_0_30px_rgba(210,81,26,0.4)] transition-all text-base sm:text-lg shadow-lg shadow-[#D2511A]/20"
               >
-                {t('nav.openAccount')} <ArrowRight size={20} />
+                {t('nav.apply')} <ArrowRight size={20} />
               </Link>
               <Link
                 to="/simulation"

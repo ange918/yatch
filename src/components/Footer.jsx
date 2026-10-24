@@ -21,11 +21,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-[#D2511A] mb-4 text-sm uppercase tracking-wider">{t('footer.products')}</h4>
             <ul className="space-y-2 text-sm text-white/60">
-              <li><Link to="/offers" className="hover:text-[#D2511A] transition-colors">{t('footer.currentAccount')}</Link></li>
-              <li><Link to="/offers" className="hover:text-[#D2511A] transition-colors">{t('footer.savingsAccount')}</Link></li>
-              <li><Link to="/offers" className="hover:text-[#D2511A] transition-colors">{t('footer.creditCard')}</Link></li>
               <li><Link to="/offers" className="hover:text-[#D2511A] transition-colors">{t('footer.loans')}</Link></li>
-              <li><Link to="/offers" className="hover:text-[#D2511A] transition-colors">{t('footer.investments')}</Link></li>
             </ul>
           </div>
 
