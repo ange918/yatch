@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ChevronDown } from 'lucide-react'
+import Flag from './Flag'
 
 const LANGS = ['DE', 'FR', 'NL', 'EN']
 
@@ -25,7 +26,7 @@ export default function Navbar() {
     setLangOpen(false)
   }
 
-  const currentLang = i18n.language.toUpperCase()
+  const currentLang = i18n.language.slice(0, 2).toUpperCase()
 
   const links = [
     { to: '/', label: t('nav.home') },
@@ -68,7 +69,7 @@ export default function Navbar() {
                 onClick={() => setLangOpen(!langOpen)}
                 className="flex items-center gap-1 text-white/80 hover:text-white text-sm font-medium px-3 py-2 rounded-lg hover:bg-white/10 transition-colors"
               >
-                {currentLang} <ChevronDown size={14} className={`transition-transform ${langOpen ? 'rotate-180' : ''}`} />
+                <Flag code={currentLang} /> <ChevronDown size={14} className={`transition-transform ${langOpen ? 'rotate-180' : ''}`} />
               </button>
               {langOpen && (
                 <div className="absolute right-0 top-full mt-1 bg-[#121110] border border-white/10 rounded-xl overflow-hidden shadow-xl">
@@ -76,9 +77,9 @@ export default function Navbar() {
                     <button
                       key={lang}
                       onClick={() => changeLang(lang)}
-                      className={`block w-full px-4 py-2 text-sm text-left transition-colors ${currentLang === lang ? 'text-[#D2511A] bg-white/5' : 'text-white/80 hover:text-white hover:bg-white/10'}`}
+                      className={`flex items-center justify-center w-full px-4 py-2.5 text-sm transition-colors ${currentLang === lang ? 'text-[#D2511A] bg-white/5' : 'text-white/80 hover:text-white hover:bg-white/10'}`}
                     >
-                      {lang}
+                      <Flag code={lang} />
                     </button>
                   ))}
                 </div>
@@ -111,9 +112,9 @@ export default function Navbar() {
               <button
                 key={lang}
                 onClick={() => changeLang(lang)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors ${currentLang === lang ? 'bg-[#D2511A] text-[#121110] border-[#D2511A]' : 'text-white/70 border-white/20 hover:border-white/40'}`}
+                className={`px-3 py-2 rounded-lg text-xs font-semibold border transition-colors ${currentLang === lang ? 'bg-[#D2511A] text-[#121110] border-[#D2511A]' : 'text-white/70 border-white/20 hover:border-white/40'}`}
               >
-                {lang}
+                <Flag code={lang} />
               </button>
             ))}
           </div>
