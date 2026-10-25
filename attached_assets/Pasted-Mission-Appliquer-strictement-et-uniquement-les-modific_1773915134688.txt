@@ -1,0 +1,52 @@
+Mission : Appliquer strictement et uniquement les modifications suivantes. Ne modifie aucune autre partie du design ou de la logique existante.
+
+1. Présence Géographique (Scaling Europe) :
+
+Remplace toutes les mentions de "4 pays" par une présence dans toute l'Europe.
+
+Texte cible (Allemand) : "Präsent in ganz Europa" ou "Europaweite Präsenz".
+
+Vérifier les fichiers : Home.jsx, About.jsx et Footer.jsx.
+
+2. Refonte du Formulaire de Contact (src/pages/Contact.jsx) :
+Modifie le formulaire pour collecter précisément ces 7 informations, en plus de la partie KYC :
+
+Vor- und Nachname (Nom & Prénom)
+
+Vollständige Adresse (Adresse complète) -> Champ large.
+
+Kreditbetrag (€) (Montant) & Laufzeit (Monate) (Durée).
+
+Beruf (Profession)
+
+Netto-Monatseinkommen (€) (Salaire mensuel net) -> type number.
+
+Verwendungszweck (Motif) -> Menu déroulant : Auto, Immobilien, Renovierung, Konsum, Sonstiges.
+
+IMPORTANT : Conserve intacte la section d'upload des documents KYC (Vorderseite & Rückseite). Les fichiers doivent continuer d'être envoyés via FormData.
+
+3. Mise à jour du Backend (send_mail.php) :
+
+Adapte le script pour traiter les 7 nouvelles variables en POST.
+
+Template Mail : Mets à jour le design (Anthracite/Vert) pour inclure ces nouvelles données dans le tableau récapitulatif.
+
+Pièces Jointes : Assure-toi que la logique $mail->addAttachment pour les fichiers id_front et id_back est conservée.
+
+Tout le contenu du mail doit être en Allemand.
+
+4. Nouveaux Canaux de Communication :
+
+ChatWidget.jsx : Remplace le chat actuel par un bouton flottant WhatsApp.
+Lien : https://wa.me/4917643631673?text=Hallo%20Kreditwelt,%20ich%20habe%20eine%20Anfrage.
+
+TickerBar.jsx : Remplace le texte défilant par ce ruban fixe :
+"📞 Rufen Sie uns an: +49 152 22422310 | ✅ WhatsApp: +49 176 43631673 | 📧 info@kreditwelt.de"
+
+5. Maintenance & UI :
+
+Ne touche pas aux animations Framer Motion.
+
+Assure-toi que le composant ScrollToTop dans App.jsx reste actif pour que les pages s'ouvrent par le haut.
+
+Thème couleur à respecter strictement : #032221 (fond) et #00DF81 (accent).

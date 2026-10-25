@@ -1,6 +1,10 @@
-modules = ["python-3.11"]
+modules = ["nodejs-20", "web"]
 [agent]
 expertMode = true
+stack = "BEST_EFFORT_FALLBACK"
+
+[nix]
+channel = "stable-25_05"
 
 [workflows]
 runButton = "Project"
@@ -12,20 +16,45 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Website"
+args = "Start application"
 
 [[workflows.workflow]]
-name = "Website"
+name = "Start application"
 author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "python -m http.server 5000"
-waitForPort = 5000
 
 [workflows.workflow.metadata]
 outputType = "webview"
 
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev & node server.js"
+waitForPort = 5000
+
+[[ports]]
+localPort = 3001
+externalPort = 3001
+
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[[ports]]
+localPort = 5001
+externalPort = 3000
+
+[[ports]]
+localPort = 5002
+externalPort = 3002
+
+[[ports]]
+localPort = 5003
+externalPort = 3003
+
+[[ports]]
+localPort = 5004
+externalPort = 4200
+
+[deployment]
+deploymentTarget = "static"
+build = ["npm", "run", "build"]
+publicDir = "dist"

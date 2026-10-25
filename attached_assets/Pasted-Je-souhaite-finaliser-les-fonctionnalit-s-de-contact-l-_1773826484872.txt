@@ -1,0 +1,37 @@
+Je souhaite finaliser les fonctionnalités de contact, l'upload de documents et corriger l'UI.
+
+IMPORTANT : J'ai déjà ajouté le dossier PHPMailer/ (contenant le sous-dossier src/) à la racine du projet sur Replit. Le script PHP doit utiliser ce dossier pour ses require.
+
+1. Système d'envoi d'emails (PHPMailer & Multilingue)
+Création du script : Crée un fichier send_mail.php à la racine.
+
+Fonctionnement : Ce script doit recevoir les données du formulaire via POST (Nom, Email, Téléphone, Montant, Durée, Langue).
+
+Auto-répondeur intelligent : Envoie un mail de confirmation automatique au client dans la langue qu'il a utilisée pour remplir le formulaire (détectée via une variable lang envoyée par le frontend : 'de', 'fr', ou 'en').
+
+Contenu des mails : * Le mail envoyé à l'administrateur doit contenir toutes les infos + les pièces jointes.
+
+Le mail de confirmation au client doit être stylisé en HTML avec les couleurs du site (Vert #00D181), le logo, et un message rassurant adapté à sa langue.
+
+Configuration : Utilise la structure use PHPMailer\PHPMailer\PHPMailer; et pointe vers le dossier PHPMailer/src/ présent à la racine.
+
+2. Formulaires et Upload de Pièces d'Identité (KYC)
+Modifications des formulaires : Ajoute deux champs d'upload obligatoires : "Carte d'Identité (Recto)" et "Carte d'Identité (Verso)".
+
+Contraintes : Accepte uniquement JPG, PNG et PDF.
+
+UX : Affiche une prévisualisation de l'image (thumbnail) une fois le fichier sélectionné par l'utilisateur.
+
+Soumission : Assure-toi que le composant React utilise FormData pour envoyer les fichiers et les champs textes (y compris la langue actuelle) vers send_mail.php.
+
+3. Corrections UI et Icônes (Boxicons)
+Icônes : Les icônes Boxicons ne s'affichent pas sur le build actuel. Force l'importation via npm install boxicons et l'import CSS global, ou ajoute le lien CDN <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> dans le index.html.
+
+Témoignages (Section Feedback) : Remplace les ronds verts contenant des initiales par des photos de visages humains réels (utilise des images professionnelles libres de droits provenant d'Unsplash ou pravatar.cc).
+
+Responsivité : Vérifie que les sections "Services" et "Contact" sont parfaitement fluides sur mobile.
+
+4. Feedback Utilisateur
+Ajoute un état de "Chargement" (spinner ou bouton grisé) pendant l'envoi du formulaire pour indiquer que le transfert des fichiers est en cours.
+
+Affiche un message de succès clair une fois le mail envoyé.
