@@ -18,16 +18,37 @@
     "cta2": "Simuler un crédit",
     "trustText": "Fait confiance par 1M+ clients dans toute l'Europe"
   },
-  "ticker": { "label": "Taux en direct" },
+  "ticker": {
+    "label": "Taux en direct",
+    "callUs": "Appelez-nous :"
+  },
   "services": {
     "title": "Nos Services",
     "subtitle": "Tout ce dont vous avez besoin pour vos finances — en un seul endroit",
-    "personal": { "title": "Banque Personnelle", "desc": "Comptes, cartes et crédits pour votre quotidien" },
-    "business": { "title": "Banque Entreprise", "desc": "Solutions sur mesure pour votre société" },
-    "investments": { "title": "Investissements", "desc": "Investissements à haut rendement dès 50€" },
-    "savings": { "title": "Épargne", "desc": "Taux d'intérêt attractifs pour vos économies" },
-    "loansCard": { "title": "Crédits", "desc": "Financements avantageux pour toutes les étapes de vie" },
-    "insurance": { "title": "Assurances", "desc": "Protection pour vous et votre famille" },
+    "personal": {
+      "title": "Banque Personnelle",
+      "desc": "Comptes, cartes et crédits pour votre quotidien"
+    },
+    "business": {
+      "title": "Banque Entreprise",
+      "desc": "Solutions sur mesure pour votre société"
+    },
+    "investments": {
+      "title": "Investissements",
+      "desc": "Investissements à haut rendement dès 50€"
+    },
+    "savings": {
+      "title": "Épargne",
+      "desc": "Taux d'intérêt attractifs pour vos économies"
+    },
+    "loansCard": {
+      "title": "Crédits",
+      "desc": "Financements avantageux pour toutes les étapes de vie"
+    },
+    "insurance": {
+      "title": "Assurances",
+      "desc": "Protection pour vous et votre famille"
+    },
     "heroTitle": "Nos Services",
     "heroSub": "Tout ce qui fait la banque moderne",
     "onlineTitle": "Banque en ligne",
@@ -48,9 +69,21 @@
   "testimonials": {
     "title": "Ce que disent nos clients",
     "subtitle": "Des expériences réelles, des personnes réelles",
-    "t1": { "name": "Anna Müller", "role": "Entrepreneuse", "text": "Finanzkredit m'a aidée à financer mon rêve. Le service est exceptionnel et les taux imbattables." },
-    "t2": { "name": "Thomas Schmidt", "role": "Salarié", "text": "Enfin une banque qui pense numérique. Tout via l'application, pas de paperasse — exactement ce que je cherchais." },
-    "t3": { "name": "Maria Hoffmann", "role": "Freelance", "text": "Le simulateur de crédit m'a fait gagner beaucoup de temps. En 24 heures, j'avais mon financement." }
+    "t1": {
+      "name": "Anna Müller",
+      "role": "Entrepreneuse",
+      "text": "Finanzkredit m'a aidée à financer mon rêve. Le service est exceptionnel et les taux imbattables."
+    },
+    "t2": {
+      "name": "Thomas Schmidt",
+      "role": "Salarié",
+      "text": "Enfin une banque qui pense numérique. Tout via l'application, pas de paperasse — exactement ce que je cherchais."
+    },
+    "t3": {
+      "name": "Maria Hoffmann",
+      "role": "Freelance",
+      "text": "Le simulateur de crédit m'a fait gagner beaucoup de temps. En 24 heures, j'avais mon financement."
+    }
   },
   "appPromo": {
     "badge": "Nouveau",
@@ -104,17 +137,66 @@
     "teamSub": "Les personnes derrière Finanzkredit",
     "awardsTitle": "Distinctions",
     "pressTitle": "Presse",
-    "milestone1": { "year": "2004", "title": "Fondation", "desc": "Finanzkredit fondée à Francfort" },
-    "milestone2": { "year": "2008", "title": "Expansion internationale", "desc": "Ouverture en France et Belgique" },
-    "milestone3": { "year": "2014", "title": "Transformation digitale", "desc": "Lancement de la première appli mobile" },
-    "milestone4": { "year": "2019", "title": "1 Million de clients", "desc": "Nous célébrons notre millionième client" },
-    "milestone5": { "year": "2024", "title": "Banque IA", "desc": "Introduction des conseillers financiers IA" },
-    "member1": { "name": "Dr. Klaus Weber", "role": "PDG & Fondateur" },
-    "member2": { "name": "Sophie Bauer", "role": "Directrice Technique" },
-    "member3": { "name": "Marc Richter", "role": "Directeur Financier" },
-    "member4": { "name": "Julia Fischer", "role": "Directrice Marketing" },
-    "member5": { "name": "Stefan Braun", "role": "Directeur des Opérations" },
-    "member6": { "name": "Laura Zimmermann", "role": "Responsable Conformité" }
+    "milestone1": {
+      "year": "2004",
+      "title": "Fondation",
+      "desc": "Finanzkredit fondée à Francfort"
+    },
+    "milestone2": {
+      "year": "2008",
+      "title": "Expansion internationale",
+      "desc": "Ouverture en France et Belgique"
+    },
+    "milestone3": {
+      "year": "2014",
+      "title": "Transformation digitale",
+      "desc": "Lancement de la première appli mobile"
+    },
+    "milestone4": {
+      "year": "2019",
+      "title": "1 Million de clients",
+      "desc": "Nous célébrons notre millionième client"
+    },
+    "milestone5": {
+      "year": "2024",
+      "title": "Banque IA",
+      "desc": "Introduction des conseillers financiers IA"
+    },
+    "member1": {
+      "name": "Dr. Klaus Weber",
+      "role": "PDG & Fondateur"
+    },
+    "member2": {
+      "name": "Sophie Bauer",
+      "role": "Directrice Technique"
+    },
+    "member3": {
+      "name": "Marc Richter",
+      "role": "Directeur Financier"
+    },
+    "member4": {
+      "name": "Julia Fischer",
+      "role": "Directrice Marketing"
+    },
+    "member5": {
+      "name": "Stefan Braun",
+      "role": "Directeur des Opérations"
+    },
+    "member6": {
+      "name": "Laura Zimmermann",
+      "role": "Responsable Conformité"
+    },
+    "tagline": "Aux côtés de plus d'un million de clients dans toute l'Europe depuis 2004.",
+    "aum": "Actifs sous gestion",
+    "happyClients": "Plus de 1 000 000 de clients satisfaits",
+    "award1": "Meilleure banque digitale 2024",
+    "award2": "Meilleure FinTech d'Allemagne",
+    "award3": "Prix de l'innovation",
+    "award4": "Excellence du service client",
+    "press1": "« Finanzkredit révolutionne la banque allemande »",
+    "press2": "« Un nouveau standard pour la banque digitale en Europe »",
+    "press3": "« La FinTech qui défie les banques traditionnelles »",
+    "aumValue": "10 Md€+"
   },
   "simulation": {
     "heroTitle": "Simulateur de Crédit",
@@ -131,7 +213,11 @@
     "totalInterest": "Intérêts totaux",
     "applyNow": "Demander maintenant",
     "disclaimer": "* Tous les calculs sont indicatifs et à titre informatif uniquement.",
-    "summary": "Récapitulatif"
+    "summary": "Récapitulatif",
+    "f1": "Calcul instantané",
+    "f2": "Curseurs interactifs",
+    "f3": "Sans engagement et gratuit",
+    "f4": "Réponse sous 24 heures"
   },
   "offers": {
     "heroTitle": "Produits & Offres",
@@ -148,9 +234,36 @@
     "simulate": "Simuler",
     "learnMore": "En savoir plus",
     "recommended": "Recommandé",
-    "basic": { "name": "Basic", "feature1": "Compte courant gratuit", "feature2": "Carte Visa débit", "feature3": "Banque mobile", "feature4": "Virements SEPA" },
-    "plus": { "name": "Plus", "feature1": "Tout de Basic", "feature2": "Cashback 0,5%", "feature3": "Assurance voyage", "feature4": "Support Premium", "feature5": "Pas de frais étrangers" },
-    "premium": { "name": "Premium", "feature1": "Tout de Plus", "feature2": "Cashback 1,5%", "feature3": "Service conciergerie", "feature4": "Support prioritaire 24/7", "feature5": "Offres exclusives", "feature6": "Conseiller personnel" }
+    "basic": {
+      "name": "Basic",
+      "feature1": "Compte courant gratuit",
+      "feature2": "Carte Visa débit",
+      "feature3": "Banque mobile",
+      "feature4": "Virements SEPA"
+    },
+    "plus": {
+      "name": "Plus",
+      "feature1": "Tout de Basic",
+      "feature2": "Cashback 0,5%",
+      "feature3": "Assurance voyage",
+      "feature4": "Support Premium",
+      "feature5": "Pas de frais étrangers"
+    },
+    "premium": {
+      "name": "Premium",
+      "feature1": "Tout de Plus",
+      "feature2": "Cashback 1,5%",
+      "feature3": "Service conciergerie",
+      "feature4": "Support prioritaire 24/7",
+      "feature5": "Offres exclusives",
+      "feature6": "Conseiller personnel"
+    },
+    "fromWord": "À partir de",
+    "rateFrom": "Taux d'intérêt à partir de",
+    "immoDesc": "Financez votre bien immobilier aux meilleures conditions",
+    "autoDesc": "La voiture de vos rêves avec un financement flexible",
+    "privatDesc": "Pour vos envies et projets personnels",
+    "businessText": "Des solutions sur mesure pour votre entreprise — de la start-up au grand groupe."
   },
   "loans": {
     "sectionBadge": "Nos offres",
@@ -158,84 +271,224 @@
     "sectionSubtitle": "Sur mesure pour chaque besoin — cliquez sur un produit pour en savoir plus.",
     "learnMore": "En savoir plus",
     "vermoegensVerwaltung": {
-      "name": "Gestion de patrimoine", "shortDesc": "Optimisez votre patrimoine", "rateLabel": "Frais de gestion p.a.",
+      "name": "Gestion de patrimoine",
+      "shortDesc": "Optimisez votre patrimoine",
+      "rateLabel": "Frais de gestion p.a.",
       "intro": "Faites travailler votre argent pour vous. Nos gestionnaires de patrimoine expérimentés élaborent une stratégie d'investissement adaptée à vos objectifs et à votre profil de risque.",
-      "b1": { "title": "Gestion active de portefeuille", "desc": "Surveillance et ajustement continus de votre portefeuille." },
-      "b2": { "title": "Diversification des risques", "desc": "Large répartition sur les classes d'actifs et les marchés." },
-      "b3": { "title": "Conseiller personnel", "desc": "Un expert dédié pour toutes vos questions." },
-      "b4": { "title": "Rapports transparents", "desc": "Rapports de performance mensuels en temps réel." }
+      "b1": {
+        "title": "Gestion active de portefeuille",
+        "desc": "Surveillance et ajustement continus de votre portefeuille."
+      },
+      "b2": {
+        "title": "Diversification des risques",
+        "desc": "Large répartition sur les classes d'actifs et les marchés."
+      },
+      "b3": {
+        "title": "Conseiller personnel",
+        "desc": "Un expert dédié pour toutes vos questions."
+      },
+      "b4": {
+        "title": "Rapports transparents",
+        "desc": "Rapports de performance mensuels en temps réel."
+      }
     },
     "lebensversicherung": {
-      "name": "Assurance vie", "shortDesc": "Protégez votre avenir", "rateLabel": "Prime mensuelle à partir de",
+      "name": "Assurance vie",
+      "shortDesc": "Protégez votre avenir",
+      "rateLabel": "Prime mensuelle à partir de",
       "intro": "Protégez votre famille et vos proches. Nos assurances vie flexibles offrent une couverture complète et peuvent être combinées avec un volet épargne.",
-      "b1": { "title": "Protection des proches", "desc": "Sécurité financière de votre famille en cas de sinistre." },
-      "b2": { "title": "Assurance vie capitalisée", "desc": "Combinaison protection et constitution de patrimoine." },
-      "b3": { "title": "Durées flexibles", "desc": "De 10 à 40 ans — selon vos besoins." },
-      "b4": { "title": "Avantages fiscaux", "desc": "Les prestations peuvent être versées en franchise d'impôt." }
+      "b1": {
+        "title": "Protection des proches",
+        "desc": "Sécurité financière de votre famille en cas de sinistre."
+      },
+      "b2": {
+        "title": "Assurance vie capitalisée",
+        "desc": "Combinaison protection et constitution de patrimoine."
+      },
+      "b3": {
+        "title": "Durées flexibles",
+        "desc": "De 10 à 40 ans — selon vos besoins."
+      },
+      "b4": {
+        "title": "Avantages fiscaux",
+        "desc": "Les prestations peuvent être versées en franchise d'impôt."
+      }
     },
     "trading": {
-      "name": "Trading & Bourse", "shortDesc": "Investissez en toute confiance", "rateLabel": "Frais de dépôt",
+      "name": "Trading & Bourse",
+      "shortDesc": "Investissez en toute confiance",
+      "rateLabel": "Frais de dépôt",
       "intro": "Négociez des actions, ETF, fonds et plus via notre plateforme de trading moderne. Profitez de frais réduits, de données en temps réel et d'outils d'analyse professionnels.",
-      "b1": { "title": "Cours en temps réel", "desc": "Données en direct de plus de 60 bourses mondiales." },
-      "b2": { "title": "Dépôt gratuit", "desc": "Pas de frais de base, coûts de transaction équitables." },
-      "b3": { "title": "Outils d'analyse", "desc": "Graphiques professionnels et indicateurs techniques." },
-      "b4": { "title": "Trading mobile", "desc": "Tradez à tout moment via notre application." }
+      "b1": {
+        "title": "Cours en temps réel",
+        "desc": "Données en direct de plus de 60 bourses mondiales."
+      },
+      "b2": {
+        "title": "Dépôt gratuit",
+        "desc": "Pas de frais de base, coûts de transaction équitables."
+      },
+      "b3": {
+        "title": "Outils d'analyse",
+        "desc": "Graphiques professionnels et indicateurs techniques."
+      },
+      "b4": {
+        "title": "Trading mobile",
+        "desc": "Tradez à tout moment via notre application."
+      }
     },
     "studentenkredit": {
-      "name": "Prêt étudiant", "shortDesc": "Financez vos études", "rateLabel": "Taux d'intérêt p.a.",
+      "name": "Prêt étudiant",
+      "shortDesc": "Financez vos études",
+      "rateLabel": "Taux d'intérêt p.a.",
       "intro": "Concentrez-vous sur vos études pendant que nous gérons vos finances. Notre prêt étudiant offre des conditions avantageuses avec un remboursement flexible après l'obtention du diplôme.",
-      "b1": { "title": "Jusqu'à 50 000 €", "desc": "Pour les frais de scolarité, frais de vie et plus encore." },
-      "b2": { "title": "Remboursement après les études", "desc": "Différé de remboursement jusqu'à 12 mois après le diplôme." },
-      "b3": { "title": "Taux avantageux", "desc": "Conditions spéciales étudiant dès 3,9% p.a." },
-      "b4": { "title": "Durées flexibles", "desc": "Adaptées à votre situation personnelle." }
+      "b1": {
+        "title": "Jusqu'à 50 000 €",
+        "desc": "Pour les frais de scolarité, frais de vie et plus encore."
+      },
+      "b2": {
+        "title": "Remboursement après les études",
+        "desc": "Différé de remboursement jusqu'à 12 mois après le diplôme."
+      },
+      "b3": {
+        "title": "Taux avantageux",
+        "desc": "Conditions spéciales étudiant dès 3,9% p.a."
+      },
+      "b4": {
+        "title": "Durées flexibles",
+        "desc": "Adaptées à votre situation personnelle."
+      }
     },
     "geschaeftskredit": {
-      "name": "Prêt professionnel", "shortDesc": "Pour votre entreprise", "rateLabel": "Taux d'intérêt p.a.",
+      "name": "Prêt professionnel",
+      "shortDesc": "Pour votre entreprise",
+      "rateLabel": "Taux d'intérêt p.a.",
       "intro": "Développez-vous avec le bon capital. Qu'il s'agisse d'investissement, de fonds de roulement ou d'expansion — notre prêt professionnel offre des solutions sur mesure pour toute taille d'entreprise.",
-      "b1": { "title": "Jusqu'à 2 000 000 €", "desc": "Pour les investissements, l'expansion et le fonds de roulement." },
-      "b2": { "title": "Décision rapide", "desc": "Décision de crédit dans les 48 heures." },
-      "b3": { "title": "Structures flexibles", "desc": "Prêts amortissables, annuitaires ou in fine." },
-      "b4": { "title": "Conseiller d'entreprise", "desc": "Accompagnement personnalisé par des experts en clientèle entreprise." }
+      "b1": {
+        "title": "Jusqu'à 2 000 000 €",
+        "desc": "Pour les investissements, l'expansion et le fonds de roulement."
+      },
+      "b2": {
+        "title": "Décision rapide",
+        "desc": "Décision de crédit dans les 48 heures."
+      },
+      "b3": {
+        "title": "Structures flexibles",
+        "desc": "Prêts amortissables, annuitaires ou in fine."
+      },
+      "b4": {
+        "title": "Conseiller d'entreprise",
+        "desc": "Accompagnement personnalisé par des experts en clientèle entreprise."
+      }
     },
     "konsumentenkredit": {
-      "name": "Crédit à la consommation", "shortDesc": "Pour vos besoins personnels", "rateLabel": "Taux d'intérêt p.a.",
+      "name": "Crédit à la consommation",
+      "shortDesc": "Pour vos besoins personnels",
+      "rateLabel": "Taux d'intérêt p.a.",
       "intro": "Réalisez vos envies — voyage, rénovation ou nouveaux appareils. Notre crédit à la consommation est simple, rapidement disponible et entièrement souscriptible en ligne.",
-      "b1": { "title": "Jusqu'à 75 000 €", "desc": "Pour tous vos projets et envies personnels." },
-      "b2": { "title": "Versement immédiat", "desc": "Argent sur votre compte en 24 heures." },
-      "b3": { "title": "Pas de garanties nécessaires", "desc": "Prêt sans nantissement immobilier ou de véhicule." },
-      "b4": { "title": "Remboursement anticipé gratuit", "desc": "Remboursez de manière flexible à tout moment." }
+      "b1": {
+        "title": "Jusqu'à 75 000 €",
+        "desc": "Pour tous vos projets et envies personnels."
+      },
+      "b2": {
+        "title": "Versement immédiat",
+        "desc": "Argent sur votre compte en 24 heures."
+      },
+      "b3": {
+        "title": "Pas de garanties nécessaires",
+        "desc": "Prêt sans nantissement immobilier ou de véhicule."
+      },
+      "b4": {
+        "title": "Remboursement anticipé gratuit",
+        "desc": "Remboursez de manière flexible à tout moment."
+      }
     },
     "hypothek": {
-      "name": "Hypothèque", "shortDesc": "Devenez propriétaire", "rateLabel": "Taux annuel effectif",
+      "name": "Hypothèque",
+      "shortDesc": "Devenez propriétaire",
+      "rateLabel": "Taux annuel effectif",
       "intro": "Réalisez votre rêve de propriété. Nos hypothèques offrent des taux attractifs, des plans de remboursement individuels et un accompagnement complet de la première idée à la remise des clés.",
-      "b1": { "title": "Jusqu'à 90% de financement", "desc": "Quotité de financement élevée pour votre bien immobilier." },
-      "b2": { "title": "Taux fixe jusqu'à 30 ans", "desc": "Sécurité de planification avec garantie de taux à long terme." },
-      "b3": { "title": "Simulateur gratuit", "desc": "Calculez votre mensualité en ligne." },
-      "b4": { "title": "Neuf & ancien", "desc": "Financement pour tout type de bien immobilier." }
+      "b1": {
+        "title": "Jusqu'à 90% de financement",
+        "desc": "Quotité de financement élevée pour votre bien immobilier."
+      },
+      "b2": {
+        "title": "Taux fixe jusqu'à 30 ans",
+        "desc": "Sécurité de planification avec garantie de taux à long terme."
+      },
+      "b3": {
+        "title": "Simulateur gratuit",
+        "desc": "Calculez votre mensualité en ligne."
+      },
+      "b4": {
+        "title": "Neuf & ancien",
+        "desc": "Financement pour tout type de bien immobilier."
+      }
     },
     "digitalkredit": {
-      "name": "Crédit digital", "shortDesc": "100% en ligne, rapide", "rateLabel": "Taux d'intérêt p.a.",
+      "name": "Crédit digital",
+      "shortDesc": "100% en ligne, rapide",
+      "rateLabel": "Taux d'intérêt p.a.",
       "intro": "Le crédit de l'ère numérique. Entièrement en ligne — de la demande au décaissement. Pas d'agence, pas de paperasse, pas de longue attente.",
-      "b1": { "title": "100% Digital", "desc": "Demande, vérification et décaissement entièrement en ligne." },
-      "b2": { "title": "Demande en 10 minutes", "desc": "Processus de demande rapide et simple." },
-      "b3": { "title": "VideoIdent", "desc": "Identification par vidéo — confortablement depuis chez vous." },
-      "b4": { "title": "Paiement immédiat", "desc": "Décaissement en quelques heures seulement." }
+      "b1": {
+        "title": "100% Digital",
+        "desc": "Demande, vérification et décaissement entièrement en ligne."
+      },
+      "b2": {
+        "title": "Demande en 10 minutes",
+        "desc": "Processus de demande rapide et simple."
+      },
+      "b3": {
+        "title": "VideoIdent",
+        "desc": "Identification par vidéo — confortablement depuis chez vous."
+      },
+      "b4": {
+        "title": "Paiement immédiat",
+        "desc": "Décaissement en quelques heures seulement."
+      }
     },
     "autokredit": {
-      "name": "Crédit auto", "shortDesc": "Financez votre véhicule", "rateLabel": "Taux d'intérêt p.a.",
+      "name": "Crédit auto",
+      "shortDesc": "Financez votre véhicule",
+      "rateLabel": "Taux d'intérêt p.a.",
       "intro": "Conduisez la voiture de vos rêves — avec un financement équitable. Neuf, occasion ou électrique : nous offrons des solutions flexibles pour chaque type de véhicule et chaque budget.",
-      "b1": { "title": "Neuf & occasion", "desc": "Financement pour véhicules de tout âge et type." },
-      "b2": { "title": "Bonus véhicule électrique", "desc": "Conditions plus avantageuses pour les véhicules électriques." },
-      "b3": { "title": "Jusqu'à 150 000 €", "desc": "Même pour les véhicules de luxe et premium." },
-      "b4": { "title": "Crédit ballon possible", "desc": "Mensualités faibles avec valeur résiduelle en fin de contrat." }
+      "b1": {
+        "title": "Neuf & occasion",
+        "desc": "Financement pour véhicules de tout âge et type."
+      },
+      "b2": {
+        "title": "Bonus véhicule électrique",
+        "desc": "Conditions plus avantageuses pour les véhicules électriques."
+      },
+      "b3": {
+        "title": "Jusqu'à 150 000 €",
+        "desc": "Même pour les véhicules de luxe et premium."
+      },
+      "b4": {
+        "title": "Crédit ballon possible",
+        "desc": "Mensualités faibles avec valeur résiduelle en fin de contrat."
+      }
     },
     "agrarkredit": {
-      "name": "Crédit agricole", "shortDesc": "Pour l'agriculture", "rateLabel": "Taux d'intérêt p.a.",
+      "name": "Crédit agricole",
+      "shortDesc": "Pour l'agriculture",
+      "rateLabel": "Taux d'intérêt p.a.",
       "intro": "Financez votre exploitation agricole avec des crédits sur mesure. Du financement de machines à la construction d'étables jusqu'à l'extension de surfaces — nous soutenons vos investissements.",
-      "b1": { "title": "Agriculture & sylviculture", "desc": "Solutions spécialisées pour toutes les exploitations agricoles." },
-      "b2": { "title": "Financement de machines", "desc": "Tracteurs, moissonneuses et machines spéciales." },
-      "b3": { "title": "Achat de terrain & bail", "desc": "Financement pour l'achat de terres et la reprise d'exploitation." },
-      "b4": { "title": "Agri-photovoltaïque", "desc": "Soutien pour les projets d'énergie durable." }
+      "b1": {
+        "title": "Agriculture & sylviculture",
+        "desc": "Solutions spécialisées pour toutes les exploitations agricoles."
+      },
+      "b2": {
+        "title": "Financement de machines",
+        "desc": "Tracteurs, moissonneuses et machines spéciales."
+      },
+      "b3": {
+        "title": "Achat de terrain & bail",
+        "desc": "Financement pour l'achat de terres et la reprise d'exploitation."
+      },
+      "b4": {
+        "title": "Agri-photovoltaïque",
+        "desc": "Soutien pour les projets d'énergie durable."
+      }
     }
   },
   "loanDetail": {
@@ -312,7 +565,113 @@
     "privacy": "Politique de confidentialité",
     "terms": "Conditions générales",
     "cookies": "Politique des cookies",
-    "regulatory": "Réglementation"
+    "regulatory": "Réglementation",
+    "content": {
+      "privacy": [
+        {
+          "heading": "1. Responsable du traitement",
+          "text": "Finanzkredit AG, Bankstraße 1, 60311 Francfort-sur-le-Main, est le responsable du traitement au sens du RGPD. Contact : datenschutz@kreditwelt.de"
+        },
+        {
+          "heading": "2. Données collectées",
+          "text": "Nous collectons les données personnelles que vous nous communiquez directement (nom, e-mail, numéro de téléphone) ainsi que des données techniques (adresse IP, type de navigateur, heures de connexion)."
+        },
+        {
+          "heading": "3. Finalités du traitement",
+          "text": "Vos données sont traitées pour l'exécution du contrat, pour communiquer avec vous, pour améliorer nos services et pour respecter nos obligations légales."
+        },
+        {
+          "heading": "4. Transmission des données",
+          "text": "Nous ne transmettons vos données que dans la mesure où la loi l'autorise ou l'exige. Aucune transmission à des tiers à des fins commerciales n'a lieu."
+        },
+        {
+          "heading": "5. Vos droits",
+          "text": "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation du traitement, de portabilité des données et d'opposition. Veuillez contacter datenschutz@kreditwelt.de."
+        },
+        {
+          "heading": "6. Cookies",
+          "text": "Nous utilisons des cookies pour améliorer l'expérience utilisateur. Vous trouverez plus d'informations dans notre politique relative aux cookies."
+        },
+        {
+          "heading": "7. Durée de conservation",
+          "text": "Les données personnelles ne sont conservées que le temps nécessaire à la finalité concernée ou tant que des obligations légales de conservation existent."
+        }
+      ],
+      "terms": [
+        {
+          "heading": "Art. 1 Champ d'application",
+          "text": "Les présentes conditions générales s'appliquent à toutes les prestations de Finanzkredit AG à l'égard de ses clients."
+        },
+        {
+          "heading": "Art. 2 Conclusion du contrat",
+          "text": "Le contrat est conclu lorsque Finanzkredit accepte l'offre du client."
+        },
+        {
+          "heading": "Art. 3 Prestations",
+          "text": "Finanzkredit propose des services bancaires conformément à la loi allemande sur les établissements de crédit (KWG), notamment la tenue de comptes, les services de paiement, l'intermédiation en crédit et le conseil en investissement."
+        },
+        {
+          "heading": "Art. 4 Frais",
+          "text": "Les frais indiqués dans la grille tarifaire et le catalogue des prestations s'appliquent à nos services."
+        },
+        {
+          "heading": "Art. 5 Responsabilité",
+          "text": "Finanzkredit est responsable en cas de faute intentionnelle et de faute lourde. En cas de faute légère, Finanzkredit n'est responsable qu'en cas de manquement à des obligations contractuelles essentielles."
+        },
+        {
+          "heading": "Art. 6 Protection des données",
+          "text": "Le traitement des données personnelles s'effectue conformément à notre politique de confidentialité et aux lois applicables en matière de protection des données."
+        },
+        {
+          "heading": "Art. 7 Droit applicable",
+          "text": "Le droit allemand est applicable. Le tribunal compétent est celui de Francfort-sur-le-Main."
+        }
+      ],
+      "cookies": [
+        {
+          "heading": "Que sont les cookies ?",
+          "text": "Les cookies sont de petits fichiers texte enregistrés sur votre appareil lorsque vous visitez notre site. Ils nous aident à vous offrir une meilleure expérience."
+        },
+        {
+          "heading": "Cookies nécessaires",
+          "text": "Ces cookies sont indispensables au fonctionnement de notre site et ne peuvent pas être désactivés."
+        },
+        {
+          "heading": "Cookies d'analyse",
+          "text": "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site en collectant des informations de manière anonyme."
+        },
+        {
+          "heading": "Cookies marketing",
+          "text": "Ces cookies servent à personnaliser les publicités et à les rendre plus pertinentes pour vous."
+        },
+        {
+          "heading": "Gestion des cookies",
+          "text": "Vous pouvez à tout moment modifier vos paramètres de cookies via les paramètres de cookies ou supprimer les cookies dans votre navigateur."
+        }
+      ],
+      "regulatory": [
+        {
+          "heading": "Agrément BaFin",
+          "text": "Finanzkredit AG est agréée en tant qu'établissement de crédit par l'Autorité fédérale de surveillance financière (BaFin) conformément à l'article 32 KWG. N° d'agrément : KW-2004-0001."
+        },
+        {
+          "heading": "Garantie des dépôts",
+          "text": "Les dépôts sont garantis par le fonds de garantie des dépôts de l'Association fédérale des banques allemandes jusqu'à 100 000 € par client."
+        },
+        {
+          "heading": "Procédure de médiation",
+          "text": "En cas de litige, les consommateurs peuvent s'adresser au médiateur des banques privées. Contact : ombudsmann@bankenverband.de"
+        },
+        {
+          "heading": "Conformité MiFID II",
+          "text": "Finanzkredit AG respecte toutes les exigences de la directive sur les marchés d'instruments financiers (MiFID II)."
+        },
+        {
+          "heading": "Conformité RGPD",
+          "text": "Nous respectons toutes les exigences du Règlement général sur la protection des données (RGPD) de l'UE. Notre délégué à la protection des données est joignable à l'adresse dpo@kreditwelt.de."
+        }
+      ]
+    }
   },
   "faq": {
     "heroTitle": "Questions Fréquemment Posées",
@@ -329,7 +688,80 @@
     },
     "ctaTitle": "Vous n'avez pas trouvé de réponse ?",
     "ctaText": "Notre équipe de support est là pour vous aider.",
-    "ctaButton": "Nous contacter"
+    "ctaButton": "Nous contacter",
+    "items": [
+      {
+        "category": "cards",
+        "q": "Quelles cartes de crédit Finanzkredit propose-t-elle ?",
+        "a": "Nous proposons les cartes de crédit Visa Classic, Gold et Platinum. Toutes les cartes sont acceptées dans le monde entier, et nos cartes premium offrent du cashback et des avantages supplémentaires."
+      },
+      {
+        "category": "cards",
+        "q": "Comment demander une carte de crédit ?",
+        "a": "La demande se fait directement dans votre banque en ligne ou dans l'application. Après acceptation, vous recevez votre carte par courrier sous 3 à 5 jours ouvrés."
+      },
+      {
+        "category": "cards",
+        "q": "Que faire si ma carte est perdue ?",
+        "a": "Bloquez immédiatement votre carte via l'application ou au 0800 123 456 7. Une carte de remplacement vous sera envoyée sous 2 jours ouvrés."
+      },
+      {
+        "category": "cards",
+        "q": "Y a-t-il des frais à l'étranger ?",
+        "a": "Aucun frais à l'étranger n'est appliqué sur nos comptes Plus et Premium. Pour le compte Basic, des frais de 1,5 % du montant de la transaction sont facturés."
+      },
+      {
+        "category": "loans",
+        "q": "Quels types de crédits Finanzkredit propose-t-elle ?",
+        "a": "Nous proposons des crédits immobiliers (à partir de 3,5 % par an), des crédits auto (à partir de 4,2 % par an) et des crédits personnels (à partir de 5,9 % par an). Tous les crédits peuvent être calculés à l'avance avec le simulateur."
+      },
+      {
+        "category": "loans",
+        "q": "En combien de temps ai-je une décision de crédit ?",
+        "a": "Pour les crédits personnels et auto, vous recevez généralement une décision sous 24 heures. Pour les crédits immobiliers, l'étude dure de 3 à 5 jours ouvrés."
+      },
+      {
+        "category": "loans",
+        "q": "Puis-je rembourser mon crédit par anticipation ?",
+        "a": "Oui, le remboursement anticipé est possible à tout moment. Aucune indemnité de remboursement anticipé n'est appliquée aux crédits personnels."
+      },
+      {
+        "category": "loans",
+        "q": "De quels documents ai-je besoin pour une demande de crédit ?",
+        "a": "Vous avez besoin d'une pièce d'identité en cours de validité, de vos derniers bulletins de salaire (3 derniers mois) et de vos relevés bancaires (3 derniers mois)."
+      },
+      {
+        "category": "transfers",
+        "q": "Combien de temps dure un virement SEPA ?",
+        "a": "Les virements SEPA standard sont exécutés sous 1 jour ouvré. Avec SEPA Instant, les virements sont possibles en 10 secondes."
+      },
+      {
+        "category": "transfers",
+        "q": "Quelles sont les limites de virement ?",
+        "a": "La limite quotidienne standard est de 50 000 €. Pour des montants plus élevés, vous pouvez nous contacter afin de convenir de limites individuelles."
+      },
+      {
+        "category": "transfers",
+        "q": "Puis-je effectuer des virements à l'étranger ?",
+        "a": "Oui, nous proposons des virements SWIFT vers plus de 150 pays. Le délai de traitement est de 1 à 5 jours ouvrés selon le pays de destination."
+      },
+      {
+        "category": "transfers",
+        "q": "Comment mettre en place un virement permanent ?",
+        "a": "Les virements permanents se configurent facilement via l'application ou la banque en ligne. Allez dans « Virements » > « Créer un virement permanent »."
+      },
+      {
+        "category": "security",
+        "q": "Mes données sont-elles en sécurité chez Finanzkredit ?",
+        "a": "Nous utilisons un chiffrement SSL 256 bits et l'authentification à deux facteurs, et nous sommes certifiés ISO 27001. Vos dépôts sont garantis jusqu'à 100 000 €."
+      },
+      {
+        "category": "security",
+        "q": "Que faire si je constate une activité suspecte ?",
+        "a": "Bloquez immédiatement votre compte via l'application et contactez notre support d'urgence sécurité 24h/24 et 7j/7 au 0800 987 654 3."
+      }
+    ],
+    "noResults": "Aucun résultat trouvé."
   },
   "cookie": {
     "text": "Nous utilisons des cookies pour améliorer votre expérience.",
@@ -343,6 +775,158 @@
     "placeholder": "Saisir un message...",
     "send": "Envoyer",
     "botGreeting": "Bonjour ! Je suis l'assistant Finanzkredit. Comment puis-je vous aider aujourd'hui ?",
-    "botReply": "Merci pour votre message ! Un conseiller vous contactera prochainement."
+    "botReply": "Merci pour votre message ! Un conseiller vous contactera prochainement.",
+    "ariaLabel": "Nous contacter sur WhatsApp",
+    "whatsappMessage": "Bonjour Finanzkredit, j'ai une question."
+  },
+  "apply": {
+    "badge": "DEMANDE DE CRÉDIT",
+    "title": "Demandez votre crédit maintenant",
+    "subtitle": "Remplissez le formulaire en entier. Notre équipe vous recontactera sous 24 heures.",
+    "successTitle": "Demande envoyée !",
+    "successText": "Merci. L'un de nos conseillers vous contactera dans les 24 heures.",
+    "successReset": "Envoyer une nouvelle demande",
+    "formTitle": "Demande de crédit",
+    "firstName": "Prénom",
+    "firstNamePh": "ex. Jean",
+    "lastName": "Nom",
+    "lastNamePh": "ex. Dupont",
+    "email": "Adresse e-mail",
+    "emailPh": "ex. jean@exemple.fr",
+    "address": "Adresse complète",
+    "addressPh": "Rue, numéro, code postal, ville, pays",
+    "amount": "Montant du crédit (€)",
+    "duration": "Durée (mois)",
+    "profession": "Profession",
+    "professionPh": "ex. ingénieur, enseignant, indépendant…",
+    "income": "Revenu mensuel net (€)",
+    "purpose": "Objet du crédit",
+    "purposeChoose": "— Veuillez choisir —",
+    "purposes": {
+      "car": "Voiture",
+      "realEstate": "Immobilier",
+      "renovation": "Rénovation",
+      "consumption": "Consommation",
+      "other": "Autre"
+    },
+    "kyc": "Pièce d'identité (KYC)",
+    "send": "Envoyer la demande",
+    "sending": "Envoi en cours...",
+    "privacy": "Vos données sont chiffrées et traitées de manière confidentielle (RGPD).",
+    "unavailable": "Le formulaire n'est pas disponible pour le moment.",
+    "contactTitle": "Contact",
+    "docsTitle": "Documents acceptés",
+    "faqTitle": "Questions fréquentes",
+    "faq1": "Comment demander un crédit ?",
+    "faq2": "De quels documents ai-je besoin ?",
+    "faq3": "Combien de temps dure le traitement ?",
+    "faqAll": "Voir toutes les FAQ →",
+    "trust1": "Chiffrement 256 bits",
+    "trust2": "Régulé par la BaFin",
+    "trust3": "Garantie des dépôts jusqu'à 100 000 €",
+    "trust4": "Certifié ISO 27001",
+    "eg": "ex."
+  },
+  "svc": {
+    "on1": {
+      "desc": "SEPA Instant en moins de 10 secondes",
+      "title": "Virements instantanés"
+    },
+    "on2": {
+      "desc": "Disponible immédiatement, entièrement sécurisée",
+      "title": "Carte virtuelle"
+    },
+    "on3": {
+      "desc": "Comprenez vos habitudes de dépense",
+      "title": "Analyse des dépenses"
+    },
+    "on4": {
+      "desc": "Automatisez vos paiements récurrents",
+      "title": "Virements permanents"
+    },
+    "on5": {
+      "desc": "Restez informé de chaque transaction",
+      "title": "Notifications push"
+    },
+    "in1": {
+      "desc": "Paiements vers plus de 150 pays",
+      "title": "Virements SWIFT"
+    },
+    "in2": {
+      "desc": "EUR, USD, GBP et plus encore",
+      "title": "Compte multidevises"
+    },
+    "in3": {
+      "desc": "Protection mondiale pour vos voyages",
+      "title": "Assurance voyage"
+    },
+    "in4": {
+      "desc": "Taux de change avantageux",
+      "title": "Change de devises"
+    },
+    "bz1": {
+      "desc": "Paiement automatisé des salaires",
+      "title": "Paie"
+    },
+    "bz2": {
+      "desc": "Des factures professionnelles en quelques minutes",
+      "title": "Facturation"
+    },
+    "bz3": {
+      "desc": "Un financement flexible pour votre croissance",
+      "title": "Crédits professionnels"
+    },
+    "bz4": {
+      "desc": "Un interlocuteur dédié",
+      "title": "Conseiller personnel"
+    },
+    "dg1": {
+      "desc": "Fixez et suivez vos objectifs budgétaires",
+      "title": "Planificateur de budget"
+    },
+    "dg2": {
+      "desc": "Épargnez automatiquement pour vos rêves",
+      "title": "Objectifs d'épargne"
+    },
+    "dg3": {
+      "desc": "Classement détaillé",
+      "title": "Catégories de dépenses"
+    },
+    "dg4": {
+      "desc": "Notifications financières intelligentes",
+      "title": "Alertes intelligentes"
+    },
+    "sp1": {
+      "desc": "Lun–Ven 8h–22h, Sam–Dim 9h–18h",
+      "title": "Chat en direct"
+    },
+    "sp2": {
+      "desc": "Lun–Ven 8h–20h"
+    },
+    "sp3": {
+      "desc": "Réponse sous 24h"
+    },
+    "sp4": {
+      "desc": "Lun–Ven 9h–18h, Sam 10h–14h"
+    },
+    "sc1": {
+      "desc": "Une sécurité de niveau bancaire pour toutes vos données",
+      "title": "Chiffrement SSL 256 bits"
+    },
+    "sc2": {
+      "desc": "Entièrement agréé et supervisé",
+      "title": "Régulé par la BaFin"
+    }
+  },
+  "home": {
+    "ctaTitle": "Prêt à vous lancer ?",
+    "ctaText": "Demandez le crédit de votre choix en quelques minutes."
+  },
+  "error": {
+    "generic": "Une erreur est survenue.",
+    "reload": "Recharger"
+  },
+  "meta": {
+    "title": "Finanzkredit — Banque numérique moderne"
   }
 }

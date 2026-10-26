@@ -35,16 +35,16 @@ export default function About() {
   const members = ['member1', 'member2', 'member3', 'member4', 'member5', 'member6']
 
   const awards = [
-    { title: 'Beste Digitalbank 2024', org: 'Handelsblatt', bx: 'bx-trophy' },
-    { title: 'Top FinTech Germany', org: 'Financial Times', bx: 'bx-medal' },
-    { title: 'Innovation Award', org: 'Bundesverband Banken', bx: 'bx-bulb' },
-    { title: 'Customer Service Excellence', org: 'Focus Money', bx: 'bx-heart' },
+    { k: 'award1', org: 'Handelsblatt', bx: 'bx-trophy' },
+    { k: 'award2', org: 'Financial Times', bx: 'bx-medal' },
+    { k: 'award3', org: 'Bundesverband Banken', bx: 'bx-bulb' },
+    { k: 'award4', org: 'Focus Money', bx: 'bx-heart' },
   ]
 
   const press = [
-    { name: 'Handelsblatt', quote: '"Finanzkredit revolutioniert das deutsche Banking"' },
-    { name: 'Financial Times', quote: '"A new standard for digital banking in Europe"' },
-    { name: 'Süddeutsche Zeitung', quote: '"Das FinTech, das traditionelle Banken herausfordert"' },
+    { name: 'Handelsblatt', k: 'press1' },
+    { name: 'Financial Times', k: 'press2' },
+    { name: 'Süddeutsche Zeitung', k: 'press3' },
   ]
 
   return (
@@ -64,7 +64,7 @@ export default function About() {
               <Accent>{t('about.heroTitle')}</Accent>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-white/70 text-lg max-w-xl mx-auto">
-              Seit 2004 für über 1 Million Kunden in ganz Europa da.
+              {t('about.tagline')}
             </motion.p>
           </motion.div>
         </div>
@@ -101,12 +101,12 @@ export default function About() {
               <div className="bg-gradient-to-br from-[#121110] to-[#3A2A20] rounded-3xl p-10 text-white shadow-2xl shadow-[#121110]/20">
                 <div className="text-center">
                   <i className="bx bx-line-chart text-[#D2511A] text-5xl mb-4" />
-                  <div className="text-6xl font-black text-[#D2511A] mb-2">€10B+</div>
-                  <div className="text-white/70 mb-6">Verwaltetes Vermögen</div>
+                  <div className="text-6xl font-black text-[#D2511A] mb-2">{t('about.aumValue')}</div>
+                  <div className="text-white/70 mb-6">{t('about.aum')}</div>
                   <div className="flex justify-center gap-1 mb-2">
                     {[...Array(5)].map((_, i) => <Star key={i} size={18} className="text-yellow-400 fill-yellow-400" />)}
                   </div>
-                  <div className="text-white/50 text-sm">1.000.000+ zufriedene Kunden</div>
+                  <div className="text-white/50 text-sm">{t('about.happyClients')}</div>
                 </div>
               </div>
             </motion.div>
@@ -208,12 +208,12 @@ export default function About() {
             className="grid grid-cols-2 sm:grid-cols-4 gap-5"
           >
             {awards.map((award) => (
-              <motion.div key={award.title} variants={fadeUp}>
+              <motion.div key={award.k} variants={fadeUp}>
                 <Card className="p-6 text-center hover:shadow-xl transition-all duration-300 bg-gradient-to-b from-white to-gray-50 border border-gray-100">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#D2511A] to-[#E8793F] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#D2511A]/20">
                     <i className={`bx ${award.bx} text-white text-2xl`} />
                   </div>
-                  <p className="font-bold text-[#121110] text-sm mb-1 leading-tight">{award.title}</p>
+                  <p className="font-bold text-[#121110] text-sm mb-1 leading-tight">{t(`about.${award.k}`)}</p>
                   <p className="text-gray-400 text-xs">{award.org}</p>
                 </Card>
               </motion.div>
@@ -237,7 +237,7 @@ export default function About() {
               <motion.div key={item.name} variants={fadeUp}>
                 <Card className="p-6 bg-gradient-to-br from-white to-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-300">
                   <CheckCircle className="text-[#D2511A] mb-3" size={22} />
-                  <p className="text-gray-600 italic text-sm mb-4 leading-relaxed">{item.quote}</p>
+                  <p className="text-gray-600 italic text-sm mb-4 leading-relaxed">{t(`about.${item.k}`)}</p>
                   <p className="font-bold text-[#121110] text-sm">{item.name}</p>
                 </Card>
               </motion.div>

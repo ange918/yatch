@@ -7,6 +7,7 @@ import Accent from '../components/Accent'
 import Card from '../components/ui/Card'
 import Badge from '../components/ui/Badge'
 import { LOANS } from '../data/loans'
+import { fmtCurrency, fmtPercent } from '../i18n/format'
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
 const stagger = { visible: { transition: { staggerChildren: 0.12 } } }
@@ -50,7 +51,7 @@ function FileUpload({ label, fieldName, file, preview, onChange, onClear, clickT
 
 export default function LoanDetail() {
   const { slug } = useParams()
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const loan = LOANS.find(l => l.slug === slug)
 
   const [form, setForm] = useState({
@@ -76,7 +77,7 @@ export default function LoanDetail() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert("Le formulaire n'est pas disponible pour le moment.")
+    alert(t('apply.unavailable'))
   }
 
   if (!loan) {
@@ -122,7 +123,7 @@ export default function LoanDetail() {
               {loanIntro}
             </motion.p>
             <motion.div variants={fadeUp} className="mt-8 inline-flex items-baseline gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4">
-              <span className="text-4xl font-black text-[#D2511A]">{loan.rate}</span>
+              <span className="text-4xl font-black text-[#D2511A]">{loan.from ? `${t('offers.fromWord')} ` : ''}{loan.unit === 'eur' ? fmtCurrency(loan.rate, i18n.language) : fmtPercent(loan.rate, i18n.language)}</span>
               <span className="text-white/60 text-sm">{loanRateLabel}</span>
             </motion.div>
           </motion.div>

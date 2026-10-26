@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Check, ArrowRight } from 'lucide-react'
 import Accent from '../components/Accent'
+import { fmtPercent } from '../i18n/format'
 import Card from '../components/ui/Card'
 import Badge from '../components/ui/Badge'
 
@@ -12,12 +13,12 @@ const stagger = { visible: { transition: { staggerChildren: 0.1 } } }
 const HERO_IMG = 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1920&q=80'
 
 export default function Offers() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const loans = [
-    { name: t('simulation.tabImmo'), rate: '3.5%', bx: 'bx-home', desc: 'Finanzieren Sie Ihre Immobilie zu Top-Konditionen', color: 'text-blue-600' },
-    { name: t('simulation.tabAuto'), rate: '4.2%', bx: 'bx-car', desc: 'Ihr Traumauto mit flexibler Finanzierung', color: 'text-[#3A2A20]' },
-    { name: t('simulation.tabPrivat'), rate: '5.9%', bx: 'bx-user', desc: 'Für persönliche Wünsche und Projekte', color: 'text-purple-600' },
+    { name: t('simulation.tabImmo'), rate: 3.5, bx: 'bx-home', desc: t('offers.immoDesc'), color: 'text-blue-600' },
+    { name: t('simulation.tabAuto'), rate: 4.2, bx: 'bx-car', desc: t('offers.autoDesc'), color: 'text-[#3A2A20]' },
+    { name: t('simulation.tabPrivat'), rate: 5.9, bx: 'bx-user', desc: t('offers.privatDesc'), color: 'text-purple-600' },
   ]
 
   return (
@@ -50,8 +51,8 @@ export default function Offers() {
                   <div className="w-12 h-12 rounded-2xl bg-[#121110]/5 flex items-center justify-center mb-4">
                     <i className={`bx ${loan.bx} ${loan.color} text-2xl`} />
                   </div>
-                  <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Zinssatz ab</div>
-                  <div className="text-4xl font-black text-[#D2511A] mb-2">{loan.rate}</div>
+                  <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">{t('offers.rateFrom')}</div>
+                  <div className="text-4xl font-black text-[#D2511A] mb-2">{fmtPercent(loan.rate, i18n.language)}</div>
                   <h3 className="font-bold text-xl text-[#121110] mb-2 tracking-tight">{loan.name}</h3>
                   <p className="text-gray-500 text-sm mb-6 flex-1 leading-relaxed">{loan.desc}</p>
                   <Link to="/simulation" className="block w-full text-center border-2 border-[#D2511A] text-[#121110] font-semibold py-2.5 rounded-full hover:bg-[#D2511A] hover:scale-105 transition-all text-sm">
@@ -75,7 +76,7 @@ export default function Offers() {
               </div>
             </motion.div>
             <motion.h2 variants={fadeUp} className="text-3xl font-extrabold text-white mb-4 tracking-tight"><Accent>{t('offers.businessSection')}</Accent></motion.h2>
-            <motion.p variants={fadeUp} className="text-white/70 mb-8 leading-relaxed">Maßgeschneiderte Lösungen für Ihr Unternehmen — von der Startup-Phase bis zum Konzern.</motion.p>
+            <motion.p variants={fadeUp} className="text-white/70 mb-8 leading-relaxed">{t('offers.businessText')}</motion.p>
             <motion.div variants={fadeUp}>
               <Link to="/contact" className="inline-flex items-center gap-2 bg-[#D2511A] text-[#121110] font-bold px-6 py-3 rounded-full hover:scale-105 transition-all shadow-lg shadow-black/10">
                 {t('offers.learnMore')} <ArrowRight size={16} />

@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import i18n from '../i18n'
 
 export default class ErrorBoundary extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ export default class ErrorBoundary extends Component {
     if (this.state.hasError) {
       return (
         <div style={{ padding: '2rem', textAlign: 'center' }}>
-          <p>Une erreur est survenue. <button onClick={() => { this.setState({ hasError: false }); window.location.reload() }}>Recharger</button></p>
+          <p>{i18n.t('error.generic')} <button onClick={() => { this.setState({ hasError: false }); window.location.reload() }}>{i18n.t('error.reload')}</button></p>
         </div>
       )
     }

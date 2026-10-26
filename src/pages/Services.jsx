@@ -10,47 +10,48 @@ const stagger = { visible: { transition: { staggerChildren: 0.1 } } }
 const HERO_IMG = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80'
 
 const ONLINE_FEATURES = [
-  { bx: 'bx-transfer', title: 'Sofortüberweisungen', desc: 'SEPA-Instant unter 10 Sekunden' },
-  { bx: 'bx-credit-card', title: 'Virtuelle Karte', desc: 'Sofort verfügbar, vollständig sicher' },
-  { bx: 'bx-bar-chart-alt-2', title: 'Ausgabenanalyse', desc: 'Verstehen Sie Ihr Ausgabeverhalten' },
-  { bx: 'bx-refresh', title: 'Daueraufträge', desc: 'Automatisieren Sie regelmäßige Zahlungen' },
-  { bx: 'bx-bell', title: 'Push-Benachrichtigungen', desc: 'Informiert über jede Transaktion' },
+  { bx: 'bx-transfer', k: 'on1' },
+  { bx: 'bx-credit-card', k: 'on2' },
+  { bx: 'bx-bar-chart-alt-2', k: 'on3' },
+  { bx: 'bx-refresh', k: 'on4' },
+  { bx: 'bx-bell', k: 'on5' },
 ]
 
 const INTL_FEATURES = [
-  { bx: 'bx-globe', title: 'SWIFT-Überweisungen', desc: 'Zahlungen in 150+ Länder' },
-  { bx: 'bx-dollar-circle', title: 'Multi-Währungskonto', desc: 'EUR, USD, GBP und mehr' },
-  { bx: 'bx-shield-quarter', title: 'Reiseversicherung', desc: 'Weltweiter Schutz für Ihre Reisen' },
-  { bx: 'bx-trending-up', title: 'Devisenhandel', desc: 'Günstige Wechselkurse' },
+  { bx: 'bx-globe', k: 'in1' },
+  { bx: 'bx-dollar-circle', k: 'in2' },
+  { bx: 'bx-shield-quarter', k: 'in3' },
+  { bx: 'bx-trending-up', k: 'in4' },
 ]
 
 const BUSINESS_FEATURES = [
-  { bx: 'bx-group', title: 'Gehaltsabrechnung', desc: 'Automatisierte Lohnzahlungen' },
-  { bx: 'bx-receipt', title: 'Rechnungsstellung', desc: 'Professionelle Rechnungen in Minuten' },
-  { bx: 'bx-buildings', title: 'Geschäftskredite', desc: 'Flexible Finanzierung für Ihr Wachstum' },
-  { bx: 'bx-user-voice', title: 'Persönlicher Berater', desc: 'Dedizierter Ansprechpartner' },
+  { bx: 'bx-group', k: 'bz1' },
+  { bx: 'bx-receipt', k: 'bz2' },
+  { bx: 'bx-buildings', k: 'bz3' },
+  { bx: 'bx-user-voice', k: 'bz4' },
 ]
 
 const DIGITAL_TOOLS = [
-  { bx: 'bx-wallet', title: 'Budgetplaner', desc: 'Setzen und verfolgen Sie Budgetziele' },
-  { bx: 'bx-target-lock', title: 'Sparziele', desc: 'Automatisches Sparen für Ihre Träume' },
-  { bx: 'bx-category', title: 'Ausgabenkategorien', desc: 'Detaillierte Kategorisierung' },
-  { bx: 'bx-bell-plus', title: 'Smart Alerts', desc: 'Intelligente Finanzbenachrichtigungen' },
+  { bx: 'bx-wallet', k: 'dg1' },
+  { bx: 'bx-target-lock', k: 'dg2' },
+  { bx: 'bx-category', k: 'dg3' },
+  { bx: 'bx-bell-plus', k: 'dg4' },
 ]
 
 const SUPPORT = [
-  { bx: 'bx-chat', title: 'Live-Chat', desc: 'Mo–Fr 8–22 Uhr, Sa–So 9–18 Uhr', gradient: 'from-[#3A2A20] to-[#E8793F]' },
-  { bx: 'bx-phone', title: '+49 69 1234 5678', desc: 'Mo–Fr 8–20 Uhr', gradient: 'from-blue-500 to-blue-700' },
-  { bx: 'bx-envelope', title: 'support@kreditwelt.de', desc: 'Antwort innerhalb 24h', gradient: 'from-purple-500 to-purple-700' },
-  { bx: 'bx-map-pin', title: 'Bankstraße 1, Frankfurt', desc: 'Mo–Fr 9–18 Uhr, Sa 10–14 Uhr', gradient: 'from-orange-500 to-red-500' },
+  { bx: 'bx-chat', k: 'sp1', gradient: 'from-[#3A2A20] to-[#E8793F]' },
+  { bx: 'bx-phone', k: 'sp2', title: '+49 69 1234 5678', gradient: 'from-blue-500 to-blue-700' },
+  { bx: 'bx-envelope', k: 'sp3', title: 'support@kreditwelt.de', gradient: 'from-purple-500 to-purple-700' },
+  { bx: 'bx-map-pin', k: 'sp4', title: 'Bankstraße 1, Frankfurt', gradient: 'from-orange-500 to-red-500' },
 ]
 
 const SECURITY = [
-  { bx: 'bx-lock-alt', title: '256-bit SSL Verschlüsselung', desc: 'Bankgrade Sicherheit für all Ihre Daten' },
-  { bx: 'bx-shield', title: 'BaFin Reguliert', desc: 'Vollständig autorisiert und überwacht' },
+  { bx: 'bx-lock-alt', k: 'sc1' },
+  { bx: 'bx-shield', k: 'sc2' },
 ]
 
 function ServiceSection({ title, items, bg = 'bg-[#EBE2D1]' }) {
+  const { t } = useTranslation()
   return (
     <section className={`py-16 ${bg}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,15 +66,15 @@ function ServiceSection({ title, items, bg = 'bg-[#EBE2D1]' }) {
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
         >
-          {items.map(({ bx, title: t, desc }) => (
-            <motion.div key={t} variants={fadeUp}>
+          {items.map(({ bx, k }) => (
+            <motion.div key={k} variants={fadeUp}>
               <Card className="p-5 flex items-start gap-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 bg-gradient-to-b from-white to-gray-50/50">
                 <div className="w-11 h-11 rounded-xl bg-[#D2511A]/10 flex items-center justify-center shrink-0">
                   <i className={`bx ${bx} text-[#3A2A20] text-2xl`} />
                 </div>
                 <div>
-                  <p className="font-bold text-[#121110] mb-1 text-sm leading-tight">{t}</p>
-                  <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
+                  <p className="font-bold text-[#121110] mb-1 text-sm leading-tight">{t(`svc.${k}.title`)}</p>
+                  <p className="text-gray-500 text-xs leading-relaxed">{t(`svc.${k}.desc`)}</p>
                 </div>
               </Card>
             </motion.div>
@@ -120,13 +121,13 @@ export default function Services() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           >
             {SUPPORT.map((s) => (
-              <motion.div key={s.title} variants={fadeUp}>
+              <motion.div key={s.k} variants={fadeUp}>
                 <div className={`bg-gradient-to-br ${s.gradient} rounded-2xl p-6 text-white text-center hover:-translate-y-1 transition-all duration-300 shadow-lg`}>
                   <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mx-auto mb-3">
                     <i className={`bx ${s.bx} text-white text-2xl`} />
                   </div>
-                  <p className="font-bold text-sm leading-tight mb-1">{s.title}</p>
-                  <p className="text-white/70 text-xs">{s.desc}</p>
+                  <p className="font-bold text-sm leading-tight mb-1">{s.title || t(`svc.${s.k}.title`)}</p>
+                  <p className="text-white/70 text-xs">{t(`svc.${s.k}.desc`)}</p>
                 </div>
               </motion.div>
             ))}
@@ -149,12 +150,12 @@ export default function Services() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {SECURITY.map((s) => (
-              <motion.div key={s.title} variants={fadeUp} className="text-center">
+              <motion.div key={s.k} variants={fadeUp} className="text-center">
                 <div className="w-16 h-16 rounded-2xl bg-[#D2511A]/10 flex items-center justify-center mx-auto mb-4 border border-[#D2511A]/20">
                   <i className={`bx ${s.bx} text-[#D2511A] text-3xl`} />
                 </div>
-                <p className="font-bold text-white mb-2 text-sm leading-tight">{s.title}</p>
-                <p className="text-white/50 text-xs leading-relaxed">{s.desc}</p>
+                <p className="font-bold text-white mb-2 text-sm leading-tight">{t(`svc.${s.k}.title`)}</p>
+                <p className="text-white/50 text-xs leading-relaxed">{t(`svc.${s.k}.desc`)}</p>
               </motion.div>
             ))}
           </motion.div>

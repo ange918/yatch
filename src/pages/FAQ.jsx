@@ -22,23 +22,6 @@ const CAT_ICONS = {
   app: 'bx-mobile-alt',
 }
 
-const ALL_FAQS = [
-  { category: 'cards', q: 'Welche Kreditkarten bietet Finanzkredit an?', a: 'Wir bieten Classic, Gold und Platinum Visa-Kreditkarten an. Alle Karten bieten weltweite Akzeptanz, und unsere Premium-Karten bieten Cashback und Zusatzleistungen.' },
-  { category: 'cards', q: 'Wie beantrage ich eine Kreditkarte?', a: 'Die Beantragung erfolgt direkt in Ihrem Online-Banking oder der App. Nach Genehmigung erhalten Sie Ihre Karte innerhalb von 3–5 Werktagen per Post.' },
-  { category: 'cards', q: 'Was tue ich, wenn meine Karte verloren geht?', a: 'Sperren Sie Ihre Karte sofort über die App oder unter 0800 123 456 7. Eine Ersatzkarte wird Ihnen innerhalb von 2 Werktagen zugesandt.' },
-  { category: 'cards', q: 'Gibt es Auslandsgebühren?', a: 'Bei unseren Plus und Premium Konten fallen keine Auslandsgebühren an. Beim Basic-Konto wird eine Gebühr von 1,5% des Transaktionsbetrags berechnet.' },
-  { category: 'loans', q: 'Welche Kreditarten bietet Finanzkredit an?', a: 'Wir bieten Immobilienkredite (ab 3,5% p.a.), Autokredite (ab 4,2% p.a.) und Privatkredite (ab 5,9% p.a.) an. Alle Kredite können im Simulator vorab berechnet werden.' },
-  { category: 'loans', q: 'Wie schnell erhalte ich eine Kreditentscheidung?', a: 'Bei Privat- und Autokrediten erhalten Sie in der Regel innerhalb von 24 Stunden eine Entscheidung. Bei Immobilienkrediten dauert die Prüfung 3–5 Werktage.' },
-  { category: 'loans', q: 'Kann ich meinen Kredit vorzeitig zurückzahlen?', a: 'Ja, eine vorzeitige Rückzahlung ist jederzeit möglich. Bei Privatkrediten fallen keine Vorfälligkeitsentschädigungen an.' },
-  { category: 'loans', q: 'Welche Unterlagen benötige ich für einen Kreditantrag?', a: 'Sie benötigen einen gültigen Ausweis, aktuelle Gehaltsabrechnungen (letzte 3 Monate) und Kontoauszüge (letzte 3 Monate).' },
-  { category: 'transfers', q: 'Wie lange dauert eine SEPA-Überweisung?', a: 'Standard-SEPA-Überweisungen werden innerhalb von 1 Werktag ausgeführt. Mit SEPA-Instant sind Überweisungen innerhalb von 10 Sekunden möglich.' },
-  { category: 'transfers', q: 'Was sind die Überweisungslimits?', a: 'Das Standard-Tageslimit beträgt €50.000. Für höhere Beträge können Sie uns kontaktieren, um individuelle Limits zu vereinbaren.' },
-  { category: 'transfers', q: 'Kann ich Überweisungen ins Ausland tätigen?', a: 'Ja, wir bieten SWIFT-Überweisungen in über 150 Länder an. Die Bearbeitungszeit beträgt 1–5 Werktage, abhängig vom Zielland.' },
-  { category: 'transfers', q: 'Wie richte ich einen Dauerauftrag ein?', a: 'Daueraufträge können einfach über die App oder das Online-Banking eingerichtet werden. Gehen Sie zu "Überweisungen" > "Dauerauftrag erstellen".' },
-  { category: 'security', q: 'Wie sicher sind meine Daten bei Finanzkredit?', a: 'Wir verwenden 256-bit SSL-Verschlüsselung, 2-Faktor-Authentifizierung und sind ISO 27001 zertifiziert. Ihre Einlagen sind bis zu €100.000 gesichert.' },
-  { category: 'security', q: 'Was soll ich tun, wenn ich eine verdächtige Aktivität bemerke?', a: 'Sperren Sie sofort Ihr Konto über die App und kontaktieren Sie unseren 24/7 Sicherheitsnotfall-Support unter 0800 987 654 3.' },
-]
-
 export default function FAQ() {
   const { t } = useTranslation()
   const [search, setSearch] = useState('')
@@ -47,12 +30,13 @@ export default function FAQ() {
   const categories = ['all', 'cards', 'loans', 'transfers', 'security']
 
   const filtered = useMemo(() => {
-    return ALL_FAQS.filter((faq) => {
+    const allFaqs = t('faq.items', { returnObjects: true })
+    return allFaqs.filter((faq) => {
       const matchCat = activeCategory === 'all' || faq.category === activeCategory
       const matchSearch = !search || faq.q.toLowerCase().includes(search.toLowerCase()) || faq.a.toLowerCase().includes(search.toLowerCase())
       return matchCat && matchSearch
     })
-  }, [search, activeCategory])
+  }, [search, activeCategory, t])
 
   return (
     <div className="pt-16">
@@ -104,7 +88,7 @@ export default function FAQ() {
             )) : (
               <div className="text-center py-16">
                 <i className="bx bx-search text-gray-300 text-5xl mb-3 block" />
-                <p className="text-gray-500">Keine Ergebnisse gefunden.</p>
+                <p className="text-gray-500">{t('faq.noResults')}</p>
               </div>
             )}
           </motion.div>
