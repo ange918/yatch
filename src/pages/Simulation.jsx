@@ -10,10 +10,10 @@ const stagger = { visible: { transition: { staggerChildren: 0.15 } } }
 const HERO_IMG = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1920&q=80'
 
 const FEATURES = [
-  { bx: 'bx-calculator', label: 'Sofortige Berechnung' },
-  { bx: 'bx-slider', label: 'Interaktive Schieberegler' },
-  { bx: 'bx-shield-quarter', label: 'Unverbindlich & kostenlos' },
-  { bx: 'bx-time-five', label: 'Antwort in 24 Stunden' },
+  { bx: 'bx-calculator', k: 'f1' },
+  { bx: 'bx-slider', k: 'f2' },
+  { bx: 'bx-shield-quarter', k: 'f3' },
+  { bx: 'bx-time-five', k: 'f4' },
 ]
 
 export default function Simulation() {
@@ -37,10 +37,10 @@ export default function Simulation() {
               <Accent>{t('simulation.heroTitle')}</Accent>
             </motion.h1>
             <motion.div variants={fadeUp} className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto mt-8">
-              {FEATURES.map(({ bx, label }) => (
-                <div key={label} className="flex flex-col items-center gap-2 bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+              {FEATURES.map(({ bx, k }) => (
+                <div key={k} className="flex flex-col items-center gap-2 bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
                   <i className={`bx ${bx} text-[#D2511A] text-2xl`} />
-                  <span className="text-white/80 text-xs font-medium text-center leading-tight">{label}</span>
+                  <span className="text-white/80 text-xs font-medium text-center leading-tight">{t(`simulation.${k}`)}</span>
                 </div>
               ))}
             </motion.div>

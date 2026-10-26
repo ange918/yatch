@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { fmtCurrency } from '../i18n/format'
 import { Link } from 'react-router-dom'
 import { Calculator, Info } from 'lucide-react'
 
@@ -9,12 +10,9 @@ const TABS = [
   { key: 'privat', minAmount: 1000, maxAmount: 75000, defaultAmount: 15000, minDuration: 6, maxDuration: 84, defaultDuration: 48, rate: 5.9 },
 ]
 
-function formatCurrency(n) {
-  return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n)
-}
-
 export default function CreditSimulator() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const formatCurrency = (n) => fmtCurrency(n, i18n.language)
   const [tabIndex, setTabIndex] = useState(0)
   const tab = TABS[tabIndex]
   const [amount, setAmount] = useState(tab.defaultAmount)
@@ -63,7 +61,7 @@ export default function CreditSimulator() {
 
         <div className="bg-gradient-to-br from-[#121110] to-[#3A2A20] rounded-2xl p-6 text-white flex flex-col justify-center">
           <p className="text-sm text-white/70">{t('simulation.monthlyPayment')}</p>
-          <p className="text-4xl font-black text-[#D2511A] mb-6">{new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(monthly)}</p>
+          <p className="text-4xl font-black text-[#D2511A] mb-6">{fmtCurrency(monthly, i18n.language, 2)}</p>
           <div className="space-y-2 border-t border-white/10 pt-4 text-sm">
             <div className="flex justify-between"><span>{t('simulation.totalCost')}</span><span className="font-bold">{formatCurrency(totalCost)}</span></div>
             <div className="flex justify-between"><span>{t('simulation.totalInterest')}</span><span className="font-bold text-[#E8793F]">{formatCurrency(totalInterest)}</span></div>

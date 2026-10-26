@@ -197,10 +197,10 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-extrabold text-[#121110] mb-4 tracking-tight">
-              Bereit loszulegen?
+              {t('home.ctaTitle')}
             </motion.h2>
             <motion.p variants={fadeUp} className="text-gray-500 mb-8 text-lg">
-              Beantragen Sie Ihren Wunschkredit in wenigen Minuten.
+              {t('home.ctaText')}
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

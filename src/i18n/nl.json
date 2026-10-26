@@ -18,16 +18,37 @@
     "cta2": "Krediet simuleren",
     "trustText": "Vertrouwd door 1M+ klanten in heel Europa"
   },
-  "ticker": { "label": "Live koersen" },
+  "ticker": {
+    "label": "Live koersen",
+    "callUs": "Bel ons:"
+  },
   "services": {
     "title": "Onze Diensten",
     "subtitle": "Alles wat u nodig heeft voor uw financiën — op één plek",
-    "personal": { "title": "Particulier Bankieren", "desc": "Rekeningen, kaarten en kredieten voor het dagelijks leven" },
-    "business": { "title": "Zakelijk Bankieren", "desc": "Oplossingen op maat voor uw bedrijf" },
-    "investments": { "title": "Beleggingen", "desc": "Rendabele beleggingen vanaf €50" },
-    "savings": { "title": "Sparen", "desc": "Aantrekkelijke rentes voor uw spaargeld" },
-    "loansCard": { "title": "Leningen", "desc": "Voordelige financiering voor alle levensfasen" },
-    "insurance": { "title": "Verzekeringen", "desc": "Bescherming voor u en uw gezin" },
+    "personal": {
+      "title": "Particulier Bankieren",
+      "desc": "Rekeningen, kaarten en kredieten voor het dagelijks leven"
+    },
+    "business": {
+      "title": "Zakelijk Bankieren",
+      "desc": "Oplossingen op maat voor uw bedrijf"
+    },
+    "investments": {
+      "title": "Beleggingen",
+      "desc": "Rendabele beleggingen vanaf €50"
+    },
+    "savings": {
+      "title": "Sparen",
+      "desc": "Aantrekkelijke rentes voor uw spaargeld"
+    },
+    "loansCard": {
+      "title": "Leningen",
+      "desc": "Voordelige financiering voor alle levensfasen"
+    },
+    "insurance": {
+      "title": "Verzekeringen",
+      "desc": "Bescherming voor u en uw gezin"
+    },
     "heroTitle": "Onze Diensten",
     "heroSub": "Alles wat modern bankieren inhoudt",
     "onlineTitle": "Online Bankieren",
@@ -48,9 +69,21 @@
   "testimonials": {
     "title": "Wat onze klanten zeggen",
     "subtitle": "Echte ervaringen, echte mensen",
-    "t1": { "name": "Anna Müller", "role": "Ondernemer", "text": "Finanzkredit heeft me geholpen mijn droom te financieren. De service is uitzonderlijk en de tarieven onklopbaar." },
-    "t2": { "name": "Thomas Schmidt", "role": "Werknemer", "text": "Eindelijk een bank die digitaal denkt. Alles via de app, geen papierwerk — precies wat ik zocht." },
-    "t3": { "name": "Maria Hoffmann", "role": "Freelancer", "text": "De kredietcalculator heeft me veel tijd bespaard. Binnen 24 uur had ik mijn financiering." }
+    "t1": {
+      "name": "Anna Müller",
+      "role": "Ondernemer",
+      "text": "Finanzkredit heeft me geholpen mijn droom te financieren. De service is uitzonderlijk en de tarieven onklopbaar."
+    },
+    "t2": {
+      "name": "Thomas Schmidt",
+      "role": "Werknemer",
+      "text": "Eindelijk een bank die digitaal denkt. Alles via de app, geen papierwerk — precies wat ik zocht."
+    },
+    "t3": {
+      "name": "Maria Hoffmann",
+      "role": "Freelancer",
+      "text": "De kredietcalculator heeft me veel tijd bespaard. Binnen 24 uur had ik mijn financiering."
+    }
   },
   "appPromo": {
     "badge": "Nieuw",
@@ -104,17 +137,66 @@
     "teamSub": "De mensen achter Finanzkredit",
     "awardsTitle": "Prijzen",
     "pressTitle": "Pers",
-    "milestone1": { "year": "2004", "title": "Oprichting", "desc": "Finanzkredit opgericht in Frankfurt" },
-    "milestone2": { "year": "2008", "title": "Internationale uitbreiding", "desc": "Opening in Frankrijk en België" },
-    "milestone3": { "year": "2014", "title": "Digitale transformatie", "desc": "Launch van eerste mobiele banking app" },
-    "milestone4": { "year": "2019", "title": "1 Miljoen Klanten", "desc": "We vieren onze miljoenste klant" },
-    "milestone5": { "year": "2024", "title": "AI Banking", "desc": "Introductie van AI-gestuurde financiële adviseurs" },
-    "member1": { "name": "Dr. Klaus Weber", "role": "CEO & Oprichter" },
-    "member2": { "name": "Sophie Bauer", "role": "CTO" },
-    "member3": { "name": "Marc Richter", "role": "CFO" },
-    "member4": { "name": "Julia Fischer", "role": "CMO" },
-    "member5": { "name": "Stefan Braun", "role": "COO" },
-    "member6": { "name": "Laura Zimmermann", "role": "Hoofd Compliance" }
+    "milestone1": {
+      "year": "2004",
+      "title": "Oprichting",
+      "desc": "Finanzkredit opgericht in Frankfurt"
+    },
+    "milestone2": {
+      "year": "2008",
+      "title": "Internationale uitbreiding",
+      "desc": "Opening in Frankrijk en België"
+    },
+    "milestone3": {
+      "year": "2014",
+      "title": "Digitale transformatie",
+      "desc": "Launch van eerste mobiele banking app"
+    },
+    "milestone4": {
+      "year": "2019",
+      "title": "1 Miljoen Klanten",
+      "desc": "We vieren onze miljoenste klant"
+    },
+    "milestone5": {
+      "year": "2024",
+      "title": "AI Banking",
+      "desc": "Introductie van AI-gestuurde financiële adviseurs"
+    },
+    "member1": {
+      "name": "Dr. Klaus Weber",
+      "role": "CEO & Oprichter"
+    },
+    "member2": {
+      "name": "Sophie Bauer",
+      "role": "CTO"
+    },
+    "member3": {
+      "name": "Marc Richter",
+      "role": "CFO"
+    },
+    "member4": {
+      "name": "Julia Fischer",
+      "role": "CMO"
+    },
+    "member5": {
+      "name": "Stefan Braun",
+      "role": "COO"
+    },
+    "member6": {
+      "name": "Laura Zimmermann",
+      "role": "Hoofd Compliance"
+    },
+    "tagline": "Sinds 2004 er voor meer dan 1 miljoen klanten in heel Europa.",
+    "aum": "Beheerd vermogen",
+    "happyClients": "1.000.000+ tevreden klanten",
+    "award1": "Beste digitale bank 2024",
+    "award2": "Top FinTech Duitsland",
+    "award3": "Innovatieprijs",
+    "award4": "Uitstekende klantenservice",
+    "press1": "„Finanzkredit zorgt voor een revolutie in het Duitse bankwezen”",
+    "press2": "„Een nieuwe standaard voor digitaal bankieren in Europa”",
+    "press3": "„De FinTech die traditionele banken uitdaagt”",
+    "aumValue": "€10 mld.+"
   },
   "simulation": {
     "heroTitle": "Kredietcalculator",
@@ -131,7 +213,11 @@
     "totalInterest": "Totale rente",
     "applyNow": "Nu aanvragen",
     "disclaimer": "* Alle berekeningen zijn vrijblijvend en uitsluitend ter informatie.",
-    "summary": "Samenvatting"
+    "summary": "Samenvatting",
+    "f1": "Directe berekening",
+    "f2": "Interactieve schuifregelaars",
+    "f3": "Vrijblijvend en gratis",
+    "f4": "Antwoord binnen 24 uur"
   },
   "offers": {
     "heroTitle": "Producten & Aanbod",
@@ -148,9 +234,36 @@
     "simulate": "Simuleren",
     "learnMore": "Meer informatie",
     "recommended": "Aanbevolen",
-    "basic": { "name": "Basic", "feature1": "Gratis betaalrekening", "feature2": "Visa betaalpas", "feature3": "Mobiel bankieren", "feature4": "SEPA-overboekingen" },
-    "plus": { "name": "Plus", "feature1": "Alles uit Basic", "feature2": "Cashback 0,5%", "feature3": "Reisverzekering", "feature4": "Premium support", "feature5": "Geen buitenlandse kosten" },
-    "premium": { "name": "Premium", "feature1": "Alles uit Plus", "feature2": "Cashback 1,5%", "feature3": "Conciergeservice", "feature4": "24/7 prioriteitssupport", "feature5": "Exclusieve aanbiedingen", "feature6": "Persoonlijk adviseur" }
+    "basic": {
+      "name": "Basic",
+      "feature1": "Gratis betaalrekening",
+      "feature2": "Visa betaalpas",
+      "feature3": "Mobiel bankieren",
+      "feature4": "SEPA-overboekingen"
+    },
+    "plus": {
+      "name": "Plus",
+      "feature1": "Alles uit Basic",
+      "feature2": "Cashback 0,5%",
+      "feature3": "Reisverzekering",
+      "feature4": "Premium support",
+      "feature5": "Geen buitenlandse kosten"
+    },
+    "premium": {
+      "name": "Premium",
+      "feature1": "Alles uit Plus",
+      "feature2": "Cashback 1,5%",
+      "feature3": "Conciergeservice",
+      "feature4": "24/7 prioriteitssupport",
+      "feature5": "Exclusieve aanbiedingen",
+      "feature6": "Persoonlijk adviseur"
+    },
+    "fromWord": "Vanaf",
+    "rateFrom": "Rente vanaf",
+    "immoDesc": "Financier uw woning tegen topvoorwaarden",
+    "autoDesc": "Uw droomauto met flexibele financiering",
+    "privatDesc": "Voor persoonlijke wensen en projecten",
+    "businessText": "Oplossingen op maat voor uw bedrijf — van startup tot concern."
   },
   "loans": {
     "sectionBadge": "Ons aanbod",
@@ -158,84 +271,224 @@
     "sectionSubtitle": "Op maat voor elke behoefte — klik op een product voor meer informatie.",
     "learnMore": "Meer informatie",
     "vermoegensVerwaltung": {
-      "name": "Vermogensbeheer", "shortDesc": "Optimaliseer uw vermogen", "rateLabel": "Beheervergoeding p.j.",
+      "name": "Vermogensbeheer",
+      "shortDesc": "Optimaliseer uw vermogen",
+      "rateLabel": "Beheervergoeding p.j.",
       "intro": "Laat uw geld voor u werken. Onze ervaren vermogensbeheerders ontwikkelen een individuele beleggingsstrategie op maat van uw doelstellingen en risicoprofiel.",
-      "b1": { "title": "Actief portefeuillebeheer", "desc": "Continue bewaking en aanpassing van uw portefeuille." },
-      "b2": { "title": "Risicospreiding", "desc": "Brede spreiding over beleggingscategorieën en markten." },
-      "b3": { "title": "Persoonlijk adviseur", "desc": "Een toegewijde expert voor al uw vragen." },
-      "b4": { "title": "Transparante rapporten", "desc": "Maandelijkse prestatierapporten in realtime." }
+      "b1": {
+        "title": "Actief portefeuillebeheer",
+        "desc": "Continue bewaking en aanpassing van uw portefeuille."
+      },
+      "b2": {
+        "title": "Risicospreiding",
+        "desc": "Brede spreiding over beleggingscategorieën en markten."
+      },
+      "b3": {
+        "title": "Persoonlijk adviseur",
+        "desc": "Een toegewijde expert voor al uw vragen."
+      },
+      "b4": {
+        "title": "Transparante rapporten",
+        "desc": "Maandelijkse prestatierapporten in realtime."
+      }
     },
     "lebensversicherung": {
-      "name": "Levensverzekering", "shortDesc": "Bescherm uw toekomst", "rateLabel": "Maandpremie vanaf",
+      "name": "Levensverzekering",
+      "shortDesc": "Bescherm uw toekomst",
+      "rateLabel": "Maandpremie vanaf",
       "intro": "Bescherm uw familie en dierbaren. Onze flexibele levensverzekeringen bieden uitgebreide dekking en kunnen worden gecombineerd met een spaarcomponent.",
-      "b1": { "title": "Bescherming nabestaanden", "desc": "Financiële zekerheid voor uw familie bij overlijden." },
-      "b2": { "title": "Gemengde levensverzekering", "desc": "Combinatie van bescherming en vermogensopbouw." },
-      "b3": { "title": "Flexibele looptijden", "desc": "Van 10 tot 40 jaar — volledig op uw maat." },
-      "b4": { "title": "Fiscale voordelen", "desc": "Uitkeringen kunnen belastingvrij worden ontvangen." }
+      "b1": {
+        "title": "Bescherming nabestaanden",
+        "desc": "Financiële zekerheid voor uw familie bij overlijden."
+      },
+      "b2": {
+        "title": "Gemengde levensverzekering",
+        "desc": "Combinatie van bescherming en vermogensopbouw."
+      },
+      "b3": {
+        "title": "Flexibele looptijden",
+        "desc": "Van 10 tot 40 jaar — volledig op uw maat."
+      },
+      "b4": {
+        "title": "Fiscale voordelen",
+        "desc": "Uitkeringen kunnen belastingvrij worden ontvangen."
+      }
     },
     "trading": {
-      "name": "Trading en beurs", "shortDesc": "Investeer met vertrouwen", "rateLabel": "Basiskosten depot",
+      "name": "Trading en beurs",
+      "shortDesc": "Investeer met vertrouwen",
+      "rateLabel": "Basiskosten depot",
       "intro": "Handel in aandelen, ETF's, fondsen en meer via ons moderne handelsplatform. Profiteer van lage kosten, realtime gegevens en professionele analysetools.",
-      "b1": { "title": "Realtime koersen", "desc": "Live data van meer dan 60 wereldbeurzen." },
-      "b2": { "title": "Gratis depot", "desc": "Geen basiskosten, eerlijke transactiekosten." },
-      "b3": { "title": "Analysetools", "desc": "Professionele grafieken en technische indicatoren." },
-      "b4": { "title": "Mobiel handelen", "desc": "Trade altijd en overal via onze app." }
+      "b1": {
+        "title": "Realtime koersen",
+        "desc": "Live data van meer dan 60 wereldbeurzen."
+      },
+      "b2": {
+        "title": "Gratis depot",
+        "desc": "Geen basiskosten, eerlijke transactiekosten."
+      },
+      "b3": {
+        "title": "Analysetools",
+        "desc": "Professionele grafieken en technische indicatoren."
+      },
+      "b4": {
+        "title": "Mobiel handelen",
+        "desc": "Trade altijd en overal via onze app."
+      }
     },
     "studentenkredit": {
-      "name": "Studentenlening", "shortDesc": "Financier uw studie", "rateLabel": "Rentevoet p.j.",
+      "name": "Studentenlening",
+      "shortDesc": "Financier uw studie",
+      "rateLabel": "Rentevoet p.j.",
       "intro": "Concentreer u op uw studie terwijl wij uw financiën beheren. Onze studentenlening biedt gunstige voorwaarden met flexibele terugbetaling na het afstuderen.",
-      "b1": { "title": "Tot €50.000", "desc": "Voor studiegeld, leefkosten en meer." },
-      "b2": { "title": "Terugbetaling na studie", "desc": "Uitstel van terugbetaling tot 12 maanden na afstuderen." },
-      "b3": { "title": "Lage rente", "desc": "Speciale studentenvoorwaarden vanaf 3,9% p.j." },
-      "b4": { "title": "Flexibele looptijden", "desc": "Aangepast aan uw persoonlijke situatie." }
+      "b1": {
+        "title": "Tot €50.000",
+        "desc": "Voor studiegeld, leefkosten en meer."
+      },
+      "b2": {
+        "title": "Terugbetaling na studie",
+        "desc": "Uitstel van terugbetaling tot 12 maanden na afstuderen."
+      },
+      "b3": {
+        "title": "Lage rente",
+        "desc": "Speciale studentenvoorwaarden vanaf 3,9% p.j."
+      },
+      "b4": {
+        "title": "Flexibele looptijden",
+        "desc": "Aangepast aan uw persoonlijke situatie."
+      }
     },
     "geschaeftskredit": {
-      "name": "Zakelijke lening", "shortDesc": "Voor uw onderneming", "rateLabel": "Rentevoet p.j.",
+      "name": "Zakelijke lening",
+      "shortDesc": "Voor uw onderneming",
+      "rateLabel": "Rentevoet p.j.",
       "intro": "Groei met het juiste kapitaal achter u. Of het nu gaat om investering, werkkapitaal of uitbreiding — onze zakelijke lening biedt oplossingen op maat voor elk bedrijf.",
-      "b1": { "title": "Tot €2.000.000", "desc": "Voor investeringen, uitbreiding en werkkapitaal." },
-      "b2": { "title": "Snelle beslissing", "desc": "Kredietbeslissing binnen 48 uur." },
-      "b3": { "title": "Flexibele structuren", "desc": "Aflossings-, annuïteits- of bulletleningen." },
-      "b4": { "title": "Bedrijfsadviseur", "desc": "Persoonlijke begeleiding door zakelijke experts." }
+      "b1": {
+        "title": "Tot €2.000.000",
+        "desc": "Voor investeringen, uitbreiding en werkkapitaal."
+      },
+      "b2": {
+        "title": "Snelle beslissing",
+        "desc": "Kredietbeslissing binnen 48 uur."
+      },
+      "b3": {
+        "title": "Flexibele structuren",
+        "desc": "Aflossings-, annuïteits- of bulletleningen."
+      },
+      "b4": {
+        "title": "Bedrijfsadviseur",
+        "desc": "Persoonlijke begeleiding door zakelijke experts."
+      }
     },
     "konsumentenkredit": {
-      "name": "Consumptief krediet", "shortDesc": "Voor persoonlijke behoeften", "rateLabel": "Rentevoet p.j.",
+      "name": "Consumptief krediet",
+      "shortDesc": "Voor persoonlijke behoeften",
+      "rateLabel": "Rentevoet p.j.",
       "intro": "Vervul uw wensen — of het nu gaat om reizen, renovatie of nieuwe elektronica. Ons consumptief krediet is eenvoudig, snel beschikbaar en volledig online af te sluiten.",
-      "b1": { "title": "Tot €75.000", "desc": "Voor al uw persoonlijke projecten en wensen." },
-      "b2": { "title": "Directe uitbetaling", "desc": "Geld op uw rekening binnen 24 uur." },
-      "b3": { "title": "Geen zekerheden vereist", "desc": "Blanco lening zonder onroerend goed- of voertuigpand." },
-      "b4": { "title": "Gratis vervroegde terugbetaling", "desc": "Op elk moment flexibel extra terugbetalen." }
+      "b1": {
+        "title": "Tot €75.000",
+        "desc": "Voor al uw persoonlijke projecten en wensen."
+      },
+      "b2": {
+        "title": "Directe uitbetaling",
+        "desc": "Geld op uw rekening binnen 24 uur."
+      },
+      "b3": {
+        "title": "Geen zekerheden vereist",
+        "desc": "Blanco lening zonder onroerend goed- of voertuigpand."
+      },
+      "b4": {
+        "title": "Gratis vervroegde terugbetaling",
+        "desc": "Op elk moment flexibel extra terugbetalen."
+      }
     },
     "hypothek": {
-      "name": "Hypotheek", "shortDesc": "Word huiseigenaar", "rateLabel": "Effectieve jaarlijkse rente",
+      "name": "Hypotheek",
+      "shortDesc": "Word huiseigenaar",
+      "rateLabel": "Effectieve jaarlijkse rente",
       "intro": "Realiseer uw droom van een eigen woning. Onze hypotheken bieden aantrekkelijke tarieven, individuele aflossingsplannen en uitgebreid advies van begin tot sleuteloverdracht.",
-      "b1": { "title": "Tot 90% financiering", "desc": "Hoge loan-to-value ratio voor uw woning." },
-      "b2": { "title": "Vaste rente tot 30 jaar", "desc": "Zekerheid met langetermijn rentegarantie." },
-      "b3": { "title": "Gratis leencalculator", "desc": "Bereken uw maandbedrag online." },
-      "b4": { "title": "Nieuwbouw & bestaande woningen", "desc": "Financiering voor elk type woning." }
+      "b1": {
+        "title": "Tot 90% financiering",
+        "desc": "Hoge loan-to-value ratio voor uw woning."
+      },
+      "b2": {
+        "title": "Vaste rente tot 30 jaar",
+        "desc": "Zekerheid met langetermijn rentegarantie."
+      },
+      "b3": {
+        "title": "Gratis leencalculator",
+        "desc": "Bereken uw maandbedrag online."
+      },
+      "b4": {
+        "title": "Nieuwbouw & bestaande woningen",
+        "desc": "Financiering voor elk type woning."
+      }
     },
     "digitalkredit": {
-      "name": "Digitaal krediet", "shortDesc": "100% online, snel", "rateLabel": "Rentevoet p.j.",
+      "name": "Digitaal krediet",
+      "shortDesc": "100% online, snel",
+      "rateLabel": "Rentevoet p.j.",
       "intro": "Het krediet voor het digitale tijdperk. Volledig online — van aanvraag tot uitbetaling. Geen kantoor, geen papierwerk, geen lange wachttijd.",
-      "b1": { "title": "100% Digitaal", "desc": "Aanvraag, beoordeling en uitbetaling volledig online." },
-      "b2": { "title": "Aanvraag in 10 minuten", "desc": "Snel en eenvoudig aanvraagproces." },
-      "b3": { "title": "VideoIdent", "desc": "Identiteitsverificatie via video — comfortabel vanuit huis." },
-      "b4": { "title": "Directe betaling", "desc": "Uitbetaling binnen enkele uren." }
+      "b1": {
+        "title": "100% Digitaal",
+        "desc": "Aanvraag, beoordeling en uitbetaling volledig online."
+      },
+      "b2": {
+        "title": "Aanvraag in 10 minuten",
+        "desc": "Snel en eenvoudig aanvraagproces."
+      },
+      "b3": {
+        "title": "VideoIdent",
+        "desc": "Identiteitsverificatie via video — comfortabel vanuit huis."
+      },
+      "b4": {
+        "title": "Directe betaling",
+        "desc": "Uitbetaling binnen enkele uren."
+      }
     },
     "autokredit": {
-      "name": "Autolening", "shortDesc": "Financier uw voertuig", "rateLabel": "Rentevoet p.j.",
+      "name": "Autolening",
+      "shortDesc": "Financier uw voertuig",
+      "rateLabel": "Rentevoet p.j.",
       "intro": "Rijd in uw droomauto — met eerlijke financiering. Of het nu nieuw, tweedehands of elektrisch is: wij bieden flexibele oplossingen voor elk voertuigtype en budget.",
-      "b1": { "title": "Nieuw & tweedehands", "desc": "Financiering voor voertuigen van elke leeftijd en type." },
-      "b2": { "title": "EV-bonus", "desc": "Gunstigere voorwaarden voor elektrische voertuigen." },
-      "b3": { "title": "Tot €150.000", "desc": "Ook voor luxe- en premiumvoertuigen." },
-      "b4": { "title": "Ballonfinanciering mogelijk", "desc": "Lage maandtermijnen met restwaarde op het einde." }
+      "b1": {
+        "title": "Nieuw & tweedehands",
+        "desc": "Financiering voor voertuigen van elke leeftijd en type."
+      },
+      "b2": {
+        "title": "EV-bonus",
+        "desc": "Gunstigere voorwaarden voor elektrische voertuigen."
+      },
+      "b3": {
+        "title": "Tot €150.000",
+        "desc": "Ook voor luxe- en premiumvoertuigen."
+      },
+      "b4": {
+        "title": "Ballonfinanciering mogelijk",
+        "desc": "Lage maandtermijnen met restwaarde op het einde."
+      }
     },
     "agrarkredit": {
-      "name": "Agrarisch krediet", "shortDesc": "Voor de landbouw", "rateLabel": "Rentevoet p.j.",
+      "name": "Agrarisch krediet",
+      "shortDesc": "Voor de landbouw",
+      "rateLabel": "Rentevoet p.j.",
       "intro": "Financier uw landbouwbedrijf met op maat gemaakte agrarische kredieten. Van machinesfinanciering tot stallenopbouw tot grondaankoop — wij ondersteunen uw investeringen.",
-      "b1": { "title": "Landbouw & bosbouw", "desc": "Gespecialiseerde oplossingen voor alle landbouwbedrijven." },
-      "b2": { "title": "Machinesfinanciering", "desc": "Tractoren, maaidorsers en speciale machines." },
-      "b3": { "title": "Grondaankoop & pacht", "desc": "Financiering voor grondaankoop en bedrijfsovername." },
-      "b4": { "title": "Agri-zonnepanelen", "desc": "Ondersteuning voor duurzame energieprojecten." }
+      "b1": {
+        "title": "Landbouw & bosbouw",
+        "desc": "Gespecialiseerde oplossingen voor alle landbouwbedrijven."
+      },
+      "b2": {
+        "title": "Machinesfinanciering",
+        "desc": "Tractoren, maaidorsers en speciale machines."
+      },
+      "b3": {
+        "title": "Grondaankoop & pacht",
+        "desc": "Financiering voor grondaankoop en bedrijfsovername."
+      },
+      "b4": {
+        "title": "Agri-zonnepanelen",
+        "desc": "Ondersteuning voor duurzame energieprojecten."
+      }
     }
   },
   "loanDetail": {
@@ -312,7 +565,113 @@
     "privacy": "Privacybeleid",
     "terms": "Algemene voorwaarden",
     "cookies": "Cookiebeleid",
-    "regulatory": "Regelgeving"
+    "regulatory": "Regelgeving",
+    "content": {
+      "privacy": [
+        {
+          "heading": "1. Verwerkingsverantwoordelijke",
+          "text": "Finanzkredit AG, Bankstraße 1, 60311 Frankfurt am Main, is de verwerkingsverantwoordelijke in de zin van de AVG. Contact: datenschutz@kreditwelt.de"
+        },
+        {
+          "heading": "2. Verzamelde gegevens",
+          "text": "Wij verzamelen persoonsgegevens die u ons rechtstreeks verstrekt (naam, e-mail, telefoonnummer) en technische gegevens (IP-adres, browsertype, toegangstijden)."
+        },
+        {
+          "heading": "3. Doeleinden van de verwerking",
+          "text": "Uw gegevens worden verwerkt voor de uitvoering van de overeenkomst, voor de communicatie met u, voor de verbetering van onze diensten en voor het nakomen van wettelijke verplichtingen."
+        },
+        {
+          "heading": "4. Verstrekking van gegevens",
+          "text": "Wij verstrekken uw gegevens alleen voor zover dit wettelijk is toegestaan of vereist. Verstrekking aan derden voor commerciële doeleinden vindt niet plaats."
+        },
+        {
+          "heading": "5. Uw rechten",
+          "text": "U hebt het recht op inzage, rectificatie, verwijdering, beperking van de verwerking, gegevensoverdraagbaarheid en bezwaar. Neem contact op via datenschutz@kreditwelt.de."
+        },
+        {
+          "heading": "6. Cookies",
+          "text": "Wij gebruiken cookies om de gebruikerservaring te verbeteren. Meer informatie vindt u in ons cookiebeleid."
+        },
+        {
+          "heading": "7. Bewaartermijn",
+          "text": "Persoonsgegevens worden slechts bewaard zolang dat nodig is voor het betreffende doel of zolang wettelijke bewaarplichten gelden."
+        }
+      ],
+      "terms": [
+        {
+          "heading": "Art. 1 Toepassingsgebied",
+          "text": "Deze algemene voorwaarden zijn van toepassing op alle diensten van Finanzkredit AG aan haar klanten."
+        },
+        {
+          "heading": "Art. 2 Totstandkoming van de overeenkomst",
+          "text": "De overeenkomst komt tot stand doordat Finanzkredit het aanbod van de klant aanvaardt."
+        },
+        {
+          "heading": "Art. 3 Diensten",
+          "text": "Finanzkredit biedt bankdiensten aan overeenkomstig de Duitse Kredietwet (KWG), waaronder rekeningbeheer, betalingsverkeer, kredietbemiddeling en beleggingsadvies."
+        },
+        {
+          "heading": "Art. 4 Kosten",
+          "text": "Voor onze diensten gelden de tarieven die in het tarievenoverzicht en de dienstenlijst zijn vermeld."
+        },
+        {
+          "heading": "Art. 5 Aansprakelijkheid",
+          "text": "Finanzkredit is aansprakelijk voor opzet en grove nalatigheid. Bij lichte nalatigheid is Finanzkredit alleen aansprakelijk bij schending van wezenlijke contractuele verplichtingen."
+        },
+        {
+          "heading": "Art. 6 Gegevensbescherming",
+          "text": "De verwerking van persoonsgegevens vindt plaats in overeenstemming met ons privacybeleid en de toepasselijke wetgeving inzake gegevensbescherming."
+        },
+        {
+          "heading": "Art. 7 Toepasselijk recht",
+          "text": "Het Duitse recht is van toepassing. De bevoegde rechter is die te Frankfurt am Main."
+        }
+      ],
+      "cookies": [
+        {
+          "heading": "Wat zijn cookies?",
+          "text": "Cookies zijn kleine tekstbestanden die op uw apparaat worden opgeslagen wanneer u onze website bezoekt. Ze helpen ons u een betere ervaring te bieden."
+        },
+        {
+          "heading": "Noodzakelijke cookies",
+          "text": "Deze cookies zijn absoluut noodzakelijk voor de werking van onze website en kunnen niet worden uitgeschakeld."
+        },
+        {
+          "heading": "Analytische cookies",
+          "text": "Deze cookies helpen ons te begrijpen hoe bezoekers met onze website omgaan door anoniem informatie te verzamelen."
+        },
+        {
+          "heading": "Marketingcookies",
+          "text": "Deze cookies worden gebruikt om advertenties te personaliseren en relevanter voor u te maken."
+        },
+        {
+          "heading": "Cookiebeheer",
+          "text": "U kunt uw cookie-instellingen op elk moment aanpassen via de cookie-instellingen of cookies in uw browser verwijderen."
+        }
+      ],
+      "regulatory": [
+        {
+          "heading": "BaFin-vergunning",
+          "text": "Finanzkredit AG beschikt over een vergunning als kredietinstelling van de Duitse toezichthouder BaFin (Bundesanstalt für Finanzdienstleistungsaufsicht) op grond van § 32 KWG. Vergunningnr.: KW-2004-0001."
+        },
+        {
+          "heading": "Depositogarantie",
+          "text": "Tegoeden zijn gewaarborgd door het depositogarantiefonds van de Duitse bankenvereniging tot een bedrag van €100.000 per klant."
+        },
+        {
+          "heading": "Geschillenregeling",
+          "text": "Bij geschillen kunnen consumenten zich wenden tot de ombudsman van de private banken. Contact: ombudsmann@bankenverband.de"
+        },
+        {
+          "heading": "MiFID II-naleving",
+          "text": "Finanzkredit AG voldoet aan alle vereisten van de Richtlijn markten voor financiële instrumenten (MiFID II)."
+        },
+        {
+          "heading": "AVG-naleving",
+          "text": "Wij voldoen aan alle vereisten van de Algemene verordening gegevensbescherming (AVG) van de EU. Onze functionaris voor gegevensbescherming is bereikbaar via dpo@kreditwelt.de."
+        }
+      ]
+    }
   },
   "faq": {
     "heroTitle": "Veelgestelde Vragen",
@@ -329,7 +688,80 @@
     },
     "ctaTitle": "Geen antwoord gevonden?",
     "ctaText": "Ons supportteam helpt u graag verder.",
-    "ctaButton": "Neem contact op"
+    "ctaButton": "Neem contact op",
+    "items": [
+      {
+        "category": "cards",
+        "q": "Welke creditcards biedt Finanzkredit aan?",
+        "a": "Wij bieden Visa-creditcards in de varianten Classic, Gold en Platinum. Alle kaarten worden wereldwijd geaccepteerd en onze premiumkaarten bieden cashback en extra voordelen."
+      },
+      {
+        "category": "cards",
+        "q": "Hoe vraag ik een creditcard aan?",
+        "a": "De aanvraag verloopt rechtstreeks via uw online bankieren of de app. Na goedkeuring ontvangt u uw kaart binnen 3–5 werkdagen per post."
+      },
+      {
+        "category": "cards",
+        "q": "Wat moet ik doen als mijn kaart kwijt is?",
+        "a": "Blokkeer uw kaart direct via de app of op 0800 123 456 7. Binnen 2 werkdagen wordt een vervangende kaart naar u verzonden."
+      },
+      {
+        "category": "cards",
+        "q": "Zijn er kosten voor buitenlandse transacties?",
+        "a": "Bij onze Plus- en Premium-rekeningen zijn er geen buitenlandkosten. Bij de Basic-rekening wordt een vergoeding van 1,5% van het transactiebedrag in rekening gebracht."
+      },
+      {
+        "category": "loans",
+        "q": "Welke soorten leningen biedt Finanzkredit aan?",
+        "a": "Wij bieden hypothecaire leningen (vanaf 3,5% p.j.), autoleningen (vanaf 4,2% p.j.) en persoonlijke leningen (vanaf 5,9% p.j.). Alle leningen kunt u vooraf berekenen met de simulator."
+      },
+      {
+        "category": "loans",
+        "q": "Hoe snel ontvang ik een beslissing over mijn lening?",
+        "a": "Bij persoonlijke leningen en autoleningen ontvangt u meestal binnen 24 uur een beslissing. Bij hypothecaire leningen duurt de beoordeling 3–5 werkdagen."
+      },
+      {
+        "category": "loans",
+        "q": "Kan ik mijn lening vervroegd aflossen?",
+        "a": "Ja, vervroegd aflossen is op elk moment mogelijk. Bij persoonlijke leningen zijn er geen boeterente of vergoedingen voor vervroegde aflossing."
+      },
+      {
+        "category": "loans",
+        "q": "Welke documenten heb ik nodig voor een leningaanvraag?",
+        "a": "U hebt een geldig identiteitsbewijs, recente loonstroken (laatste 3 maanden) en bankafschriften (laatste 3 maanden) nodig."
+      },
+      {
+        "category": "transfers",
+        "q": "Hoe lang duurt een SEPA-overboeking?",
+        "a": "Standaard SEPA-overboekingen worden binnen 1 werkdag uitgevoerd. Met SEPA Instant zijn overboekingen binnen 10 seconden mogelijk."
+      },
+      {
+        "category": "transfers",
+        "q": "Wat zijn de overboekingslimieten?",
+        "a": "De standaard daglimiet bedraagt €50.000. Voor hogere bedragen kunt u contact met ons opnemen om individuele limieten af te spreken."
+      },
+      {
+        "category": "transfers",
+        "q": "Kan ik overboekingen naar het buitenland doen?",
+        "a": "Ja, wij bieden SWIFT-overboekingen naar meer dan 150 landen. De verwerkingstijd bedraagt 1–5 werkdagen, afhankelijk van het land van bestemming."
+      },
+      {
+        "category": "transfers",
+        "q": "Hoe stel ik een periodieke overboeking in?",
+        "a": "Periodieke overboekingen stelt u eenvoudig in via de app of online bankieren. Ga naar \"Overboekingen\" > \"Periodieke overboeking aanmaken\"."
+      },
+      {
+        "category": "security",
+        "q": "Hoe veilig zijn mijn gegevens bij Finanzkredit?",
+        "a": "Wij gebruiken 256-bit SSL-versleuteling en tweefactorauthenticatie en zijn ISO 27001-gecertificeerd. Uw tegoeden zijn gewaarborgd tot €100.000."
+      },
+      {
+        "category": "security",
+        "q": "Wat moet ik doen als ik verdachte activiteit opmerk?",
+        "a": "Blokkeer uw rekening direct via de app en neem contact op met onze 24/7 noodlijn voor beveiliging op 0800 987 654 3."
+      }
+    ],
+    "noResults": "Geen resultaten gevonden."
   },
   "cookie": {
     "text": "Wij gebruiken cookies om uw ervaring te verbeteren.",
@@ -343,6 +775,158 @@
     "placeholder": "Typ een bericht...",
     "send": "Versturen",
     "botGreeting": "Hallo! Ik ben de Finanzkredit-assistent. Hoe kan ik u vandaag helpen?",
-    "botReply": "Bedankt voor uw bericht! Een adviseur neemt binnenkort contact met u op."
+    "botReply": "Bedankt voor uw bericht! Een adviseur neemt binnenkort contact met u op.",
+    "ariaLabel": "Neem contact op via WhatsApp",
+    "whatsappMessage": "Hallo Finanzkredit, ik heb een vraag."
+  },
+  "apply": {
+    "badge": "LENINGAANVRAAG",
+    "title": "Vraag nu een lening aan",
+    "subtitle": "Vul het formulier volledig in. Ons team neemt binnen 24 uur contact met u op.",
+    "successTitle": "Aanvraag verzonden!",
+    "successText": "Hartelijk dank. Een van onze adviseurs neemt binnen 24 uur contact met u op.",
+    "successReset": "Nieuwe aanvraag versturen",
+    "formTitle": "Leningaanvraag",
+    "firstName": "Voornaam",
+    "firstNamePh": "bijv. Jan",
+    "lastName": "Achternaam",
+    "lastNamePh": "bijv. Jansen",
+    "email": "E-mailadres",
+    "emailPh": "bijv. jan@voorbeeld.nl",
+    "address": "Volledig adres",
+    "addressPh": "Straat, huisnummer, postcode, plaats, land",
+    "amount": "Leningbedrag (€)",
+    "duration": "Looptijd (maanden)",
+    "profession": "Beroep",
+    "professionPh": "bijv. ingenieur, leraar, zelfstandige…",
+    "income": "Netto maandinkomen (€)",
+    "purpose": "Doel van de lening",
+    "purposeChoose": "— Maak een keuze —",
+    "purposes": {
+      "car": "Auto",
+      "realEstate": "Vastgoed",
+      "renovation": "Renovatie",
+      "consumption": "Consumptie",
+      "other": "Overig"
+    },
+    "kyc": "Identiteitsbewijs (KYC)",
+    "send": "Aanvraag versturen",
+    "sending": "Bezig met verzenden...",
+    "privacy": "Uw gegevens worden versleuteld en vertrouwelijk behandeld (AVG).",
+    "unavailable": "Het formulier is momenteel niet beschikbaar.",
+    "contactTitle": "Contact",
+    "docsTitle": "Geaccepteerde documenten",
+    "faqTitle": "Veelgestelde vragen",
+    "faq1": "Hoe vraag ik een lening aan?",
+    "faq2": "Welke documenten heb ik nodig?",
+    "faq3": "Hoe lang duurt de verwerking?",
+    "faqAll": "Alle FAQ's bekijken →",
+    "trust1": "256-bit versleuteling",
+    "trust2": "Gereguleerd door BaFin",
+    "trust3": "Depositogarantie tot €100.000",
+    "trust4": "ISO 27001-gecertificeerd",
+    "eg": "bijv."
+  },
+  "svc": {
+    "on1": {
+      "desc": "SEPA Instant binnen 10 seconden",
+      "title": "Directe overboekingen"
+    },
+    "on2": {
+      "desc": "Direct beschikbaar, volledig veilig",
+      "title": "Virtuele kaart"
+    },
+    "on3": {
+      "desc": "Begrijp uw uitgavenpatroon",
+      "title": "Uitgavenanalyse"
+    },
+    "on4": {
+      "desc": "Automatiseer uw terugkerende betalingen",
+      "title": "Periodieke overboekingen"
+    },
+    "on5": {
+      "desc": "Op de hoogte van elke transactie",
+      "title": "Pushmeldingen"
+    },
+    "in1": {
+      "desc": "Betalingen naar 150+ landen",
+      "title": "SWIFT-overboekingen"
+    },
+    "in2": {
+      "desc": "EUR, USD, GBP en meer",
+      "title": "Meervoudige valutarekening"
+    },
+    "in3": {
+      "desc": "Wereldwijde bescherming tijdens uw reizen",
+      "title": "Reisverzekering"
+    },
+    "in4": {
+      "desc": "Gunstige wisselkoersen",
+      "title": "Valutahandel"
+    },
+    "bz1": {
+      "desc": "Geautomatiseerde salarisbetalingen",
+      "title": "Salarisadministratie"
+    },
+    "bz2": {
+      "desc": "Professionele facturen in enkele minuten",
+      "title": "Facturatie"
+    },
+    "bz3": {
+      "desc": "Flexibele financiering voor uw groei",
+      "title": "Zakelijke leningen"
+    },
+    "bz4": {
+      "desc": "Een vaste contactpersoon",
+      "title": "Persoonlijke adviseur"
+    },
+    "dg1": {
+      "desc": "Stel uw budgetdoelen in en volg ze",
+      "title": "Budgetplanner"
+    },
+    "dg2": {
+      "desc": "Spaar automatisch voor uw dromen",
+      "title": "Spaardoelen"
+    },
+    "dg3": {
+      "desc": "Gedetailleerde indeling",
+      "title": "Uitgavencategorieën"
+    },
+    "dg4": {
+      "desc": "Intelligente financiële meldingen",
+      "title": "Slimme meldingen"
+    },
+    "sp1": {
+      "desc": "Ma–vr 8–22 uur, za–zo 9–18 uur",
+      "title": "Livechat"
+    },
+    "sp2": {
+      "desc": "Ma–vr 8–20 uur"
+    },
+    "sp3": {
+      "desc": "Antwoord binnen 24 uur"
+    },
+    "sp4": {
+      "desc": "Ma–vr 9–18 uur, za 10–14 uur"
+    },
+    "sc1": {
+      "desc": "Beveiliging op bankniveau voor al uw gegevens",
+      "title": "256-bit SSL-versleuteling"
+    },
+    "sc2": {
+      "desc": "Volledig erkend en onder toezicht",
+      "title": "Gereguleerd door BaFin"
+    }
+  },
+  "home": {
+    "ctaTitle": "Klaar om te beginnen?",
+    "ctaText": "Vraag uw lening aan in slechts enkele minuten."
+  },
+  "error": {
+    "generic": "Er is een fout opgetreden.",
+    "reload": "Opnieuw laden"
+  },
+  "meta": {
+    "title": "Finanzkredit — Moderne digitale bank"
   }
 }

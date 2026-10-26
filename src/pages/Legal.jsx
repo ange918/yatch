@@ -27,50 +27,10 @@ export default function Legal() {
   ]
 
   const content = {
-    privacy: {
-      title: t('legal.privacy'),
-      sections: [
-        { heading: '1. Verantwortlicher', text: 'Finanzkredit AG, Bankstraße 1, 60311 Frankfurt am Main ist der Verantwortliche im Sinne der DSGVO. Kontakt: datenschutz@kreditwelt.de' },
-        { heading: '2. Erhobene Daten', text: 'Wir erheben personenbezogene Daten, die Sie uns direkt mitteilen (Name, E-Mail, Telefonnummer) sowie technische Daten (IP-Adresse, Browser-Typ, Zugriffszeiten).' },
-        { heading: '3. Verwendungszwecke', text: 'Ihre Daten werden zur Vertragserfüllung, zur Kommunikation mit Ihnen, zur Verbesserung unserer Dienste und zur Einhaltung gesetzlicher Verpflichtungen verarbeitet.' },
-        { heading: '4. Datenweitergabe', text: 'Wir geben Ihre Daten nur weiter, soweit dies gesetzlich zulässig oder erforderlich ist. Eine Weitergabe an Dritte zu kommerziellen Zwecken findet nicht statt.' },
-        { heading: '5. Ihre Rechte', text: 'Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Wenden Sie sich an datenschutz@kreditwelt.de.' },
-        { heading: '6. Cookies', text: 'Wir verwenden Cookies zur Verbesserung der Nutzererfahrung. Weitere Informationen finden Sie in unserer Cookie-Richtlinie.' },
-        { heading: '7. Speicherdauer', text: 'Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.' },
-      ],
-    },
-    terms: {
-      title: t('legal.terms'),
-      sections: [
-        { heading: '§ 1 Geltungsbereich', text: 'Diese Allgemeinen Geschäftsbedingungen gelten für alle Leistungen der Finanzkredit AG gegenüber ihren Kunden.' },
-        { heading: '§ 2 Vertragsschluss', text: 'Der Vertrag kommt durch Annahme des Angebots des Kunden durch Finanzkredit zustande.' },
-        { heading: '§ 3 Leistungen', text: 'Finanzkredit bietet Bankdienstleistungen gemäß dem Kreditwesengesetz (KWG) an, darunter Kontoführung, Zahlungsverkehr, Kreditvermittlung und Anlageberatung.' },
-        { heading: '§ 4 Entgelte', text: 'Für unsere Leistungen gelten die im Preisaushang und Preis- und Leistungsverzeichnis angegebenen Entgelte.' },
-        { heading: '§ 5 Haftung', text: 'Finanzkredit haftet für Vorsatz und grobe Fahrlässigkeit. Bei leichter Fahrlässigkeit haftet Finanzkredit nur bei Verletzung wesentlicher Vertragspflichten.' },
-        { heading: '§ 6 Datenschutz', text: 'Die Verarbeitung personenbezogener Daten erfolgt gemäß unserer Datenschutzerklärung und den geltenden Datenschutzgesetzen.' },
-        { heading: '§ 7 Anwendbares Recht', text: 'Es gilt deutsches Recht. Gerichtsstand ist Frankfurt am Main.' },
-      ],
-    },
-    cookies: {
-      title: t('legal.cookies'),
-      sections: [
-        { heading: 'Was sind Cookies?', text: 'Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden, wenn Sie unsere Website besuchen. Sie helfen uns, Ihnen ein besseres Erlebnis zu bieten.' },
-        { heading: 'Notwendige Cookies', text: 'Diese Cookies sind für den Betrieb unserer Website unbedingt erforderlich und können nicht deaktiviert werden.' },
-        { heading: 'Analyse-Cookies', text: 'Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren, indem sie Informationen anonym sammeln.' },
-        { heading: 'Marketing-Cookies', text: 'Diese Cookies werden verwendet, um Anzeigen zu personalisieren und für Sie relevanter zu machen.' },
-        { heading: 'Cookie-Verwaltung', text: 'Sie können Ihre Cookie-Einstellungen jederzeit über die Cookie-Einstellungen anpassen oder Cookies in Ihrem Browser löschen.' },
-      ],
-    },
-    regulatory: {
-      title: t('legal.regulatory'),
-      sections: [
-        { heading: 'BaFin-Zulassung', text: 'Finanzkredit AG ist durch die Bundesanstalt für Finanzdienstleistungsaufsicht (BaFin) als Kreditinstitut gemäß § 32 KWG zugelassen. Lizenz-Nr.: KW-2004-0001.' },
-        { heading: 'Einlagensicherung', text: 'Einlagen sind durch den Einlagensicherungsfonds des Bundesverbandes deutscher Banken e.V. bis zu einem Betrag von €100.000 pro Kunde gesichert.' },
-        { heading: 'Schlichtungsverfahren', text: 'Bei Streitigkeiten haben Verbraucher die Möglichkeit, den Ombudsmann der privaten Banken anzurufen. Kontakt: ombudsmann@bankenverband.de' },
-        { heading: 'MiFID II Compliance', text: 'Finanzkredit AG hält alle Anforderungen der Richtlinie über Märkte für Finanzinstrumente (MiFID II) ein.' },
-        { heading: 'DSGVO Compliance', text: 'Wir halten alle Anforderungen der EU-Datenschutz-Grundverordnung (DSGVO) ein. Unser Datenschutzbeauftragter ist unter dpo@kreditwelt.de erreichbar.' },
-      ],
-    },
+    privacy: { title: t('legal.privacy'), sections: t('legal.content.privacy', { returnObjects: true }) },
+    terms: { title: t('legal.terms'), sections: t('legal.content.terms', { returnObjects: true }) },
+    cookies: { title: t('legal.cookies'), sections: t('legal.content.cookies', { returnObjects: true }) },
+    regulatory: { title: t('legal.regulatory'), sections: t('legal.content.regulatory', { returnObjects: true }) },
   }
 
   const active = content[activeTab]

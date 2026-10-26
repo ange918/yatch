@@ -1,10 +1,13 @@
+import { useTranslation } from 'react-i18next'
+
 export default function ChatWidget() {
+  const { t } = useTranslation()
   return (
     <a
-      href="https://wa.me/491755312515?text=Hallo%20Finanzkredit,%20ich%20habe%20eine%20Anfrage."
+      href={`https://wa.me/491755312515?text=${encodeURIComponent(t('chat.whatsappMessage'))}`}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="WhatsApp kontaktieren"
+      aria-label={t('chat.ariaLabel')}
       className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-xl hover:scale-110 hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] transition-all flex items-center justify-center"
       style={{ background: '#25D366' }}
     >
