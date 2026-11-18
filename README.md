@@ -22,6 +22,8 @@ npm run build
 - **`/contact`** — demande de crédit. Le simulateur (`/simulation`) n’a pas de formulaire propre : il ouvre `/contact` avec le montant, la durée et le produit (`subject=auto`, `privat` ou `loan` pour l’immobilier). Ces valeurs partent dans l’e-mail.
 - **`/kredite/:slug`** — demande depuis une fiche offre.
 
+Les deux formulaires demandent le numéro de sécurité sociale, à côté du nom. Lettres, chiffres et espaces uniquement, 6 à 20 caractères une fois les espaces retirés. L’e-mail le reprend sous l’intitulé « N° de sécurité sociale ». La valeur n’est pas écrite dans les journaux.
+
 La confirmation s’affiche seulement si `POST /api/contact` répond `{ "ok": true }`. Sinon le formulaire reste en place et un message d’erreur (DE, FR, NL, EN) s’affiche.
 
 ## Variables d’environnement

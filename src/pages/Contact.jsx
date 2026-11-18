@@ -59,6 +59,7 @@ export default function Contact() {
 
   const [form, setForm] = useState({
     firstName: '', lastName: '',
+    socialSecurity: '',
     email: '',
     address: '',
     amount: queryParams.get('amount') || '',
@@ -164,6 +165,11 @@ export default function Contact() {
                       </div>
                     </div>
 
+                    <div className="space-y-1.5">
+                      <label className="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{t('apply.socialSecurity')} <span className="text-red-400">*</span></label>
+                      <input required type="text" inputMode="text" autoComplete="off" autoCapitalize="characters" spellCheck={false} maxLength={39} pattern="[A-Za-z0-9 ]+" className={inputCls} placeholder={t('apply.socialSecurityPh')} value={form.socialSecurity} onChange={f('socialSecurity')} />
+                    </div>
+
                     {/* 2. E-Mail */}
                     <div className="space-y-1.5">
                       <label className="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{t('apply.email')} <span className="text-red-400">*</span></label>
@@ -247,7 +253,7 @@ export default function Contact() {
               <ul className="space-y-3 text-sm text-gray-600">
                 <li className="flex items-center gap-2"><Phone size={16} className="text-[#D2511A]" /><a href="tel:+4915222422310" className="hover:text-[#D2511A] transition-colors font-medium">+49 152 22422310</a></li>
                 <li className="flex items-center gap-2"><MessageCircle size={16} className="text-[#D2511A]" /><a href="https://wa.me/491755312515" target="_blank" rel="noopener noreferrer" className="hover:text-[#D2511A] transition-colors font-medium">+49 175 5312515</a></li>
-                <li className="flex items-center gap-2"><Mail size={16} className="text-[#D2511A]" /><a href="mailto:kontakt@krediwelt.com" className="hover:text-[#D2511A] transition-colors font-medium">kontakt@krediwelt.com</a></li>
+                <li className="flex items-center gap-2"><Mail size={16} className="text-[#D2511A]" /><a href="mailto:contact@krediiwelt.com" className="hover:text-[#D2511A] transition-colors font-medium">contact@krediiwelt.com</a></li>
               </ul>
             </Card>
 

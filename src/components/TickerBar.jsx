@@ -20,7 +20,7 @@ export default function TickerBar() {
         <span className="text-[#3A2A20] hidden sm:inline">|</span>
         <span className="flex items-center gap-2 shrink-0">
           <Mail size={14} className="text-[#D2511A]" />
-          <a href="mailto:kontakt@krediiwelt.com" className="font-bold text-white hover:text-[#D2511A] transition-colors">kontakt@krediiwelt.com</a>
+          <a href="mailto:contact@krediiwelt.com" className="font-bold text-white hover:text-[#D2511A] transition-colors">contact@krediiwelt.com</a>
         </span>
       </div>
     </div>

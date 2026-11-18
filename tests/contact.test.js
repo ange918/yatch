@@ -32,6 +32,7 @@ function validContact(overrides = {}) {
     fields: {
       firstName: 'Jean',
       lastName: 'Dupont',
+      socialSecurity: '12 345678 a 123',
       email: 'jean@exemple.fr',
       address: '1 rue de la Paix\n75001 Paris',
       amount: '15000',
@@ -77,6 +78,9 @@ test('succès : e-mail complet, reply-to du client, destinataire par défaut', a
   assert.match(sent[0].text, /1 rue de la Paix/)
   assert.match(sent[0].text, /Français \(fr\)/)
   assert.match(sent[0].text, /\/contact\?amount=15000/)
+  assert.match(sent[0].text, /N° de sécurité sociale : 12 345678 A 123/)
+  assert.match(sent[0].html, /N° de sécurité sociale/)
+  assert.match(sent[0].html, /12 345678 A 123/)
   assert.match(sent[0].text, /Voiture/)
   assert.match(sent[0].text, /Auto \(simulateur\)/)
   assert.match(sent[0].html, /Jean/)
@@ -96,6 +100,7 @@ test('succès : demande d’une fiche crédit', async () => {
     fields: {
       firstName: 'Max',
       lastName: 'Mustermann',
+      socialSecurity: '123456789',
       email: 'max@beispiel.de',
       phone: '+49 152 22422310',
       amount: '8000',
@@ -123,6 +128,29 @@ test('erreur : le transport échoue, pas de confirmation', async () => {
   assert.equal(res.status, 502)
   assert.equal(body.ok, false)
   assert.equal(body.error, 'send_failed')
+})
+
+test('numéro de sécurité sociale : absent ou invalide, rien n’est envoyé', async () => {
+  const missing = validContact()
+  delete missing.fields.socialSecurity
+  const absent = await post(missing)
+  assert.equal(absent.res.status, 400)
+  assert.equal(absent.body.error, 'validation')
+  assert.equal(absent.sent.length, 0)
+
+  const symbols = validContact()
+  symbols.fields = { ...symbols.fields, socialSecurity: '12-345678' }
+  const bad = await post(symbols)
+  assert.equal(bad.res.status, 400)
+  assert.equal(bad.body.error, 'validation')
+  assert.equal(bad.sent.length, 0)
+
+  const short = validContact()
+  short.fields = { ...short.fields, socialSecurity: '12345' }
+  const tooShort = await post(short)
+  assert.equal(tooShort.res.status, 400)
+  assert.equal(tooShort.body.error, 'validation')
+  assert.equal(tooShort.sent.length, 0)
 })
 
 test('champ invalide : e-mail refusé, rien n’est envoyé', async () => {

@@ -58,7 +58,7 @@ export default function LoanDetail() {
   const loan = LOANS.find(l => l.slug === slug)
 
   const [form, setForm] = useState({
-    firstName: '', lastName: '', email: '', phone: '',
+    firstName: '', lastName: '', socialSecurity: '', email: '', phone: '',
     subject: loan?.subject || '',
     message: '', amount: '', duration: ''
   })
@@ -98,6 +98,7 @@ export default function LoanDetail() {
           firstName: form.firstName,
           lastName: form.lastName,
           email: form.email,
+          socialSecurity: form.socialSecurity,
           phone: form.phone,
           amount: form.amount,
           duration: form.duration,
@@ -263,6 +264,11 @@ export default function LoanDetail() {
                           <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">{t('loanDetail.lastName')}</label>
                           <input className="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-[#D2511A] rounded-2xl px-4 py-3.5 text-sm outline-none transition-all" value={form.lastName} onChange={e => setForm({ ...form, lastName: e.target.value })} />
                         </div>
+                      </div>
+
+                      <div className="space-y-1.5">
+                        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">{t('loanDetail.socialSecurity')} <span className="text-red-400">{t('loanDetail.required')}</span></label>
+                        <input required type="text" inputMode="text" autoComplete="off" autoCapitalize="characters" spellCheck={false} maxLength={39} pattern="[A-Za-z0-9 ]+" className="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-[#D2511A] rounded-2xl px-4 py-3.5 text-sm outline-none transition-all" placeholder={t('loanDetail.socialSecurityPh')} value={form.socialSecurity} onChange={e => setForm({ ...form, socialSecurity: e.target.value })} />
                       </div>
 
                       <div className="space-y-1.5">
