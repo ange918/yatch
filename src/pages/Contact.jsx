@@ -59,6 +59,7 @@ export default function Contact() {
 
   const [form, setForm] = useState({
     firstName: '', lastName: '',
+    socialSecurity: '',
     email: '',
     address: '',
     amount: queryParams.get('amount') || '',
@@ -162,6 +163,11 @@ export default function Contact() {
                         <label className="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{t('apply.lastName')} <span className="text-red-400">*</span></label>
                         <input required className={inputCls} placeholder={t('apply.lastNamePh')} value={form.lastName} onChange={f('lastName')} />
                       </div>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label className="text-[11px] font-bold text-gray-400 uppercase tracking-widest ml-1">{t('apply.socialSecurity')} <span className="text-red-400">*</span></label>
+                      <input required type="text" inputMode="text" autoComplete="off" autoCapitalize="characters" spellCheck={false} maxLength={39} pattern="[A-Za-z0-9 ]+" className={inputCls} placeholder={t('apply.socialSecurityPh')} value={form.socialSecurity} onChange={f('socialSecurity')} />
                     </div>
 
                     {/* 2. E-Mail */}

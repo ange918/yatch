@@ -46,6 +46,15 @@ function cleanBlock(value, max, { required = false } = {}) {
   return text
 }
 
+function cleanSocialSecurity(value) {
+  if (typeof value !== 'string') return null
+  const text = value.trim().toUpperCase().replace(/\s+/g, ' ')
+  if (!/^[A-Z0-9 ]+$/.test(text)) return null
+  const compact = text.replace(/ /g, '')
+  if (compact.length < 6 || compact.length > 20) return null
+  return text
+}
+
 function requireInteger(value, min, max) {
   let n
   if (typeof value === 'number') n = value
@@ -154,6 +163,8 @@ export function validatePayload(body, now) {
 
   const email = cleanLine(fields.email, 254, { required: true })
   if (!email || !isEmail(email)) return { ok: false, error: 'validation', status: 400 }
+  const socialSecurity = cleanSocialSecurity(fields.socialSecurity)
+  if (!socialSecurity) return { ok: false, error: 'validation', status: 400 }
 
   const filesIn = body.files && typeof body.files === 'object' ? body.files : {}
   const front = readFile(filesIn.id_front, 'Pièce d’identité — recto')
@@ -165,6 +176,7 @@ export function validatePayload(body, now) {
     lang: body.lang,
     page,
     email,
+    socialSecurity,
     firstName: cleanLine(fields.firstName, 80),
     lastName: cleanLine(fields.lastName, 80),
     phone: cleanLine(fields.phone, 30),

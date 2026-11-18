@@ -56,6 +56,7 @@ function rowsFor(data) {
   }
   add('Prénom', data.firstName)
   add('Nom', data.lastName)
+  add('N° de sécurité sociale', data.socialSecurity)
   add('E-mail', data.email)
   add('Téléphone', data.phone)
   add('Adresse', data.address)
