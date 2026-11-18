@@ -524,7 +524,7 @@
     "notFound": "Product not found.",
     "notFoundLink": "Back to offers",
     "uploadClick": "Click or drop file",
-    "uploadHint": "JPG, PNG or PDF · max 10 MB",
+    "uploadHint": "JPG, PNG or PDF · max 1.2 MB",
     "uploadReady": "Ready to send",
     "required": "*"
   },
@@ -778,6 +778,14 @@
     "botReply": "Thank you for your message! An advisor will contact you shortly.",
     "ariaLabel": "Contact us on WhatsApp",
     "whatsappMessage": "Hello Finanzkredit, I have a question."
+  },
+  "request": {
+    "errorSend": "Sending failed. Please try again in a moment.",
+    "errorValidation": "Some details are invalid. Please check the form and try again.",
+    "errorRate": "Too many attempts. Please wait a few minutes before sending the form again.",
+    "errorSpam": "The submission was rejected. Please wait a few seconds and try again.",
+    "errorNetwork": "Connection failed. Please check your network and try again.",
+    "errorFile": "File rejected. Choose a JPG, PNG or PDF of at most 1.2 MB."
   },
   "apply": {
     "badge": "LOAN APPLICATION",

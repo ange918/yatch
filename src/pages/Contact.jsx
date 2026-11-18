@@ -6,8 +6,10 @@ import { CheckCircle, X, ChevronRight, ShieldCheck, Lock, Globe, FileText, Phone
 import Accent from '../components/Accent'
 import Card from '../components/ui/Card'
 import Badge from '../components/ui/Badge'
+import { FormError, Honeypot } from '../components/FormGuards'
+import { filesPayload, requestErrorMessage, submitRequest } from '../lib/contactApi'
 
-const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
+const PURPOSE_FROM_SUBJECT = { auto: 'Auto', privat: 'Konsum', loan: 'Immobilien', immo: 'Immobilien' }
 
 function FileUpload({ label, fieldName, file, preview, onChange, onClear }) {
   const { t } = useTranslation()
@@ -40,7 +42,7 @@ function FileUpload({ label, fieldName, file, preview, onChange, onClear }) {
             <p className="text-xs font-bold text-gray-700 truncate">{file.name}</p>
             <p className="text-[10px] text-gray-400 uppercase font-bold tracking-tight">{t('loanDetail.uploadReady')}</p>
           </div>
-          <button onClick={() => onClear(fieldName)} className="p-1.5 hover:bg-red-50 text-gray-400 hover:text-red-500 rounded-full transition-colors"><X size={16} /></button>
+          <button type="button" onClick={() => onClear(fieldName)} className="p-1.5 hover:bg-red-50 text-gray-400 hover:text-red-500 rounded-full transition-colors"><X size={16} /></button>
         </div>
       )}
     </div>
@@ -48,9 +50,12 @@ function FileUpload({ label, fieldName, file, preview, onChange, onClear }) {
 }
 
 export default function Contact() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const location = useLocation()
   const queryParams = new URLSearchParams(location.search)
+  const subject = queryParams.get('subject') || ''
+  const product = ['auto', 'privat', 'loan', 'immo'].includes(subject) ? subject : ''
+  const startedAt = useRef(Date.now())
 
   const [form, setForm] = useState({
     firstName: '', lastName: '',
@@ -60,11 +65,13 @@ export default function Contact() {
     duration: queryParams.get('duration') || '',
     profession: '',
     income: '',
-    purpose: '',
+    purpose: PURPOSE_FROM_SUBJECT[product] || '',
   })
   const [files, setFiles] = useState({ id_front: null, id_back: null })
   const [previews, setPreviews] = useState({ id_front: null, id_back: null })
-  const [loading] = useState(false)
+  const [honeypot, setHoneypot] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
   const f = (key) => (e) => setForm({ ...form, [key]: e.target.value })
@@ -80,9 +87,30 @@ export default function Contact() {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    alert(t('apply.unavailable'))
+    if (loading) return
+    setError('')
+    setLoading(true)
+    try {
+      const uploaded = await filesPayload(files)
+      await submitRequest({
+        form: 'contact',
+        lang: (i18n.resolvedLanguage || i18n.language || 'de').slice(0, 2),
+        page: `${location.pathname}${location.search}`,
+        startedAt: startedAt.current,
+        company_website: honeypot,
+        fields: { ...form, product },
+        files: uploaded,
+      })
+      setFiles({ id_front: null, id_back: null })
+      setPreviews({ id_front: null, id_back: null })
+      setSubmitted(true)
+    } catch (err) {
+      setError(requestErrorMessage(t, err))
+    } finally {
+      setLoading(false)
+    }
   }
 
   const inputCls = "w-full bg-gray-50 border border-transparent focus:bg-white focus:border-[#D2511A] rounded-2xl px-5 py-4 text-sm transition-all outline-none"
@@ -109,7 +137,7 @@ export default function Contact() {
                   <div className="w-20 h-20 bg-[#D2511A]/10 rounded-full flex items-center justify-center mx-auto mb-6"><CheckCircle size={40} className="text-[#D2511A]" /></div>
                   <h2 className="text-2xl font-black text-[#121110] mb-4">{t('apply.successTitle')}</h2>
                   <p className="text-gray-500 mb-8">{t('apply.successText')}</p>
-                  <button onClick={() => setSubmitted(false)} className="font-bold text-[#D2511A] hover:underline">{t('apply.successReset')}</button>
+                  <button onClick={() => { setSubmitted(false); setError('') }} className="font-bold text-[#D2511A] hover:underline">{t('apply.successReset')}</button>
                 </motion.div>
               ) : (
                 <motion.div key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -121,7 +149,8 @@ export default function Contact() {
                     <h2 className="text-2xl font-black text-[#121110]">{t('apply.formTitle')}</h2>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="relative space-y-6">
+                    <Honeypot value={honeypot} onChange={setHoneypot} />
 
                     {/* 1. Vor- und Nachname */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -196,8 +225,9 @@ export default function Contact() {
                       </div>
                     </div>
 
-                    <button type="submit" disabled={loading} className="w-full bg-[#D2511A] hover:bg-[#B4430F] text-[#121110] font-black py-5 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-xl shadow-[#D2511A]/20 active:scale-95 disabled:opacity-50">
-                      {loading ? t('apply.sending') : <><i className="bx bx-paper-plane text-xl" /> {t('apply.send')}</>}
+                    <FormError>{error}</FormError>
+                    <button type="submit" disabled={loading} aria-busy={loading} className="w-full bg-[#D2511A] hover:bg-[#B4430F] text-[#121110] font-black py-5 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-xl shadow-[#D2511A]/20 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
+                      {loading ? <><i className="bx bx-loader-alt bx-spin text-xl" /> {t('apply.sending')}</> : <><i className="bx bx-paper-plane text-xl" /> {t('apply.send')}</>}
                     </button>
                     <p className="text-[11px] text-center text-gray-400 flex items-center justify-center gap-1.5"><Lock size={10} /> {t('apply.privacy')}</p>
                   </form>

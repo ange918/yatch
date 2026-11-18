@@ -524,7 +524,7 @@
     "notFound": "Produit introuvable.",
     "notFoundLink": "Retour aux offres",
     "uploadClick": "Cliquer ou déposer un fichier",
-    "uploadHint": "JPG, PNG ou PDF · max 10 Mo",
+    "uploadHint": "JPG, PNG ou PDF · max 1,2 Mo",
     "uploadReady": "Prêt à envoyer",
     "required": "*"
   },
@@ -778,6 +778,14 @@
     "botReply": "Merci pour votre message ! Un conseiller vous contactera prochainement.",
     "ariaLabel": "Nous contacter sur WhatsApp",
     "whatsappMessage": "Bonjour Finanzkredit, j'ai une question."
+  },
+  "request": {
+    "errorSend": "L'envoi a échoué. Réessayez dans un instant.",
+    "errorValidation": "Certaines informations sont invalides. Vérifiez le formulaire et réessayez.",
+    "errorRate": "Trop de tentatives. Patientez quelques minutes avant de renvoyer le formulaire.",
+    "errorSpam": "L'envoi a été refusé. Attendez quelques secondes, puis réessayez.",
+    "errorNetwork": "Connexion impossible. Vérifiez votre réseau et réessayez.",
+    "errorFile": "Fichier refusé. Choisissez un JPG, un PNG ou un PDF de 1,2 Mo maximum."
   },
   "apply": {
     "badge": "DEMANDE DE CRÉDIT",

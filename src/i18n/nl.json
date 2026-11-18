@@ -524,7 +524,7 @@
     "notFound": "Product niet gevonden.",
     "notFoundLink": "Terug naar het aanbod",
     "uploadClick": "Klikken of bestand neerzetten",
-    "uploadHint": "JPG, PNG of PDF · max 10 MB",
+    "uploadHint": "JPG, PNG of PDF · max 1,2 MB",
     "uploadReady": "Klaar om te verzenden",
     "required": "*"
   },
@@ -778,6 +778,14 @@
     "botReply": "Bedankt voor uw bericht! Een adviseur neemt binnenkort contact met u op.",
     "ariaLabel": "Neem contact op via WhatsApp",
     "whatsappMessage": "Hallo Finanzkredit, ik heb een vraag."
+  },
+  "request": {
+    "errorSend": "Het verzenden is mislukt. Probeer het over een ogenblik opnieuw.",
+    "errorValidation": "Sommige gegevens zijn ongeldig. Controleer het formulier en probeer het opnieuw.",
+    "errorRate": "Te veel pogingen. Wacht enkele minuten voordat u het formulier opnieuw verstuurt.",
+    "errorSpam": "De verzending is geweigerd. Wacht enkele seconden en probeer het opnieuw.",
+    "errorNetwork": "Geen verbinding. Controleer uw netwerk en probeer het opnieuw.",
+    "errorFile": "Bestand geweigerd. Kies een JPG, PNG of PDF van maximaal 1,2 MB."
   },
   "apply": {
     "badge": "LENINGAANVRAAG",

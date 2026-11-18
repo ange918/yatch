@@ -1,11 +1,13 @@
 import { useState, useRef } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle, X, Lock, FileText, ArrowLeft } from 'lucide-react'
 import Accent from '../components/Accent'
 import Card from '../components/ui/Card'
 import Badge from '../components/ui/Badge'
+import { FormError, Honeypot } from '../components/FormGuards'
+import { filesPayload, requestErrorMessage, submitRequest } from '../lib/contactApi'
 import { LOANS } from '../data/loans'
 import { fmtCurrency, fmtPercent } from '../i18n/format'
 
@@ -42,7 +44,7 @@ function FileUpload({ label, fieldName, file, preview, onChange, onClear, clickT
             <p className="text-xs font-bold text-gray-700 truncate">{file.name}</p>
             <p className="text-[10px] text-gray-400 uppercase font-bold tracking-tight">{readyText}</p>
           </div>
-          <button onClick={() => onClear(fieldName)} className="p-1.5 hover:bg-red-50 text-gray-400 hover:text-red-500 rounded-full transition-colors"><X size={14} /></button>
+          <button type="button" onClick={() => onClear(fieldName)} className="p-1.5 hover:bg-red-50 text-gray-400 hover:text-red-500 rounded-full transition-colors"><X size={14} /></button>
         </div>
       )}
     </div>
@@ -51,6 +53,7 @@ function FileUpload({ label, fieldName, file, preview, onChange, onClear, clickT
 
 export default function LoanDetail() {
   const { slug } = useParams()
+  const location = useLocation()
   const { t, i18n } = useTranslation()
   const loan = LOANS.find(l => l.slug === slug)
 
@@ -61,8 +64,11 @@ export default function LoanDetail() {
   })
   const [files, setFiles] = useState({ id_front: null, id_back: null })
   const [previews, setPreviews] = useState({ id_front: null, id_back: null })
-  const [loading] = useState(false)
+  const [honeypot, setHoneypot] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const startedAt = useRef(Date.now())
 
   const handleFile = (field, file) => {
     setFiles(prev => ({ ...prev, [field]: file }))
@@ -75,9 +81,40 @@ export default function LoanDetail() {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    alert(t('apply.unavailable'))
+    if (loading || !loan) return
+    setError('')
+    setLoading(true)
+    try {
+      const uploaded = await filesPayload(files)
+      await submitRequest({
+        form: 'loan',
+        lang: (i18n.resolvedLanguage || i18n.language || 'de').slice(0, 2),
+        page: `${location.pathname}${location.search}`,
+        startedAt: startedAt.current,
+        company_website: honeypot,
+        fields: {
+          firstName: form.firstName,
+          lastName: form.lastName,
+          email: form.email,
+          phone: form.phone,
+          amount: form.amount,
+          duration: form.duration,
+          message: form.message,
+          product: form.subject || loan.subject,
+          loanSlug: loan.slug,
+        },
+        files: uploaded,
+      })
+      setFiles({ id_front: null, id_back: null })
+      setPreviews({ id_front: null, id_back: null })
+      setSubmitted(true)
+    } catch (err) {
+      setError(requestErrorMessage(t, err))
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (!loan) {
@@ -210,12 +247,13 @@ export default function LoanDetail() {
                     </div>
                     <h2 className="text-2xl font-black text-[#121110] mb-4"><Accent>{t('loanDetail.successTitle')}</Accent></h2>
                     <p className="text-gray-500 mb-8">{t('loanDetail.successText')}</p>
-                    <button onClick={() => setSubmitted(false)} className="font-bold text-[#D2511A] hover:underline text-sm">{t('loanDetail.successReset')}</button>
+                    <button onClick={() => { setSubmitted(false); setError('') }} className="font-bold text-[#D2511A] hover:underline text-sm">{t('loanDetail.successReset')}</button>
                   </motion.div>
                 ) : (
                   <motion.div key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                     <Card className="p-8 rounded-[32px] shadow-sm border-gray-100">
-                    <form onSubmit={handleSubmit} className="space-y-5">
+                    <form onSubmit={handleSubmit} className="relative space-y-5">
+                      <Honeypot value={honeypot} onChange={setHoneypot} />
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div className="space-y-1.5">
                           <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">{t('loanDetail.firstName')}</label>
@@ -276,8 +314,9 @@ export default function LoanDetail() {
                         </div>
                       </div>
 
-                      <button type="submit" disabled={loading} className="w-full bg-[#D2511A] hover:bg-[#B4430F] text-[#121110] font-black py-4 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-xl shadow-[#D2511A]/20 active:scale-95 disabled:opacity-50 text-sm">
-                        {loading ? t('loanDetail.sending') : <><i className="bx bx-paper-plane text-lg" /> {t('loanDetail.send')}</>}
+                      <FormError>{error}</FormError>
+                      <button type="submit" disabled={loading} aria-busy={loading} className="w-full bg-[#D2511A] hover:bg-[#B4430F] text-[#121110] font-black py-4 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-xl shadow-[#D2511A]/20 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed text-sm">
+                        {loading ? <><i className="bx bx-loader-alt bx-spin text-lg" /> {t('loanDetail.sending')}</> : <><i className="bx bx-paper-plane text-lg" /> {t('loanDetail.send')}</>}
                       </button>
                       <p className="text-[11px] text-center text-gray-400 flex items-center justify-center gap-1.5">
                         <Lock size={10} /> {t('loanDetail.privacy')}
