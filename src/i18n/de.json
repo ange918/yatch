@@ -524,7 +524,7 @@
     "notFound": "Produkt nicht gefunden.",
     "notFoundLink": "Zurück zu den Angeboten",
     "uploadClick": "Klicken oder Datei ablegen",
-    "uploadHint": "JPG, PNG oder PDF · max 10 MB",
+    "uploadHint": "JPG, PNG oder PDF · max 1,2 MB",
     "uploadReady": "Bereit zum Senden",
     "required": "*"
   },
@@ -778,6 +778,14 @@
     "botReply": "Vielen Dank für Ihre Nachricht! Ein Berater wird sich in Kürze bei Ihnen melden.",
     "ariaLabel": "WhatsApp kontaktieren",
     "whatsappMessage": "Hallo Finanzkredit, ich habe eine Anfrage."
+  },
+  "request": {
+    "errorSend": "Der Versand ist fehlgeschlagen. Bitte versuchen Sie es in einem Moment erneut.",
+    "errorValidation": "Einige Angaben sind ungültig. Bitte prüfen Sie das Formular und versuchen Sie es erneut.",
+    "errorRate": "Zu viele Versuche. Bitte warten Sie einige Minuten, bevor Sie das Formular erneut senden.",
+    "errorSpam": "Der Versand wurde abgelehnt. Bitte warten Sie einige Sekunden und versuchen Sie es erneut.",
+    "errorNetwork": "Keine Verbindung. Bitte prüfen Sie Ihr Netzwerk und versuchen Sie es erneut.",
+    "errorFile": "Datei abgelehnt. Bitte ein JPG, PNG oder PDF von höchstens 1,2 MB wählen."
   },
   "apply": {
     "badge": "KREDITANTRAG",

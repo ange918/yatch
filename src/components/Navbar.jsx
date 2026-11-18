@@ -10,16 +10,15 @@ export default function Navbar() {
   const { t, i18n } = useTranslation()
   const location = useLocation()
   const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuState, setMenuState] = useState({ open: false, key: location.key })
   const [langOpen, setLangOpen] = useState(false)
+  const menuOpen = menuState.key === location.key && menuState.open
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  useEffect(() => { setMenuOpen(false) }, [location])
 
   const changeLang = (lang) => {
     i18n.changeLanguage(lang.toLowerCase())
@@ -90,7 +89,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <button className="lg:hidden text-white p-2" onClick={() => setMenuOpen(!menuOpen)}>
+          <button className="lg:hidden text-white p-2" onClick={() => setMenuState({ open: !menuOpen, key: location.key })}>
             <i className={`bx ${menuOpen ? 'bx-x' : 'bx-menu'} text-2xl`} />
           </button>
         </div>
