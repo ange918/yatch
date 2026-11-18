@@ -253,7 +253,7 @@ export default function Contact() {
               <ul className="space-y-3 text-sm text-gray-600">
                 <li className="flex items-center gap-2"><Phone size={16} className="text-[#D2511A]" /><a href="tel:+4915222422310" className="hover:text-[#D2511A] transition-colors font-medium">+49 152 22422310</a></li>
                 <li className="flex items-center gap-2"><MessageCircle size={16} className="text-[#D2511A]" /><a href="https://wa.me/491755312515" target="_blank" rel="noopener noreferrer" className="hover:text-[#D2511A] transition-colors font-medium">+49 175 5312515</a></li>
-                <li className="flex items-center gap-2"><Mail size={16} className="text-[#D2511A]" /><a href="mailto:kontakt@krediwelt.com" className="hover:text-[#D2511A] transition-colors font-medium">kontakt@krediwelt.com</a></li>
+                <li className="flex items-center gap-2"><Mail size={16} className="text-[#D2511A]" /><a href="mailto:contact@krediiwelt.com" className="hover:text-[#D2511A] transition-colors font-medium">contact@krediiwelt.com</a></li>
               </ul>
             </Card>
 
