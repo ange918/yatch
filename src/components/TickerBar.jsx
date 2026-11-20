@@ -9,18 +9,18 @@ export default function TickerBar() {
         <span className="flex items-center gap-2 shrink-0">
           <Phone size={14} className="text-[#D2511A]" />
           <span className="text-gray-300">{t('ticker.callUs')}</span>
-          <a href="tel:+4915222422310" className="font-bold text-white hover:text-[#D2511A] transition-colors">+49 152 22422310</a>
+          <a href="tel:+41799239259" className="font-bold text-white hover:text-[#D2511A] transition-colors">+41 79 923 92 59</a>
         </span>
         <span className="text-[#3A2A20] hidden sm:inline">|</span>
         <span className="flex items-center gap-2 shrink-0">
           <MessageCircle size={14} className="text-[#D2511A]" />
           <span className="text-gray-300">WhatsApp:</span>
-          <a href={`https://wa.me/491755312515?text=${encodeURIComponent(t('chat.whatsappMessage'))}`} target="_blank" rel="noopener noreferrer" className="font-bold text-white hover:text-[#D2511A] transition-colors">+49 175 5312515</a>
+          <a href={`https://wa.me/41799239259?text=${encodeURIComponent(t('chat.whatsappMessage'))}`} target="_blank" rel="noopener noreferrer" className="font-bold text-white hover:text-[#D2511A] transition-colors">+41 79 923 92 59</a>
         </span>
         <span className="text-[#3A2A20] hidden sm:inline">|</span>
         <span className="flex items-center gap-2 shrink-0">
           <Mail size={14} className="text-[#D2511A]" />
-          <a href="mailto:kontakt@krediiwelt.com" className="font-bold text-white hover:text-[#D2511A] transition-colors">kontakt@krediiwelt.com</a>
+          <a href="mailto:contact@krediiwelt.com" className="font-bold text-white hover:text-[#D2511A] transition-colors">contact@krediiwelt.com</a>
         </span>
       </div>
     </div>

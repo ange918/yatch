@@ -1,13 +1,11 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import Accent from '../components/Accent'
+import PageHero from '../components/PageHero'
 import Card from '../components/ui/Card'
-import Badge from '../components/ui/Badge'
 
-const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
-const stagger = { visible: { transition: { staggerChildren: 0.1 } } }
-
-const HERO_IMG = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80'
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }
+const stagger = { visible: { transition: { staggerChildren: 0.08 } } }
 
 const ONLINE_FEATURES = [
   { bx: 'bx-transfer', k: 'on1' },
@@ -39,10 +37,10 @@ const DIGITAL_TOOLS = [
 ]
 
 const SUPPORT = [
-  { bx: 'bx-chat', k: 'sp1', gradient: 'from-[#3A2A20] to-[#E8793F]' },
-  { bx: 'bx-phone', k: 'sp2', title: '+49 69 1234 5678', gradient: 'from-blue-500 to-blue-700' },
-  { bx: 'bx-envelope', k: 'sp3', title: 'support@kreditwelt.de', gradient: 'from-purple-500 to-purple-700' },
-  { bx: 'bx-map-pin', k: 'sp4', title: 'Bankstraße 1, Frankfurt', gradient: 'from-orange-500 to-red-500' },
+  { bx: 'bx-chat', k: 'sp1' },
+  { bx: 'bx-phone', k: 'sp2', title: '+41 79 923 92 59', href: 'tel:+41799239259' },
+  { bx: 'bx-envelope', k: 'sp3', title: 'contact@krediiwelt.com', href: 'mailto:contact@krediiwelt.com' },
+  { bx: 'bx-map-pin', k: 'sp4', title: 'Bankstraße 1, Frankfurt' },
 ]
 
 const SECURITY = [
@@ -54,13 +52,12 @@ function ServiceSection({ title, items, bg = 'bg-[#EBE2D1]' }) {
   const { t } = useTranslation()
   return (
     <section className={`py-16 ${bg}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-          className="text-2xl font-extrabold text-[#121110] mb-8 tracking-tight flex items-center gap-3"
+          className="text-2xl sm:text-3xl font-extrabold text-[#121110] mb-8 tracking-tight"
         >
-          <div className="w-1 h-8 rounded-full bg-[#D2511A]" />
-          {title}
+          <Accent editorial>{title}</Accent>
         </motion.h2>
         <motion.div
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
@@ -68,13 +65,13 @@ function ServiceSection({ title, items, bg = 'bg-[#EBE2D1]' }) {
         >
           {items.map(({ bx, k }) => (
             <motion.div key={k} variants={fadeUp}>
-              <Card className="p-5 flex items-start gap-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 bg-gradient-to-b from-white to-gray-50/50">
+              <Card className="p-5 flex items-start gap-4 h-full">
                 <div className="w-11 h-11 rounded-xl bg-[#D2511A]/10 flex items-center justify-center shrink-0">
-                  <i className={`bx ${bx} text-[#3A2A20] text-2xl`} />
+                  <i className={`bx ${bx} text-[#D2511A] text-xl`} />
                 </div>
                 <div>
                   <p className="font-bold text-[#121110] mb-1 text-sm leading-tight">{t(`svc.${k}.title`)}</p>
-                  <p className="text-gray-500 text-xs leading-relaxed">{t(`svc.${k}.desc`)}</p>
+                  <p className="text-[#4A453E] text-xs leading-relaxed">{t(`svc.${k}.desc`)}</p>
                 </div>
               </Card>
             </motion.div>
@@ -89,20 +86,8 @@ export default function Services() {
   const { t } = useTranslation()
 
   return (
-    <div className="pt-16">
-      {/* Hero */}
-      <section
-        className="relative py-36 text-center overflow-hidden hero-bg"
-        style={{ backgroundImage: `url(${HERO_IMG})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#8F3510]/90 via-[#121110]/88 to-[#3A2A20]/80 backdrop-blur-[1px]" />
-        <div className="relative max-w-4xl mx-auto px-4">
-          <motion.div initial="hidden" animate="visible" variants={stagger}>
-            <motion.div variants={fadeUp}><Badge className="mb-6"><i className="bx bx-star text-sm mr-1" />{t('services.heroSub')}</Badge></motion.div>
-            <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl font-extrabold text-white mb-4 tracking-tight leading-tight"><Accent>{t('services.heroTitle')}</Accent></motion.h1>
-          </motion.div>
-        </div>
-      </section>
+    <div>
+      <PageHero eyebrow={t('services.heroSub')} title={t('services.heroTitle')} />
 
       <ServiceSection title={t('services.onlineTitle')} items={ONLINE_FEATURES} bg="bg-white" />
       <ServiceSection title={t('services.intlTitle')} items={INTL_FEATURES} />
@@ -110,25 +95,33 @@ export default function Services() {
       <ServiceSection title={t('services.digitalTitle')} items={DIGITAL_TOOLS} />
 
       {/* Support */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white border-t border-[#121110]/8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-            className="text-2xl font-extrabold text-[#121110] text-center mb-10 tracking-tight"
-          ><Accent>{t('services.supportTitle')}</Accent></motion.h2>
+            className="text-2xl sm:text-3xl font-extrabold text-[#121110] text-center mb-10 tracking-tight"
+          >
+            <Accent editorial>{t('services.supportTitle')}</Accent>
+          </motion.h2>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           >
             {SUPPORT.map((s) => (
               <motion.div key={s.k} variants={fadeUp}>
-                <div className={`bg-gradient-to-br ${s.gradient} rounded-2xl p-6 text-white text-center hover:-translate-y-1 transition-all duration-300 shadow-lg`}>
-                  <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mx-auto mb-3">
-                    <i className={`bx ${s.bx} text-white text-2xl`} />
+                <Card className="p-6 text-center h-full flex flex-col items-center justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-[#D2511A]/10 flex items-center justify-center mx-auto mb-3">
+                    <i className={`bx ${s.bx} text-[#D2511A] text-2xl`} />
                   </div>
-                  <p className="font-bold text-sm leading-tight mb-1">{s.title || t(`svc.${s.k}.title`)}</p>
-                  <p className="text-white/70 text-xs">{t(`svc.${s.k}.desc`)}</p>
-                </div>
+                  {s.href ? (
+                    <a href={s.href} className="font-bold text-sm text-[#121110] hover:text-[#D2511A] transition-colors leading-tight mb-1">
+                      {s.title}
+                    </a>
+                  ) : (
+                    <p className="font-bold text-sm text-[#121110] leading-tight mb-1">{s.title || t(`svc.${s.k}.title`)}</p>
+                  )}
+                  <p className="text-[#6B6359] text-xs">{t(`svc.${s.k}.desc`)}</p>
+                </Card>
               </motion.div>
             ))}
           </motion.div>
@@ -136,26 +129,25 @@ export default function Services() {
       </section>
 
       {/* Security */}
-      <section className="py-20 bg-[#121110] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute -top-20 -right-20 w-96 h-96 bg-[#D2511A] rounded-full" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-[#121110]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-            className="text-2xl font-extrabold text-white text-center mb-12 tracking-tight"
-          ><Accent>{t('services.securityTitle')}</Accent></motion.h2>
+            className="text-2xl sm:text-3xl font-extrabold text-white text-center mb-12 tracking-tight"
+          >
+            <Accent editorial>{t('services.securityTitle')}</Accent>
+          </motion.h2>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto"
           >
             {SECURITY.map((s) => (
-              <motion.div key={s.k} variants={fadeUp} className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-[#D2511A]/10 flex items-center justify-center mx-auto mb-4 border border-[#D2511A]/20">
-                  <i className={`bx ${s.bx} text-[#D2511A] text-3xl`} />
+              <motion.div key={s.k} variants={fadeUp} className="text-center p-6 rounded-[24px] border border-white/10 bg-white/[0.03]">
+                <div className="w-14 h-14 rounded-2xl bg-[#D2511A]/15 flex items-center justify-center mx-auto mb-4">
+                  <i className={`bx ${s.bx} text-[#D2511A] text-2xl`} />
                 </div>
                 <p className="font-bold text-white mb-2 text-sm leading-tight">{t(`svc.${s.k}.title`)}</p>
-                <p className="text-white/50 text-xs leading-relaxed">{t(`svc.${s.k}.desc`)}</p>
+                <p className="text-white/60 text-xs leading-relaxed">{t(`svc.${s.k}.desc`)}</p>
               </motion.div>
             ))}
           </motion.div>

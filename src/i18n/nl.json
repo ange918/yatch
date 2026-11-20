@@ -13,10 +13,53 @@
   "hero": {
     "badge": "Beste Digitale Bank Duitsland 2024",
     "headline": "Bankieren dat bij uw leven past",
+    "headlinePrefix": "Uw krediet, ",
+    "headlineItalic": "op maat gemaakt",
+    "headlineSuffix": " voor uw leven.",
     "subtext": "Ontdek moderne financiële oplossingen — veilig, snel en volledig digitaal. Finanzkredit begeleidt u bij elke stap van uw financiële reis.",
+    "highlights": [
+      "100% Digitaal",
+      "Antwoord binnen 24u",
+      "Vaste rente vanaf 1,9%",
+      "Geen verborgen kosten"
+    ],
     "cta1": "Leningen bekijken",
     "cta2": "Krediet simuleren",
     "trustText": "Vertrouwd door 1M+ klanten in heel Europa"
+  },
+  "heroPreview": {
+    "disclaimer": "Interactief voorbeeld van uw simulatie — indicatieve bedragen.",
+    "exampleTag": "Voorbeeld",
+    "menuLabel": "Kredietvormen",
+    "instantCalc": "Directe berekening",
+    "viewLabel": "Simulatie · 2026",
+    "dashboardTitle": "Dashboard",
+    "currency": "Valuta: EUR (€)",
+    "kpiAmount": "Leenbedrag",
+    "kpiMonthly": "Maandlast",
+    "kpiRate": "Vaste JKP",
+    "monthsUnit": "maanden",
+    "perMonth": "per maand",
+    "fixedRate": "Vaste rente",
+    "chartTitle": "Aflossingsverloop",
+    "chartSub": "Resterende schuld per periode",
+    "splitTitle": "Verdeling",
+    "splitSub": "Totale kostenverdeling",
+    "principal": "Hoofdsom",
+    "interest": "Rente",
+    "sheetTitle": "Voorbeeld PDF-offerte",
+    "docType": "Simulatie",
+    "purposeLabel": "Doel",
+    "durationLabel": "Looptijd",
+    "feesLabel": "Dossierkosten",
+    "docNote": "Indicatief voorbeeldoverzicht — geen bindend kredietaanbod.",
+    "applyWithOffer": "Deze offerte aanvragen",
+    "scenarios": {
+      "privat": "Persoonlijke Lening",
+      "auto": "Autolening",
+      "immo": "Hypotheek",
+      "umschuldung": "Herfinanciering"
+    }
   },
   "ticker": {
     "label": "Live koersen",

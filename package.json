@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "start": "node server.js",
     "dev:api": "node server/dev-api.js",
     "build": "vite build",
     "lint": "eslint .",
     "test": "node --test tests/contact.test.js",
-    "preview": "vite preview"
+    "preview": "vite preview --host 0.0.0.0 --port 3000"
   },
   "dependencies": {
     "boxicons": "^2.1.4",

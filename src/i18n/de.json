@@ -13,10 +13,53 @@
   "hero": {
     "badge": "Beste Digitalbank Deutschlands 2024",
     "headline": "Banking, das zu Ihrem Leben passt",
+    "headlinePrefix": "Ihr Kredit, ",
+    "headlineItalic": "maßgeschneidert",
+    "headlineSuffix": " für Ihr Leben.",
     "subtext": "Entdecken Sie moderne Finanzlösungen — sicher, schnell und vollständig digital. Finanzkredit begleitet Sie bei jedem Schritt Ihrer finanziellen Reise.",
+    "highlights": [
+      "100 % Digital",
+      "Antwort in 24 Std.",
+      "Festzins ab 1,9 %",
+      "Keine versteckten Gebühren"
+    ],
     "cta1": "Kredite ansehen",
     "cta2": "Kredit simulieren",
     "trustText": "Vertrauen Sie 1M+ Kunden in ganz Europa"
+  },
+  "heroPreview": {
+    "disclaimer": "Interaktive Vorschau Ihrer Finanzierung — Beispielwerte ohne Gewähr.",
+    "exampleTag": "Beispiel",
+    "menuLabel": "Kreditarten",
+    "instantCalc": "Live-Berechnung",
+    "viewLabel": "Simulation · 2026",
+    "dashboardTitle": "Finanzübersicht",
+    "currency": "Währung: EUR (€)",
+    "kpiAmount": "Kreditbetrag",
+    "kpiMonthly": "Monatsrate",
+    "kpiRate": "Effektivzins",
+    "monthsUnit": "Monate",
+    "perMonth": "pro Monat",
+    "fixedRate": "Sollzins gebunden",
+    "chartTitle": "Tilgungsverlauf",
+    "chartSub": "Restschuld über die Laufzeit",
+    "splitTitle": "Aufteilung",
+    "splitSub": "Gesamtkostenstruktur",
+    "principal": "Tilgung",
+    "interest": "Zinsen",
+    "sheetTitle": "Vorschau Kreditangebot",
+    "docType": "Angebot",
+    "purposeLabel": "Verwendung",
+    "durationLabel": "Laufzeit",
+    "feesLabel": "Bearbeitungsgebühr",
+    "docNote": "Unverbindliche Beispielrechnung — kein verbindliches Kreditangebot.",
+    "applyWithOffer": "Dieses Angebot anfragen",
+    "scenarios": {
+      "privat": "Privatkredit",
+      "auto": "Autokredit",
+      "immo": "Baufinanzierung",
+      "umschuldung": "Umschuldung"
+    }
   },
   "ticker": {
     "label": "Live-Kurse",

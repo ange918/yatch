@@ -1,16 +1,14 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, Star, CheckCircle, Trophy } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Star } from 'lucide-react'
 import Accent from '../components/Accent'
+import HeroShowcase from '../components/HeroShowcase'
 import Card from '../components/ui/Card'
-import Badge from '../components/ui/Badge'
 import { LOANS } from '../data/loans'
 
-const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
-const stagger = { visible: { transition: { staggerChildren: 0.12 } } }
-
-const HERO_IMG = 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1920&q=80'
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }
+const stagger = { visible: { transition: { staggerChildren: 0.1 } } }
 
 const STATS = [
   { key: 'clients', bx: 'bx-group', value: '1M+' },
@@ -21,76 +19,83 @@ const STATS = [
   { key: 'rating', bx: 'bx-star', value: '4.8' },
 ]
 
-const APP_FEATURES = [
-  { key: 'feature1', bx: 'bx-bell' },
-  { key: 'feature2', bx: 'bx-fingerprint' },
-  { key: 'feature3', bx: 'bx-bar-chart-alt-2' },
-  { key: 'feature4', bx: 'bx-zap' },
-]
-
 export default function Home() {
   const { t } = useTranslation()
+  const highlights = t('hero.highlights', { returnObjects: true })
 
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-20">
-        <div
-          className="absolute -inset-4 hero-bg blur-[6px]"
-          style={{ backgroundImage: `url(${HERO_IMG})` }}
-        />
-        <div className="absolute inset-0 bg-[#121110]/65" />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative bg-gradient-to-b from-[#F7F4EC] via-[#F3EDE0] to-[#EBE2D1] pt-24 sm:pt-32 pb-16 sm:pb-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial="hidden" animate="visible" variants={stagger}>
-            <motion.div variants={fadeUp} className="mb-6">
-              <Badge className="text-sm px-4 py-2 text-[#F5D5C2]!"><Trophy size={16} />{t('hero.badge')}</Badge>
-            </motion.div>
             <motion.h1
               variants={fadeUp}
-              className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.05] tracking-tight"
+              style={{ textWrap: 'balance' }}
+              className="text-[clamp(2.35rem,5.2vw,4.5rem)] font-extrabold text-[#121110] leading-[1.05] tracking-tight max-w-4xl mx-auto"
             >
-              <Accent>{t('hero.headline')}</Accent>
+              {t('hero.headlinePrefix')}
+              <span className="font-serif-editorial italic text-[#D2511A]">
+                {t('hero.headlineItalic')}
+              </span>
+              {t('hero.headlineSuffix')}
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-lg sm:text-xl text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
+
+            <motion.p
+              variants={fadeUp}
+              className="text-base sm:text-lg text-[#4A453E] max-w-2xl mx-auto mt-6 leading-relaxed font-normal"
+            >
               {t('hero.subtext')}
             </motion.p>
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link
-                to="/offers"
-                className="inline-flex items-center justify-center gap-2 bg-[#D2511A] text-[#121110] font-bold px-8 py-4 rounded-full hover:scale-105 hover:shadow-[0_0_40px_rgba(210,81,26,0.5)] transition-all text-base sm:text-lg"
+
+            {Array.isArray(highlights) && highlights.length > 0 && (
+              <motion.div
+                variants={fadeUp}
+                className="mt-7 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs sm:text-sm font-semibold text-[#575148]"
               >
-                <i className="bx bx-list-ul text-xl" />
-                {t('hero.cta1')}
-              </Link>
+                {highlights.map((item, idx) => (
+                  <span key={item} className="inline-flex items-center gap-3">
+                    {idx > 0 && <span className="text-[#B8AFA3]" aria-hidden="true">·</span>}
+                    <span className={idx === 0 ? 'text-[#D2511A]' : 'text-[#3A2A20]'}>{item}</span>
+                  </span>
+                ))}
+              </motion.div>
+            )}
+
+            <motion.div variants={fadeUp} className="mt-8 flex flex-col sm:flex-row gap-3.5 justify-center items-center">
               <Link
                 to="/simulation"
-                className="inline-flex items-center justify-center gap-2 border-2 border-white/40 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 hover:border-white/70 transition-all text-base sm:text-lg"
+                className="inline-flex items-center justify-center gap-2 bg-[#121110] text-white font-bold px-7 py-3.5 rounded-full hover:bg-[#D2511A] transition-colors text-sm whitespace-nowrap shrink-0 shadow-sm"
               >
-                <i className="bx bx-calculator text-xl" />
-                {t('hero.cta2')}
+                <span>{t('hero.cta2')}</span>
+                <ArrowUpRight size={16} />
+              </Link>
+              <Link
+                to="/offers"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#121110] border border-[#121110]/15 font-bold px-7 py-3.5 rounded-full hover:border-[#121110]/40 transition-colors text-sm whitespace-nowrap shrink-0 shadow-sm"
+              >
+                <span>{t('hero.cta1')}</span>
               </Link>
             </motion.div>
-            <motion.p variants={fadeUp} className="text-white/50 text-sm flex items-center justify-center gap-2">
-              <CheckCircle size={16} className="text-[#D2511A]" />
-              {t('hero.trustText')}
-            </motion.p>
+
+            <motion.div variants={fadeUp}>
+              <HeroShowcase />
+            </motion.div>
           </motion.div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#EBE2D1] to-transparent" />
       </section>
 
       {/* Loan products — image card grid */}
       <section className="py-20 bg-[#EBE2D1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-14">
-            <motion.div variants={fadeUp} className="mb-3">
-              <Badge><i className="bx bx-money-withdraw text-sm mr-1" />{t('loans.sectionBadge')}</Badge>
-            </motion.div>
+            <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.14em] text-[#D2511A] mb-3">
+              {t('loans.sectionBadge')}
+            </motion.p>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#121110] tracking-tight">
-              <Accent>{t('loans.sectionTitle')}</Accent>
+              <Accent editorial>{t('loans.sectionTitle')}</Accent>
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-gray-500 mt-3 max-w-xl mx-auto">
+            <motion.p variants={fadeUp} className="text-[#4A453E] mt-3 max-w-xl mx-auto">
               {t('loans.sectionSubtitle')}
             </motion.p>
           </motion.div>
@@ -156,8 +161,8 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-14">
-            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-extrabold text-[#121110] tracking-tight mb-3"><Accent>{t('testimonials.title')}</Accent></motion.h2>
-            <motion.p variants={fadeUp} className="text-gray-500 font-medium">{t('testimonials.subtitle')}</motion.p>
+            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-extrabold text-[#121110] tracking-tight mb-3"><Accent editorial>{t('testimonials.title')}</Accent></motion.h2>
+            <motion.p variants={fadeUp} className="text-[#4A453E] font-medium">{t('testimonials.subtitle')}</motion.p>
           </motion.div>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
@@ -197,23 +202,23 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-extrabold text-[#121110] mb-4 tracking-tight">
-              {t('home.ctaTitle')}
+              <Accent editorial>{t('home.ctaTitle')}</Accent>
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-gray-500 mb-8 text-lg">
+            <motion.p variants={fadeUp} className="text-[#4A453E] mb-8 text-lg">
               {t('home.ctaText')}
             </motion.p>
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3.5 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-[#D2511A] text-[#121110] font-bold px-8 py-4 rounded-full hover:scale-105 hover:shadow-[0_0_30px_rgba(210,81,26,0.4)] transition-all text-base sm:text-lg shadow-lg shadow-[#D2511A]/20"
+                className="inline-flex items-center justify-center gap-2 bg-[#121110] text-white font-bold px-8 py-4 rounded-full hover:bg-[#D2511A] transition-colors text-sm sm:text-base shadow-sm"
               >
-                {t('nav.apply')} <ArrowRight size={20} />
+                {t('nav.apply')} <ArrowRight size={18} />
               </Link>
               <Link
                 to="/simulation"
-                className="inline-flex items-center justify-center gap-2 border-2 border-[#121110] text-[#121110] font-bold px-8 py-4 rounded-full hover:bg-[#121110] hover:text-white transition-all text-base sm:text-lg"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#121110] border border-[#121110]/15 font-bold px-8 py-4 rounded-full hover:border-[#121110]/40 transition-colors text-sm sm:text-base shadow-sm"
               >
-                <i className="bx bx-calculator text-xl" />
+                <i className="bx bx-calculator text-lg" />
                 {t('nav.simulation')}
               </Link>
             </motion.div>

@@ -13,10 +13,53 @@
   "hero": {
     "badge": "Best Digital Bank Germany 2024",
     "headline": "Banking that fits your life",
+    "headlinePrefix": "Financing ",
+    "headlineItalic": "tailored seamlessly",
+    "headlineSuffix": " to your life.",
     "subtext": "Discover modern financial solutions — secure, fast and fully digital. Finanzkredit guides you at every step of your financial journey.",
+    "highlights": [
+      "100% Digital",
+      "24h Decision",
+      "Fixed APR from 1.9%",
+      "No hidden fees"
+    ],
     "cta1": "View loans",
     "cta2": "Simulate Credit",
     "trustText": "Trusted by 1M+ customers across Europe"
+  },
+  "heroPreview": {
+    "disclaimer": "Interactive financing preview — sample figures for illustration only.",
+    "exampleTag": "Example",
+    "menuLabel": "Loan Types",
+    "instantCalc": "Instant estimate",
+    "viewLabel": "Simulation · 2026",
+    "dashboardTitle": "Dashboard",
+    "currency": "Currency: EUR (€)",
+    "kpiAmount": "Loan Amount",
+    "kpiMonthly": "Monthly Payment",
+    "kpiRate": "Fixed APR",
+    "monthsUnit": "months",
+    "perMonth": "per month",
+    "fixedRate": "Fixed rate",
+    "chartTitle": "Repayment Curve",
+    "chartSub": "Remaining balance over term",
+    "splitTitle": "Breakdown",
+    "splitSub": "Total repayment share",
+    "principal": "Principal",
+    "interest": "Interest",
+    "sheetTitle": "PDF Offer Preview",
+    "docType": "Estimate",
+    "purposeLabel": "Purpose",
+    "durationLabel": "Duration",
+    "feesLabel": "Origination fee",
+    "docNote": "Indicative sample layout — not a binding loan agreement.",
+    "applyWithOffer": "Request this offer",
+    "scenarios": {
+      "privat": "Personal Loan",
+      "auto": "Auto Loan",
+      "immo": "Mortgage",
+      "umschuldung": "Debt Consolidation"
+    }
   },
   "ticker": {
     "label": "Live Rates",

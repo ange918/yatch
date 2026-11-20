@@ -4,7 +4,7 @@ export default function ChatWidget() {
   const { t } = useTranslation()
   return (
     <a
-      href={`https://wa.me/491755312515?text=${encodeURIComponent(t('chat.whatsappMessage'))}`}
+      href={`https://wa.me/41799239259?text=${encodeURIComponent(t('chat.whatsappMessage'))}`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={t('chat.ariaLabel')}

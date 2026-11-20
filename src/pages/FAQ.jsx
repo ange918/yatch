@@ -4,13 +4,11 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import Accordion from '../components/ui/Accordion'
-import Badge from '../components/ui/Badge'
 import Accent from '../components/Accent'
+import PageHero from '../components/PageHero'
 
-const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
-const stagger = { visible: { transition: { staggerChildren: 0.08 } } }
-
-const HERO_IMG = 'https://images.unsplash.com/photo-1553484771-371a605b060b?w=1920&q=80'
+const fadeUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.45 } } }
+const stagger = { visible: { transition: { staggerChildren: 0.06 } } }
 
 const CAT_ICONS = {
   all: 'bx-grid-alt',
@@ -39,29 +37,18 @@ export default function FAQ() {
   }, [search, activeCategory, t])
 
   return (
-    <div className="pt-16">
-      {/* Hero */}
-      <section
-        className="relative py-36 text-center overflow-hidden hero-bg"
-        style={{ backgroundImage: `url(${HERO_IMG})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#8F3510]/90 via-[#121110]/88 to-[#3A2A20]/80 backdrop-blur-[1px]" />
-        <div className="relative max-w-4xl mx-auto px-4">
-          <motion.div initial="hidden" animate="visible" variants={{ visible: { transition: { staggerChildren: 0.15 } } }}>
-            <motion.div variants={fadeUp}><Badge className="mb-6"><i className="bx bx-help-circle text-sm mr-1" />{t('faq.heroSub')}</Badge></motion.div>
-            <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl font-extrabold text-white mb-8 tracking-tight leading-tight"><Accent>{t('faq.heroTitle')}</Accent></motion.h1>
-            <motion.div variants={fadeUp} className="max-w-xl mx-auto relative">
-              <i className="bx bx-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl" />
-              <input
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder={t('faq.searchPlaceholder')}
-                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#D2511A] shadow-2xl font-medium"
-              />
-            </motion.div>
-          </motion.div>
+    <div>
+      <PageHero eyebrow={t('faq.heroSub')} title={t('faq.heroTitle')}>
+        <div className="max-w-xl mx-auto relative">
+          <i className="bx bx-search absolute left-4 top-1/2 -translate-y-1/2 text-[#6B6359] text-xl" />
+          <input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder={t('faq.searchPlaceholder')}
+            className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white border border-[#121110]/12 text-[#121110] placeholder:text-[#8A8175] text-sm focus:outline-none focus:border-[#D2511A] shadow-[0_14px_38px_-14px_rgba(18,17,16,0.08)] font-medium"
+          />
         </div>
-      </section>
+      </PageHero>
 
       <section className="py-16 bg-[#EBE2D1]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,10 +57,15 @@ export default function FAQ() {
             {categories.map((cat) => (
               <button
                 key={cat}
+                type="button"
                 onClick={() => setActiveCategory(cat)}
-                className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all ${activeCategory === cat ? 'bg-[#121110] text-[#D2511A] shadow-md' : 'bg-white text-gray-500 hover:text-gray-700 border border-gray-200 hover:shadow-sm'}`}
+                className={`flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-colors cursor-pointer ${
+                  activeCategory === cat
+                    ? 'bg-[#121110] text-white'
+                    : 'bg-white text-[#575148] hover:text-[#121110] border border-[#121110]/10'
+                }`}
               >
-                <i className={`bx ${CAT_ICONS[cat]} text-base`} />
+                <i className={`bx ${CAT_ICONS[cat]} text-base ${activeCategory === cat ? 'text-[#D2511A]' : 'text-[#8A8175]'}`} />
                 {t(`faq.categories.${cat}`)}
               </button>
             ))}
@@ -86,9 +78,9 @@ export default function FAQ() {
                 <Accordion question={faq.q} answer={faq.a} />
               </motion.div>
             )) : (
-              <div className="text-center py-16">
-                <i className="bx bx-search text-gray-300 text-5xl mb-3 block" />
-                <p className="text-gray-500">{t('faq.noResults')}</p>
+              <div className="text-center py-16 bg-white rounded-[24px] border border-[#121110]/10">
+                <i className="bx bx-search text-[#8A8175] text-4xl mb-3 block" />
+                <p className="text-[#4A453E] font-medium">{t('faq.noResults')}</p>
               </div>
             )}
           </motion.div>
@@ -96,20 +88,25 @@ export default function FAQ() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-br from-[#121110] to-[#3A2A20]">
+      <section className="py-20 bg-white border-t border-[#121110]/8">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.div variants={fadeUp} className="mb-4">
-              <div className="w-14 h-14 rounded-2xl bg-[#D2511A]/15 flex items-center justify-center mx-auto">
-                <i className="bx bx-support text-[#D2511A] text-3xl" />
+            <motion.div variants={fadeUp} className="mb-5">
+              <div className="w-14 h-14 rounded-2xl bg-[#D2511A]/10 flex items-center justify-center mx-auto">
+                <i className="bx bx-support text-[#D2511A] text-2xl" />
               </div>
             </motion.div>
-            <motion.h2 variants={fadeUp} className="text-3xl font-extrabold text-white mb-4 tracking-tight"><Accent>{t('faq.ctaTitle')}</Accent></motion.h2>
-            <motion.p variants={fadeUp} className="text-white/70 mb-8 leading-relaxed">{t('faq.ctaText')}</motion.p>
+            <motion.h2 variants={fadeUp} className="text-3xl font-extrabold text-[#121110] mb-4 tracking-tight">
+              <Accent editorial>{t('faq.ctaTitle')}</Accent>
+            </motion.h2>
+            <motion.p variants={fadeUp} className="text-[#4A453E] mb-8 leading-relaxed">{t('faq.ctaText')}</motion.p>
             <motion.div variants={fadeUp}>
-              <Link to="/contact" className="inline-flex items-center gap-2 bg-[#D2511A] text-[#121110] font-bold px-8 py-4 rounded-full hover:scale-105 hover:shadow-lg transition-all shadow-md shadow-black/10">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-[#121110] text-white font-bold px-7 py-3.5 rounded-full hover:bg-[#D2511A] transition-colors text-sm"
+              >
                 <i className="bx bx-chat text-lg" />
-                {t('faq.ctaButton')} <ArrowRight size={18} />
+                {t('faq.ctaButton')} <ArrowRight size={16} />
               </Link>
             </motion.div>
           </motion.div>

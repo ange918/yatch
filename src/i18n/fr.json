@@ -13,10 +13,53 @@
   "hero": {
     "badge": "Meilleure Banque Digitale Allemagne 2024",
     "headline": "Une banque qui s'adapte à votre vie",
+    "headlinePrefix": "Obtenez votre ",
+    "headlineItalic": "crédit sur mesure",
+    "headlineSuffix": " en toute simplicité.",
     "subtext": "Découvrez des solutions financières modernes — sécurisées, rapides et entièrement numériques. Finanzkredit vous accompagne à chaque étape de votre parcours financier.",
+    "highlights": [
+      "100 % Numérique",
+      "Réponse sous 24 h",
+      "Taux fixe dès 1,9 %",
+      "Sans frais cachés"
+    ],
     "cta1": "Voir les crédits",
     "cta2": "Simuler un crédit",
     "trustText": "Fait confiance par 1M+ clients dans toute l'Europe"
+  },
+  "heroPreview": {
+    "disclaimer": "Aperçu interactif de votre simulation — montants indicatifs, sans engagement.",
+    "exampleTag": "Exemple",
+    "menuLabel": "Projets",
+    "instantCalc": "Calcul en direct",
+    "viewLabel": "Simulation · 2026",
+    "dashboardTitle": "Tableau de bord",
+    "currency": "Devise : EUR (€)",
+    "kpiAmount": "Montant",
+    "kpiMonthly": "Mensualité",
+    "kpiRate": "Taux TAEG",
+    "monthsUnit": "mois",
+    "perMonth": "par mois",
+    "fixedRate": "Taux fixe",
+    "chartTitle": "Amortissement du capital",
+    "chartSub": "Évolution du solde dû",
+    "splitTitle": "Répartition",
+    "splitSub": "Coût total du prêt",
+    "principal": "Capital",
+    "interest": "Intérêts",
+    "sheetTitle": "Aperçu de l'offre PDF",
+    "docType": "Simulation",
+    "purposeLabel": "Objet",
+    "durationLabel": "Durée",
+    "feesLabel": "Frais de dossier",
+    "docNote": "Document indicatif — aperçu de mise en page, sans valeur contractuelle.",
+    "applyWithOffer": "Demander cette offre",
+    "scenarios": {
+      "privat": "Crédit Privé",
+      "auto": "Crédit Auto",
+      "immo": "Crédit Immobilier",
+      "umschuldung": "Rachat de Crédit"
+    }
   },
   "ticker": {
     "label": "Taux en direct",

@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { fmtCurrency } from '../i18n/format'
+import { fmtCurrency, fmtPercent } from '../i18n/format'
 import { Link } from 'react-router-dom'
-import { Calculator, Info } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 
 const TABS = [
   { key: 'immo', minAmount: 50000, maxAmount: 2000000, defaultAmount: 300000, minDuration: 12, maxDuration: 360, defaultDuration: 240, rate: 3.5 },
@@ -12,7 +12,8 @@ const TABS = [
 
 export default function CreditSimulator() {
   const { t, i18n } = useTranslation()
-  const formatCurrency = (n) => fmtCurrency(n, i18n.language)
+  const lang = i18n.resolvedLanguage || i18n.language || 'de'
+  const formatCurrency = (n) => fmtCurrency(n, lang)
   const [tabIndex, setTabIndex] = useState(0)
   const tab = TABS[tabIndex]
   const [amount, setAmount] = useState(tab.defaultAmount)
@@ -33,45 +34,96 @@ export default function CreditSimulator() {
   }, [amount, duration, insurance, tab])
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
-      <div className="flex border-b border-gray-100">
+    <div className="bg-white rounded-[24px] shadow-[0_24px_60px_-15px_rgba(18,17,16,0.09)] border border-[#121110]/10 overflow-hidden">
+      <div className="flex bg-[#FAF8F3] border-b border-[#121110]/8 p-1.5 gap-1.5">
         {['simulation.tabImmo', 'simulation.tabAuto', 'simulation.tabPrivat'].map((label, i) => (
-          <button key={i} onClick={() => handleTabChange(i)} className={`flex-1 py-4 text-sm font-semibold transition-all ${tabIndex === i ? 'bg-[#121110] text-[#D2511A] border-b-2 border-[#D2511A]' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'}`}>
+          <button
+            key={i}
+            type="button"
+            onClick={() => handleTabChange(i)}
+            className={`flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold transition-colors cursor-pointer ${
+              tabIndex === i
+                ? 'bg-[#121110] text-white'
+                : 'text-[#575148] hover:text-[#121110] hover:bg-[#121110]/5'
+            }`}
+          >
             {t(label)}
           </button>
         ))}
       </div>
 
-      <div className="p-6 lg:p-8 grid lg:grid-cols-2 gap-8">
-        <div className="space-y-6">
+      <div className="p-6 lg:p-8 grid lg:grid-cols-12 gap-8 items-stretch">
+        <div className="lg:col-span-7 space-y-6 flex flex-col justify-center">
           <div>
-            <div className="flex justify-between mb-3"><label className="text-sm font-semibold">{t('simulation.loanAmount')}</label><span className="font-bold">{formatCurrency(amount)}</span></div>
-            <input type="range" min={tab.minAmount} max={tab.maxAmount} step={500} value={amount} onChange={(e) => setAmount(Number(e.target.value))} className="w-full h-2 bg-gray-200 accent-[#D2511A] cursor-pointer" />
+            <div className="flex justify-between mb-3">
+              <label className="text-sm font-bold text-[#121110]">{t('simulation.loanAmount')}</label>
+              <span className="font-extrabold text-[#121110] tabular-nums">{formatCurrency(amount)}</span>
+            </div>
+            <input
+              type="range"
+              min={tab.minAmount}
+              max={tab.maxAmount}
+              step={500}
+              value={amount}
+              onChange={(e) => setAmount(Number(e.target.value))}
+              className="w-full cursor-pointer"
+            />
           </div>
           <div>
-            <div className="flex justify-between mb-3"><label className="text-sm font-semibold">{t('simulation.duration')}</label><span className="font-bold">{duration} Mo.</span></div>
-            <input type="range" min={tab.minDuration} max={tab.maxDuration} step={6} value={duration} onChange={(e) => setDuration(Number(e.target.value))} className="w-full h-2 bg-gray-200 accent-[#D2511A] cursor-pointer" />
+            <div className="flex justify-between mb-3">
+              <label className="text-sm font-bold text-[#121110]">{t('simulation.duration')}</label>
+              <span className="font-extrabold text-[#121110] tabular-nums">{duration} {t('heroPreview.monthsUnit')}</span>
+            </div>
+            <input
+              type="range"
+              min={tab.minDuration}
+              max={tab.maxDuration}
+              step={6}
+              value={duration}
+              onChange={(e) => setDuration(Number(e.target.value))}
+              className="w-full cursor-pointer"
+            />
           </div>
-          <div className="p-4 bg-gray-50 rounded-xl flex justify-between items-center"><span className="text-sm">{t('simulation.interestRate')}</span><span className="font-bold">{tab.rate}%</span></div>
-          <label className="flex items-center gap-3 p-4 border rounded-xl cursor-pointer hover:border-[#D2511A]">
-            <input type="checkbox" checked={insurance} onChange={(e) => setInsurance(e.target.checked)} />
-            <span className="text-sm font-medium">{t('simulation.insurance')}</span>
+          <div className="p-4 bg-[#FAF8F3] border border-[#121110]/8 rounded-xl flex justify-between items-center">
+            <span className="text-sm font-medium text-[#4A453E]">{t('simulation.interestRate')}</span>
+            <span className="font-extrabold text-[#121110] tabular-nums">{fmtPercent(tab.rate, lang)}</span>
+          </div>
+          <label className="flex items-center gap-3 p-4 bg-white border border-[#121110]/12 rounded-xl cursor-pointer hover:border-[#D2511A] transition-colors">
+            <input
+              type="checkbox"
+              checked={insurance}
+              onChange={(e) => setInsurance(e.target.checked)}
+              className="accent-[#D2511A] w-4 h-4"
+            />
+            <span className="text-sm font-semibold text-[#121110]">{t('simulation.insurance')}</span>
           </label>
         </div>
 
-        <div className="bg-gradient-to-br from-[#121110] to-[#3A2A20] rounded-2xl p-6 text-white flex flex-col justify-center">
-          <p className="text-sm text-white/70">{t('simulation.monthlyPayment')}</p>
-          <p className="text-4xl font-black text-[#D2511A] mb-6">{fmtCurrency(monthly, i18n.language, 2)}</p>
-          <div className="space-y-2 border-t border-white/10 pt-4 text-sm">
-            <div className="flex justify-between"><span>{t('simulation.totalCost')}</span><span className="font-bold">{formatCurrency(totalCost)}</span></div>
-            <div className="flex justify-between"><span>{t('simulation.totalInterest')}</span><span className="font-bold text-[#E8793F]">{formatCurrency(totalInterest)}</span></div>
+        <div className="lg:col-span-5 bg-[#FAF8F3] border border-[#121110]/10 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-wider text-[#8A8175]">
+              {t('simulation.monthlyPayment')}
+            </p>
+            <p className="text-4xl font-extrabold text-[#D2511A] mt-2 mb-6 tabular-nums">
+              {fmtCurrency(monthly, lang, 2)}
+            </p>
+            <div className="space-y-3 border-t border-[#121110]/10 pt-4 text-sm">
+              <div className="flex justify-between text-[#575148]">
+                <span>{t('simulation.totalCost')}</span>
+                <span className="font-bold text-[#121110] tabular-nums">{formatCurrency(totalCost)}</span>
+              </div>
+              <div className="flex justify-between text-[#575148]">
+                <span>{t('simulation.totalInterest')}</span>
+                <span className="font-bold text-[#D2511A] tabular-nums">{formatCurrency(totalInterest)}</span>
+              </div>
+            </div>
           </div>
-          {/* LIEN DYNAMIQUE VERS CONTACT */}
-          <Link 
-            to={`/contact?amount=${amount}&duration=${duration}&subject=${tab.key === 'immo' ? 'loan' : tab.key}`} 
-            className="mt-6 block w-full text-center bg-[#D2511A] text-[#121110] font-bold py-3 rounded-full hover:scale-105 transition-all"
+          <Link
+            to={`/contact?amount=${amount}&duration=${duration}&subject=${tab.key === 'immo' ? 'loan' : tab.key}`}
+            className="mt-6 inline-flex items-center justify-center gap-2 w-full bg-[#121110] text-white font-bold py-3.5 px-6 rounded-full hover:bg-[#D2511A] transition-colors text-sm"
           >
-            {t('simulation.applyNow')}
+            <span>{t('simulation.applyNow')}</span>
+            <ArrowUpRight size={16} />
           </Link>
         </div>
       </div>
