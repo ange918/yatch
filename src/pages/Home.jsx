@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowRight, ArrowUpRight, Star } from 'lucide-react'
 import Accent from '../components/Accent'
-import HeroShowcase from '../components/HeroShowcase'
+import CreditSimulator from '../components/CreditSimulator'
 import Card from '../components/ui/Card'
 import { LOANS } from '../data/loans'
 
@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative bg-gradient-to-b from-[#F7F4EC] via-[#F3EDE0] to-[#EBE2D1] pt-24 sm:pt-32 pb-16 sm:pb-24">
+      <section className="relative bg-gradient-to-b from-[#F7F4EC] via-[#F3EDE0] to-[#EBE2D1] pt-24 sm:pt-32 pb-14 sm:pb-20 border-b border-[#121110]/8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial="hidden" animate="visible" variants={stagger}>
             <motion.h1
@@ -77,16 +77,34 @@ export default function Home() {
                 <span>{t('hero.cta1')}</span>
               </Link>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
 
-            <motion.div variants={fadeUp}>
-              <HeroShowcase />
-            </motion.div>
+      {/* Simulation */}
+      <section id="simulation" className="py-16 sm:py-20 bg-[#EBE2D1]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-10">
+            <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.14em] text-[#D2511A] mb-3">
+              {t('simulation.heroSub')}
+            </motion.p>
+            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-extrabold text-[#121110] tracking-tight">
+              <Accent editorial>{t('simulation.heroTitle')}</Accent>
+            </motion.h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <CreditSimulator />
           </motion.div>
         </div>
       </section>
 
       {/* Loan products — image card grid */}
-      <section className="py-20 bg-[#EBE2D1]">
+      <section className="py-20 bg-[#FAF8F3] border-t border-[#121110]/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-14">
             <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.14em] text-[#D2511A] mb-3">

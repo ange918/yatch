@@ -20,7 +20,7 @@
     "highlights": [
       "100% Digital",
       "24h Decision",
-      "Fixed APR from 1.9%",
+      "Fixed APR 3%",
       "No hidden fees"
     ],
     "cta1": "View loans",
@@ -394,7 +394,7 @@
       },
       "b3": {
         "title": "Low interest rates",
-        "desc": "Special student conditions from 3.9% p.a."
+        "desc": "Special student conditions at 3% p.a."
       },
       "b4": {
         "title": "Flexible terms",
@@ -756,7 +756,7 @@
       {
         "category": "loans",
         "q": "Which types of loans does Finanzkredit offer?",
-        "a": "We offer real estate loans (from 3.5% p.a.), car loans (from 4.2% p.a.) and personal loans (from 5.9% p.a.). All loans can be calculated in advance with the simulator."
+        "a": "We offer real estate loans, car loans and personal loans at a uniform rate of 3% p.a. All loans can be calculated in advance with the simulator."
       },
       {
         "category": "loans",

@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 
 const TABS = [
-  { key: 'immo', minAmount: 50000, maxAmount: 2000000, defaultAmount: 300000, minDuration: 12, maxDuration: 360, defaultDuration: 240, rate: 3.5 },
-  { key: 'auto', minAmount: 5000, maxAmount: 150000, defaultAmount: 25000, minDuration: 12, maxDuration: 84, defaultDuration: 60, rate: 4.2 },
-  { key: 'privat', minAmount: 1000, maxAmount: 75000, defaultAmount: 15000, minDuration: 6, maxDuration: 84, defaultDuration: 48, rate: 5.9 },
+  { key: 'immo', minAmount: 50000, maxAmount: 2000000, defaultAmount: 300000, minDuration: 12, maxDuration: 360, defaultDuration: 240, rate: 3 },
+  { key: 'auto', minAmount: 5000, maxAmount: 150000, defaultAmount: 25000, minDuration: 12, maxDuration: 84, defaultDuration: 60, rate: 3 },
+  { key: 'privat', minAmount: 1000, maxAmount: 75000, defaultAmount: 15000, minDuration: 6, maxDuration: 84, defaultDuration: 48, rate: 3 },
 ]
 
 export default function CreditSimulator() {

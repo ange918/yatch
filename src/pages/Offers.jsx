@@ -15,9 +15,9 @@ export default function Offers() {
   const lang = i18n.resolvedLanguage || i18n.language || 'de'
 
   const loans = [
-    { name: t('simulation.tabImmo'), rate: 3.5, bx: 'bx-home', desc: t('offers.immoDesc'), subject: 'loan' },
-    { name: t('simulation.tabAuto'), rate: 4.2, bx: 'bx-car', desc: t('offers.autoDesc'), subject: 'auto' },
-    { name: t('simulation.tabPrivat'), rate: 5.9, bx: 'bx-user', desc: t('offers.privatDesc'), subject: 'privat' },
+    { name: t('simulation.tabImmo'), rate: 3, bx: 'bx-home', desc: t('offers.immoDesc'), subject: 'loan' },
+    { name: t('simulation.tabAuto'), rate: 3, bx: 'bx-car', desc: t('offers.autoDesc'), subject: 'auto' },
+    { name: t('simulation.tabPrivat'), rate: 3, bx: 'bx-user', desc: t('offers.privatDesc'), subject: 'privat' },
   ]
 
   return (
