@@ -83,7 +83,7 @@ export default function Home() {
                 <ArrowUpRight size={16} />
               </Link>
               <Link
-                to="/offers"
+                to="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-white/95 text-[#121110] font-bold px-7 py-3.5 rounded-full hover:bg-white transition-colors text-sm whitespace-nowrap shrink-0 shadow-lg"
               >
                 <span>{t('hero.cta1')}</span>
