@@ -69,7 +69,7 @@ test('succès : e-mail complet, reply-to du client, destinataire par défaut', a
   }, { env: {} })
   assert.equal(res.status, 200)
   assert.equal(body.ok, true)
-  assert.equal(sent.length, 1)
+  assert.equal(sent.length, 2)
   assert.equal(sent[0].to, defaultRecipient())
   assert.equal(defaultRecipient(), 'contact@krediiwelt.com')
   assert.equal(sent[0].replyTo, 'jean@exemple.fr')
@@ -84,9 +84,20 @@ test('succès : e-mail complet, reply-to du client, destinataire par défaut', a
   assert.equal(sent[0].attachments.length, 1)
   assert.equal(sent[0].attachments[0].filename.endsWith('.png'), true)
   assert.ok(Buffer.isBuffer(sent[0].attachments[0].content))
+
+  // Confirmation e-mail sent to the applicant with 3% monthly payment reminder
+  assert.equal(sent[1].to, 'jean@exemple.fr')
+  assert.equal(sent[1].replyTo, 'contact@krediiwelt.com')
+  assert.match(sent[1].subject, /Confirmation de votre demande/)
+  assert.match(sent[1].text, /Bonjour Jean Dupont/)
+  assert.match(sent[1].text, /269,53/)
+  assert.match(sent[1].text, /3,0\s*%/)
+  assert.match(sent[1].text, /60 mois/)
+  assert.match(sent[1].html, /269,53/)
+  assert.equal(sent[1].attachments.length, 0)
 })
 
-test('succès : demande d’une fiche crédit', async () => {
+test('succès : demande d’une fiche crédit et confirmation localisée', async () => {
   const { res, sent, body } = await post({
     form: 'loan',
     lang: 'de',
@@ -107,11 +118,44 @@ test('succès : demande d’une fiche crédit', async () => {
   })
   assert.equal(res.status, 200)
   assert.equal(body.ok, true)
+  assert.equal(sent.length, 2)
   assert.equal(sent[0].replyTo, 'max@beispiel.de')
   assert.match(sent[0].text, /Allemand \(de\)/)
   assert.match(sent[0].text, /\/kredite\/autokredit/)
   assert.match(sent[0].text, /Autokredit/)
   assert.match(sent[0].html, /Mustermann/)
+
+  assert.equal(sent[1].to, 'max@beispiel.de')
+  assert.equal(sent[1].replyTo, 'contact@krediiwelt.com')
+  assert.match(sent[1].subject, /Bestätigung Ihrer Kreditanfrage/)
+  assert.match(sent[1].text, /Guten Tag Max Mustermann/)
+  assert.match(sent[1].text, /177,07/)
+  assert.match(sent[1].text, /3,0\s*%/)
+  assert.match(sent[1].html, /177,07/)
+})
+
+test('succès : demande fiche crédit sans montant ni durée gérée sans erreur', async () => {
+  const { res, sent, body } = await post({
+    form: 'loan',
+    lang: 'en',
+    page: '/kredite/konsumentenkredit',
+    startedAt: Date.now() - 5000,
+    company_website: '',
+    fields: {
+      email: 'alex@example.com',
+      message: 'Please send me information.',
+      product: 'Konsumentenkredit',
+      loanSlug: 'konsumentenkredit',
+    },
+  })
+  assert.equal(res.status, 200)
+  assert.equal(body.ok, true)
+  assert.equal(sent.length, 2)
+  assert.equal(sent[1].to, 'alex@example.com')
+  assert.match(sent[1].subject, /Confirmation of your loan application/)
+  assert.match(sent[1].text, /3\.0%/)
+  assert.equal(sent[1].text.includes('NaN'), false)
+  assert.equal(sent[1].html.includes('NaN'), false)
 })
 
 test('erreur : le transport échoue, pas de confirmation', async () => {
@@ -169,6 +213,7 @@ test('html échappé et fournisseur : Resend prioritaire, SMTP en repli, sans co
   assert.match(sent[0].html, /Jean &lt;script&gt;/)
   assert.equal(sent[0].html.includes('<script>'), false)
   assert.match(sent[0].text, /Jean <script>/)
+  assert.equal(sent[1].html.includes('<script>'), false)
 
   const both = resolveMailer({
     RESEND_API_KEY: 're_test',
@@ -210,12 +255,17 @@ test('html échappé et fournisseur : Resend prioritaire, SMTP en repli, sans co
     },
   })
   assert.equal(sentViaResend.status, 200)
-  assert.equal(calls.length, 1)
+  assert.equal(calls.length, 2)
   assert.equal(calls[0].url, 'https://api.resend.com/emails')
   const mail = JSON.parse(calls[0].init.body)
   assert.deepEqual(mail.to, ['contact@krediiwelt.com'])
   assert.equal(mail.reply_to, 'jean@exemple.fr')
   assert.equal(calls[0].init.headers.Authorization, 'Bearer re_test_key')
+
+  const confirmMail = JSON.parse(calls[1].init.body)
+  assert.deepEqual(confirmMail.to, ['jean@exemple.fr'])
+  assert.equal(confirmMail.reply_to, 'contact@krediiwelt.com')
+  assert.match(confirmMail.text, /269,53/)
 
   const unconfigured = await handleContactRequest(jsonRequest(validContact()), {
     env: {},

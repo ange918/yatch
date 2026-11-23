@@ -1,5 +1,5 @@
 import { resolveMailer } from './mail.js'
-import { buildMessage } from './template.js'
+import { buildConfirmationMessage, buildMessage } from './template.js'
 import { validatePayload } from './validate.js'
 import { allowRequest } from './rate-limit.js'
 import { MAX_BODY_BYTES } from './limits.js'
@@ -77,7 +77,8 @@ export async function handleContactRequest(request, options = {}) {
   if (!parsed.ok) return json({ ok: false, error: parsed.error }, parsed.status)
 
   const message = buildMessage(parsed.data, env, now)
-  if (!message) {
+  const confirmation = buildConfirmationMessage(parsed.data, env, now)
+  if (!message || !confirmation) {
     console.error('[contact] bad_recipient')
     return json({ ok: false, error: 'send_failed' }, 503)
   }
@@ -94,6 +95,7 @@ export async function handleContactRequest(request, options = {}) {
 
   try {
     await send(message)
+    await send(confirmation)
   } catch (error) {
     console.error('[contact] send_failed', error?.code || error?.name || 'error')
     return json({ ok: false, error: 'send_failed' }, 502)
