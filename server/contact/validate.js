@@ -173,13 +173,14 @@ export function validatePayload(body, now) {
   if (common.firstName == null || common.lastName == null || common.phone == null) {
     return { ok: false, error: 'validation', status: 400 }
   }
-  if (common.phone && !/^[0-9+()./\s-]{6,30}$/.test(common.phone)) {
+  if (common.phone && (!/^[0-9+()./\s-]{6,30}$/.test(common.phone) || common.phone.replace(/\D/g, '').length < 6)) {
     return { ok: false, error: 'validation', status: 400 }
   }
 
   if (form === 'contact') {
     const firstName = cleanLine(fields.firstName, 80, { required: true })
     const lastName = cleanLine(fields.lastName, 80, { required: true })
+    const phone = cleanLine(fields.phone, 30, { required: true })
     const address = cleanBlock(fields.address, 500, { required: true })
     const profession = cleanLine(fields.profession, 120, { required: true })
     const purpose = cleanLine(fields.purpose, 40, { required: true })
@@ -187,7 +188,7 @@ export function validatePayload(body, now) {
     const duration = requireInteger(fields.duration, 6, 360)
     const income = requireInteger(fields.income, 0, 10_000_000)
     const product = cleanLine(fields.product, 40)
-    if (!firstName || !lastName || !address || !profession || !purpose) {
+    if (!firstName || !lastName || !phone || !address || !profession || !purpose) {
       return { ok: false, error: 'validation', status: 400 }
     }
     if (!PURPOSES.has(purpose) || amount == null || duration == null || income == null) {
@@ -202,6 +203,7 @@ export function validatePayload(body, now) {
         ...common,
         firstName,
         lastName,
+        phone,
         address,
         profession,
         purpose,

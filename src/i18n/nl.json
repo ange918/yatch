@@ -844,6 +844,8 @@
     "lastNamePh": "bijv. Jansen",
     "email": "E-mailadres",
     "emailPh": "bijv. jan@voorbeeld.nl",
+    "phone": "Telefoonnummer",
+    "phonePh": "bijv. +31 6 12345678",
     "address": "Volledig adres",
     "addressPh": "Straat, huisnummer, postcode, plaats, land",
     "amount": "Leningbedrag (€)",

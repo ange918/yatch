@@ -844,6 +844,8 @@
     "lastNamePh": "ex. Dupont",
     "email": "Adresse e-mail",
     "emailPh": "ex. jean@exemple.fr",
+    "phone": "Numéro de téléphone",
+    "phonePh": "ex. +33 6 12 34 56 78",
     "address": "Adresse complète",
     "addressPh": "Rue, numéro, code postal, ville, pays",
     "amount": "Montant du crédit (€)",

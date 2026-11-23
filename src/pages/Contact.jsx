@@ -62,6 +62,7 @@ export default function Contact() {
   const [form, setForm] = useState({
     firstName: '', lastName: '',
     email: '',
+    phone: '',
     address: '',
     amount: queryParams.get('amount') || '',
     duration: queryParams.get('duration') || '',
@@ -163,10 +164,16 @@ export default function Contact() {
                         </div>
                       </div>
 
-                      {/* 2. Email */}
-                      <div className="space-y-1.5">
-                        <label className="text-[11px] font-bold text-[#6B6359] uppercase tracking-widest ml-1">{t('apply.email')} <span className="text-red-500">*</span></label>
-                        <input type="email" required className={inputCls} placeholder={t('apply.emailPh')} value={form.email} onChange={f('email')} />
+                      {/* 2. Email & Phone */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-1.5">
+                          <label className="text-[11px] font-bold text-[#6B6359] uppercase tracking-widest ml-1">{t('apply.email')} <span className="text-red-500">*</span></label>
+                          <input type="email" required className={inputCls} placeholder={t('apply.emailPh')} value={form.email} onChange={f('email')} />
+                        </div>
+                        <div className="space-y-1.5">
+                          <label className="text-[11px] font-bold text-[#6B6359] uppercase tracking-widest ml-1">{t('apply.phone')} <span className="text-red-500">*</span></label>
+                          <input type="tel" required minLength={6} maxLength={30} className={inputCls} placeholder={t('apply.phonePh')} value={form.phone} onChange={f('phone')} />
+                        </div>
                       </div>
 
                       {/* 3. Address */}

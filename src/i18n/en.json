@@ -844,6 +844,8 @@
     "lastNamePh": "e.g. Smith",
     "email": "Email address",
     "emailPh": "e.g. john@example.com",
+    "phone": "Phone number",
+    "phonePh": "e.g. +41 79 123 45 67",
     "address": "Full address",
     "addressPh": "Street, number, postcode, city, country",
     "amount": "Loan amount (€)",

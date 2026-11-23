@@ -844,6 +844,8 @@
     "lastNamePh": "z. B. Mustermann",
     "email": "E-Mail-Adresse",
     "emailPh": "z. B. max@beispiel.de",
+    "phone": "Telefonnummer",
+    "phonePh": "z. B. +49 151 23456789",
     "address": "Vollständige Adresse",
     "addressPh": "Straße, Hausnummer, PLZ, Stadt, Land",
     "amount": "Kreditbetrag (€)",

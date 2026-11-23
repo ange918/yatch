@@ -33,6 +33,7 @@ function validContact(overrides = {}) {
       firstName: 'Jean',
       lastName: 'Dupont',
       email: 'jean@exemple.fr',
+      phone: '+33 6 12 34 56 78',
       address: '1 rue de la Paix\n75001 Paris',
       amount: '15000',
       duration: '60',
@@ -74,6 +75,7 @@ test('succès : e-mail complet, reply-to du client, destinataire par défaut', a
   assert.equal(defaultRecipient(), 'contact@krediiwelt.com')
   assert.equal(sent[0].replyTo, 'jean@exemple.fr')
   assert.match(sent[0].subject, /Jean Dupont/)
+  assert.match(sent[0].text, /\+33 6 12 34 56 78/)
   assert.match(sent[0].text, /1 rue de la Paix/)
   assert.match(sent[0].text, /Français \(fr\)/)
   assert.match(sent[0].text, /\/contact\?amount=15000/)
@@ -177,6 +179,22 @@ test('champ invalide : e-mail refusé, rien n’est envoyé', async () => {
   assert.equal(body.ok, false)
   assert.equal(body.error, 'validation')
   assert.equal(sent.length, 0)
+})
+
+test('champ invalide : téléphone manquant ou invalide refusé sur /contact', async () => {
+  const missing = validContact()
+  missing.fields = { ...missing.fields, phone: '' }
+  const resMissing = await post(missing)
+  assert.equal(resMissing.res.status, 400)
+  assert.equal(resMissing.body.error, 'validation')
+  assert.equal(resMissing.sent.length, 0)
+
+  const invalid = validContact()
+  invalid.fields = { ...invalid.fields, phone: '------' }
+  const resInvalid = await post(invalid)
+  assert.equal(resInvalid.res.status, 400)
+  assert.equal(resInvalid.body.error, 'validation')
+  assert.equal(resInvalid.sent.length, 0)
 })
 
 test('spam : honeypot ignoré sans envoi', async () => {
