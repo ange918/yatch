@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Shield, Lock, Award, CheckCircle } from 'lucide-react'
+import { Shield, Lock, Award, CheckCircle, Phone, Mail } from 'lucide-react'
 
 export default function Footer() {
   const { t } = useTranslation()
@@ -15,7 +15,27 @@ export default function Footer() {
               </div>
               <span className="font-bold text-xl">Finanzkredit</span>
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed">{t('footer.tagline')}</p>
+            <p className="text-white/60 text-sm leading-relaxed mb-4">{t('footer.tagline')}</p>
+            <ul className="space-y-2 text-sm text-white/75">
+              <li>
+                <a
+                  href="tel:+41799239259"
+                  className="inline-flex items-center gap-2 hover:text-[#D2511A] transition-colors font-medium"
+                >
+                  <Phone size={14} className="text-[#D2511A] shrink-0" />
+                  <span>+41 79 923 92 59</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:contact@krediiwelt.com"
+                  className="inline-flex items-center gap-2 hover:text-[#D2511A] transition-colors font-medium break-all"
+                >
+                  <Mail size={14} className="text-[#D2511A] shrink-0" />
+                  <span>contact@krediiwelt.com</span>
+                </a>
+              </li>
+            </ul>
           </div>
 
           <div>

@@ -6,6 +6,7 @@ import Accent from '../components/Accent'
 import CreditSimulator from '../components/CreditSimulator'
 import Card from '../components/ui/Card'
 import { LOANS } from '../data/loans'
+import heroBg from '../assets/images/hero_banking_bg_1795449680872.jpg'
 
 const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } }
@@ -26,16 +27,27 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative bg-gradient-to-b from-[#F7F4EC] via-[#F3EDE0] to-[#EBE2D1] pt-24 sm:pt-32 pb-14 sm:pb-20 border-b border-[#121110]/8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative overflow-hidden bg-[#121110] min-h-[520px] sm:min-h-[600px] flex items-center pt-28 sm:pt-36 pb-16 sm:pb-24 border-b border-[#121110]/15">
+        <img
+          src={heroBg}
+          alt=""
+          aria-hidden="true"
+          referrerPolicy="no-referrer"
+          className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-b from-[#121110]/65 via-[#121110]/45 to-[#121110]/75"
+        />
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial="hidden" animate="visible" variants={stagger}>
             <motion.h1
               variants={fadeUp}
               style={{ textWrap: 'balance' }}
-              className="text-[clamp(2.35rem,5.2vw,4.5rem)] font-extrabold text-[#121110] leading-[1.05] tracking-tight max-w-4xl mx-auto"
+              className="text-[clamp(2.35rem,5.2vw,4.5rem)] font-extrabold text-white leading-[1.05] tracking-tight max-w-4xl mx-auto drop-shadow-[0_2px_14px_rgba(0,0,0,0.35)]"
             >
               {t('hero.headlinePrefix')}
-              <span className="font-serif-editorial italic text-[#D2511A]">
+              <span className="font-serif-editorial italic text-[#F27D42]">
                 {t('hero.headlineItalic')}
               </span>
               {t('hero.headlineSuffix')}
@@ -43,7 +55,7 @@ export default function Home() {
 
             <motion.p
               variants={fadeUp}
-              className="text-base sm:text-lg text-[#4A453E] max-w-2xl mx-auto mt-6 leading-relaxed font-normal"
+              className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto mt-6 leading-relaxed font-normal drop-shadow-[0_1px_8px_rgba(0,0,0,0.35)]"
             >
               {t('hero.subtext')}
             </motion.p>
@@ -51,12 +63,12 @@ export default function Home() {
             {Array.isArray(highlights) && highlights.length > 0 && (
               <motion.div
                 variants={fadeUp}
-                className="mt-7 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs sm:text-sm font-semibold text-[#575148]"
+                className="mt-7 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs sm:text-sm font-semibold text-white/90"
               >
                 {highlights.map((item, idx) => (
                   <span key={item} className="inline-flex items-center gap-3">
-                    {idx > 0 && <span className="text-[#B8AFA3]" aria-hidden="true">·</span>}
-                    <span className={idx === 0 ? 'text-[#D2511A]' : 'text-[#3A2A20]'}>{item}</span>
+                    {idx > 0 && <span className="text-white/45" aria-hidden="true">·</span>}
+                    <span className={idx === 0 ? 'text-[#F27D42]' : 'text-white/95'}>{item}</span>
                   </span>
                 ))}
               </motion.div>
@@ -65,14 +77,14 @@ export default function Home() {
             <motion.div variants={fadeUp} className="mt-8 flex flex-col sm:flex-row gap-3.5 justify-center items-center">
               <Link
                 to="/simulation"
-                className="inline-flex items-center justify-center gap-2 bg-[#121110] text-white font-bold px-7 py-3.5 rounded-full hover:bg-[#D2511A] transition-colors text-sm whitespace-nowrap shrink-0 shadow-sm"
+                className="inline-flex items-center justify-center gap-2 bg-[#D2511A] text-white font-bold px-7 py-3.5 rounded-full hover:bg-[#E8662E] transition-colors text-sm whitespace-nowrap shrink-0 shadow-lg"
               >
                 <span>{t('hero.cta2')}</span>
                 <ArrowUpRight size={16} />
               </Link>
               <Link
                 to="/offers"
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#121110] border border-[#121110]/15 font-bold px-7 py-3.5 rounded-full hover:border-[#121110]/40 transition-colors text-sm whitespace-nowrap shrink-0 shadow-sm"
+                className="inline-flex items-center justify-center gap-2 bg-white/95 text-[#121110] font-bold px-7 py-3.5 rounded-full hover:bg-white transition-colors text-sm whitespace-nowrap shrink-0 shadow-lg"
               >
                 <span>{t('hero.cta1')}</span>
               </Link>
