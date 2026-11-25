@@ -18,7 +18,7 @@ function FileUpload({ label, fieldName, file, preview, onChange, onClear, clickT
   return (
     <div className="flex-1">
       <label className="block text-[10px] font-bold text-[#6B6359] uppercase tracking-widest mb-2">
-        {label} <span className="text-red-500">*</span>
+        {label}
       </label>
       {!file ? (
         <div
@@ -312,13 +312,13 @@ export default function LoanDetail() {
                             <FileUpload
                               label={t('loanDetail.kycFront')} fieldName="id_front"
                               file={files.id_front} preview={previews.id_front}
-                              onChange={handleFile} onClear={(f) => setFiles({ ...files, [f]: null })}
+                              onChange={handleFile} onClear={(f) => { setFiles(prev => ({ ...prev, [f]: null })); setPreviews(prev => ({ ...prev, [f]: null })) }}
                               clickText={t('loanDetail.uploadClick')} hintText={t('loanDetail.uploadHint')} readyText={t('loanDetail.uploadReady')}
                             />
                             <FileUpload
                               label={t('loanDetail.kycBack')} fieldName="id_back"
                               file={files.id_back} preview={previews.id_back}
-                              onChange={handleFile} onClear={(f) => setFiles({ ...files, [f]: null })}
+                              onChange={handleFile} onClear={(f) => { setFiles(prev => ({ ...prev, [f]: null })); setPreviews(prev => ({ ...prev, [f]: null })) }}
                               clickText={t('loanDetail.uploadClick')} hintText={t('loanDetail.uploadHint')} readyText={t('loanDetail.uploadReady')}
                             />
                           </div>

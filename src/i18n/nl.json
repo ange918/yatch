@@ -555,7 +555,7 @@
     "duration": "Looptijd (maanden)",
     "message": "Uw bericht",
     "messagePlaceholder": "Beschrijf uw project…",
-    "kyc": "Identiteitsdocument (KYC)",
+    "kyc": "Identiteitsdocument (KYC — optioneel)",
     "kycFront": "Voorzijde",
     "kycBack": "Achterzijde",
     "send": "Aanvraag versturen",
@@ -862,7 +862,7 @@
       "consumption": "Consumptie",
       "other": "Overig"
     },
-    "kyc": "Identiteitsbewijs (KYC)",
+    "kyc": "Identiteitsbewijs (KYC — optioneel)",
     "send": "Aanvraag versturen",
     "sending": "Bezig met verzenden...",
     "privacy": "Uw gegevens worden versleuteld en vertrouwelijk behandeld (AVG).",

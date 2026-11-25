@@ -555,7 +555,7 @@
     "duration": "Duration (Months)",
     "message": "Your Message",
     "messagePlaceholder": "Tell us about your project…",
-    "kyc": "Identity Document (KYC)",
+    "kyc": "Identity Document (KYC — optional)",
     "kycFront": "Front side",
     "kycBack": "Back side",
     "send": "Send Request",
@@ -862,7 +862,7 @@
       "consumption": "Consumer spending",
       "other": "Other"
     },
-    "kyc": "Identity document (KYC)",
+    "kyc": "Identity document (KYC — optional)",
     "send": "Submit application",
     "sending": "Sending...",
     "privacy": "Your data is encrypted and treated confidentially (GDPR).",

@@ -555,7 +555,7 @@
     "duration": "Durée (mois)",
     "message": "Votre message",
     "messagePlaceholder": "Décrivez-nous votre projet…",
-    "kyc": "Document d'identité (KYC)",
+    "kyc": "Document d'identité (KYC — optionnel)",
     "kycFront": "Recto",
     "kycBack": "Verso",
     "send": "Envoyer la demande",
@@ -862,7 +862,7 @@
       "consumption": "Consommation",
       "other": "Autre"
     },
-    "kyc": "Pièce d'identité (KYC)",
+    "kyc": "Pièce d'identité (KYC — optionnel)",
     "send": "Envoyer la demande",
     "sending": "Envoi en cours...",
     "privacy": "Vos données sont chiffrées et traitées de manière confidentielle (RGPD).",

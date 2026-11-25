@@ -16,7 +16,7 @@ function FileUpload({ label, fieldName, file, preview, onChange, onClear }) {
   return (
     <div className="flex-1">
       <label className="block text-[10px] font-bold text-[#6B6359] uppercase tracking-widest mb-2">
-        {label} <span className="text-red-500">*</span>
+        {label}
       </label>
       {!file ? (
         <div
@@ -226,8 +226,8 @@ export default function Contact() {
                           <h3 className="font-bold text-[#121110]">{t('apply.kyc')}</h3>
                         </div>
                         <div className="flex flex-col md:flex-row gap-4">
-                          <FileUpload label={t('loanDetail.kycFront')} fieldName="id_front" file={files.id_front} preview={previews.id_front} onChange={handleFile} onClear={(f2) => setFiles({ ...files, [f2]: null })} />
-                          <FileUpload label={t('loanDetail.kycBack')} fieldName="id_back" file={files.id_back} preview={previews.id_back} onChange={handleFile} onClear={(f2) => setFiles({ ...files, [f2]: null })} />
+                          <FileUpload label={t('loanDetail.kycFront')} fieldName="id_front" file={files.id_front} preview={previews.id_front} onChange={handleFile} onClear={(f2) => { setFiles(prev => ({ ...prev, [f2]: null })); setPreviews(prev => ({ ...prev, [f2]: null })) }} />
+                          <FileUpload label={t('loanDetail.kycBack')} fieldName="id_back" file={files.id_back} preview={previews.id_back} onChange={handleFile} onClear={(f2) => { setFiles(prev => ({ ...prev, [f2]: null })); setPreviews(prev => ({ ...prev, [f2]: null })) }} />
                         </div>
                       </div>
 

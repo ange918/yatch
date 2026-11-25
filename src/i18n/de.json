@@ -555,7 +555,7 @@
     "duration": "Laufzeit (Monate)",
     "message": "Ihre Nachricht",
     "messagePlaceholder": "Schildern Sie uns Ihr Vorhaben…",
-    "kyc": "Ausweisdokument (KYC)",
+    "kyc": "Ausweisdokument (KYC — optional)",
     "kycFront": "Vorderseite",
     "kycBack": "Rückseite",
     "send": "Anfrage senden",
@@ -862,7 +862,7 @@
       "consumption": "Konsum",
       "other": "Sonstiges"
     },
-    "kyc": "Ausweisdokument (KYC)",
+    "kyc": "Ausweisdokument (KYC — optional)",
     "send": "Antrag absenden",
     "sending": "Wird gesendet...",
     "privacy": "Ihre Daten werden verschlüsselt und vertraulich behandelt (DSGVO).",
